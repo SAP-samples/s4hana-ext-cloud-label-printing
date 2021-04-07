@@ -1,0 +1,19 @@
+{
+  "xsappname": "s4print-dev-xsuaa",
+  "tenant-mode": "dedicated",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.PrintUser",
+      "description": "Required to print"
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "PrintUser",
+      "description": "Required to print",
+      "scope-references"     : [
+        "$XSAPPNAME.PrintUser", "uaa.user" 
+      ]
+    }
+  ]
+}

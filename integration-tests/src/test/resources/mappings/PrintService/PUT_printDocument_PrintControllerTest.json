@@ -1,0 +1,23 @@
+{
+	"request": {
+		"method": "PUT",
+		"urlPattern": "/dm/api/v1/rest/print-documents/[0-9a-fA-F]{8}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{12}",
+		"headers": {
+			"Content-Type": {
+				"equalTo": "application/octet-stream",
+        		"caseInsensitive": true
+			},
+			"If-None-Match": {
+				"equalTo": "*"
+			}
+		},
+		"bodyPatterns": [
+			{
+				"binaryEqualTo": "ZWFzdGVyIGVnZw=="
+			}
+		]
+	},
+	"response": {
+		"status": 204
+	}
+}

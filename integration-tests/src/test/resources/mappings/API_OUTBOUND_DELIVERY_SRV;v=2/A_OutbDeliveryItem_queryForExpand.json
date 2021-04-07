@@ -1,0 +1,36 @@
+{
+	"request": {
+		"method": "GET",
+		"urlPath": "/sap/opu/odata/sap/API_OUTBOUND_DELIVERY_SRV;v=0002/A_OutbDeliveryItem",
+		"queryParameters": {
+			"$format": {
+				"equalTo": "json"
+			},
+			"$filter": {
+				"equalTo": "DeliveryDocument eq '80000000'"
+			}
+		}
+	},
+	"response": {
+		"status": 200,
+		"headers": {
+			"Content-Type": "application/json"
+		},
+		"jsonBody": {
+		   "d":{
+		      "results":[
+		         {
+		            "__metadata":{
+		               "id":"https://myXXXXXX-api.s4hana.ondemand.com/sap/opu/odata/sap/API_OUTBOUND_DELIVERY_SRV;v=0002/A_OutbDeliveryItem(DeliveryDocument='80000000',DeliveryDocumentItem='000010')",
+		               "uri":"https://myXXXXXX-api.s4hana.ondemand.com/sap/opu/odata/sap/API_OUTBOUND_DELIVERY_SRV;v=0002/A_OutbDeliveryItem(DeliveryDocument='80000000',DeliveryDocumentItem='000010')",
+		               "type":"API_OUTBOUND_DELIVERY_SRV.A_OutbDeliveryItemType",
+		               "etag":"W/\"'0002'\""
+		            },
+		            "DeliveryDocument":"80000000",
+		            "DeliveryDocumentItem":"000010"
+		         }
+		      ]
+		   }
+		}
+	}
+}

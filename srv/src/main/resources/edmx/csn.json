@@ -1,0 +1,3204 @@
+{
+  "definitions": {
+    "API_OUTBOUND_DELIVERY_SRV.A_MaintenanceItemObjectType": {
+      "kind": "entity",
+      "@cds.persistence.name": "API_OUTBOUND_DELIVERY_SRV_A_MAINTENANCEITEMOBJECTTYPE",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "MaintenanceItemObject": {
+          "@cds.persistence.name": "MAINTENANCEITEMOBJECT",
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "MaintenanceItemObjectList": {
+          "@cds.persistence.name": "MAINTENANCEITEMOBJECTLIST",
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "Assembly": {
+          "@cds.persistence.name": "ASSEMBLY",
+          "type": "cds.String",
+          "length": 40
+        },
+        "Equipment": {
+          "@cds.persistence.name": "EQUIPMENT",
+          "type": "cds.String",
+          "length": 18
+        },
+        "FunctionalLocation": {
+          "@cds.persistence.name": "FUNCTIONALLOCATION",
+          "type": "cds.String",
+          "length": 40
+        },
+        "MaintenanceNotification": {
+          "@cds.persistence.name": "MAINTENANCENOTIFICATION",
+          "type": "cds.String",
+          "length": 12
+        },
+        "MaintObjectLocAcctAssgmtNmbr": {
+          "@cds.persistence.name": "MAINTOBJECTLOCACCTASSGMTNMBR",
+          "type": "cds.String",
+          "length": 12
+        },
+        "Material": {
+          "@cds.persistence.name": "MATERIAL",
+          "type": "cds.String",
+          "length": 40
+        },
+        "SerialNumber": {
+          "@cds.persistence.name": "SERIALNUMBER",
+          "type": "cds.String",
+          "length": 18
+        }
+      }
+    },
+    "API_OUTBOUND_DELIVERY_SRV.A_OutbDeliveryAddressType": {
+      "kind": "entity",
+      "@cds.persistence.name": "API_OUTBOUND_DELIVERY_SRV_A_OUTBDELIVERYADDRESSTYPE",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "AddressID": {
+          "@cds.persistence.name": "ADDRESSID",
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "AdditionalStreetPrefixName": {
+          "@cds.persistence.name": "ADDITIONALSTREETPREFIXNAME",
+          "type": "cds.String",
+          "length": 40
+        },
+        "AdditionalStreetSuffixName": {
+          "@cds.persistence.name": "ADDITIONALSTREETSUFFIXNAME",
+          "type": "cds.String",
+          "length": 40
+        },
+        "AddressTimeZone": {
+          "@cds.persistence.name": "ADDRESSTIMEZONE",
+          "type": "cds.String",
+          "length": 6
+        },
+        "Building": {
+          "@cds.persistence.name": "BUILDING",
+          "type": "cds.String",
+          "length": 20
+        },
+        "BusinessPartnerName1": {
+          "@cds.persistence.name": "BUSINESSPARTNERNAME1",
+          "type": "cds.String",
+          "length": 40
+        },
+        "BusinessPartnerName2": {
+          "@cds.persistence.name": "BUSINESSPARTNERNAME2",
+          "type": "cds.String",
+          "length": 40
+        },
+        "BusinessPartnerName3": {
+          "@cds.persistence.name": "BUSINESSPARTNERNAME3",
+          "type": "cds.String",
+          "length": 40
+        },
+        "BusinessPartnerName4": {
+          "@cds.persistence.name": "BUSINESSPARTNERNAME4",
+          "type": "cds.String",
+          "length": 40
+        },
+        "CareOfName": {
+          "@cds.persistence.name": "CAREOFNAME",
+          "type": "cds.String",
+          "length": 40
+        },
+        "CityCode": {
+          "@cds.persistence.name": "CITYCODE",
+          "type": "cds.String",
+          "length": 12
+        },
+        "CityName": {
+          "@cds.persistence.name": "CITYNAME",
+          "type": "cds.String",
+          "length": 40
+        },
+        "CitySearch": {
+          "@cds.persistence.name": "CITYSEARCH",
+          "type": "cds.String",
+          "length": 25
+        },
+        "CompanyPostalCode": {
+          "@cds.persistence.name": "COMPANYPOSTALCODE",
+          "type": "cds.String",
+          "length": 10
+        },
+        "CorrespondenceLanguage": {
+          "@cds.persistence.name": "CORRESPONDENCELANGUAGE",
+          "type": "cds.String",
+          "length": 2
+        },
+        "Country": {
+          "@cds.persistence.name": "COUNTRY",
+          "type": "cds.String",
+          "length": 3
+        },
+        "County": {
+          "@cds.persistence.name": "COUNTY",
+          "type": "cds.String",
+          "length": 40
+        },
+        "DeliveryServiceNumber": {
+          "@cds.persistence.name": "DELIVERYSERVICENUMBER",
+          "type": "cds.String",
+          "length": 10
+        },
+        "DeliveryServiceTypeCode": {
+          "@cds.persistence.name": "DELIVERYSERVICETYPECODE",
+          "type": "cds.String",
+          "length": 4
+        },
+        "District": {
+          "@cds.persistence.name": "DISTRICT",
+          "type": "cds.String",
+          "length": 40
+        },
+        "FaxNumber": {
+          "@cds.persistence.name": "FAXNUMBER",
+          "type": "cds.String",
+          "length": 30
+        },
+        "Floor": {
+          "@cds.persistence.name": "FLOOR",
+          "type": "cds.String",
+          "length": 10
+        },
+        "FormOfAddress": {
+          "@cds.persistence.name": "FORMOFADDRESS",
+          "type": "cds.String",
+          "length": 4
+        },
+        "FullName": {
+          "@cds.persistence.name": "FULLNAME",
+          "type": "cds.String",
+          "length": 80
+        },
+        "HomeCityName": {
+          "@cds.persistence.name": "HOMECITYNAME",
+          "type": "cds.String",
+          "length": 40
+        },
+        "HouseNumber": {
+          "@cds.persistence.name": "HOUSENUMBER",
+          "type": "cds.String",
+          "length": 10
+        },
+        "HouseNumberSupplementText": {
+          "@cds.persistence.name": "HOUSENUMBERSUPPLEMENTTEXT",
+          "type": "cds.String",
+          "length": 10
+        },
+        "Nation": {
+          "@cds.persistence.name": "NATION",
+          "type": "cds.String",
+          "length": 1
+        },
+        "Person": {
+          "@cds.persistence.name": "PERSON",
+          "type": "cds.String",
+          "length": 10
+        },
+        "PhoneNumber": {
+          "@cds.persistence.name": "PHONENUMBER",
+          "type": "cds.String",
+          "length": 30
+        },
+        "POBox": {
+          "@cds.persistence.name": "POBOX",
+          "type": "cds.String",
+          "length": 10
+        },
+        "POBoxDeviatingCityName": {
+          "@cds.persistence.name": "POBOXDEVIATINGCITYNAME",
+          "type": "cds.String",
+          "length": 40
+        },
+        "POBoxDeviatingCountry": {
+          "@cds.persistence.name": "POBOXDEVIATINGCOUNTRY",
+          "type": "cds.String",
+          "length": 3
+        },
+        "POBoxDeviatingRegion": {
+          "@cds.persistence.name": "POBOXDEVIATINGREGION",
+          "type": "cds.String",
+          "length": 3
+        },
+        "POBoxIsWithoutNumber": {
+          "@cds.persistence.name": "POBOXISWITHOUTNUMBER",
+          "type": "cds.Boolean"
+        },
+        "POBoxLobbyName": {
+          "@cds.persistence.name": "POBOXLOBBYNAME",
+          "type": "cds.String",
+          "length": 40
+        },
+        "POBoxPostalCode": {
+          "@cds.persistence.name": "POBOXPOSTALCODE",
+          "type": "cds.String",
+          "length": 10
+        },
+        "PostalCode": {
+          "@cds.persistence.name": "POSTALCODE",
+          "type": "cds.String",
+          "length": 10
+        },
+        "PrfrdCommMediumType": {
+          "@cds.persistence.name": "PRFRDCOMMMEDIUMTYPE",
+          "type": "cds.String",
+          "length": 3
+        },
+        "Region": {
+          "@cds.persistence.name": "REGION",
+          "type": "cds.String",
+          "length": 3
+        },
+        "RoomNumber": {
+          "@cds.persistence.name": "ROOMNUMBER",
+          "type": "cds.String",
+          "length": 10
+        },
+        "SearchTerm1": {
+          "@cds.persistence.name": "SEARCHTERM1",
+          "type": "cds.String",
+          "length": 20
+        },
+        "StreetName": {
+          "@cds.persistence.name": "STREETNAME",
+          "type": "cds.String",
+          "length": 60
+        },
+        "StreetPrefixName": {
+          "@cds.persistence.name": "STREETPREFIXNAME",
+          "type": "cds.String",
+          "length": 40
+        },
+        "StreetSearch": {
+          "@cds.persistence.name": "STREETSEARCH",
+          "type": "cds.String",
+          "length": 25
+        },
+        "StreetSuffixName": {
+          "@cds.persistence.name": "STREETSUFFIXNAME",
+          "type": "cds.String",
+          "length": 40
+        },
+        "TaxJurisdiction": {
+          "@cds.persistence.name": "TAXJURISDICTION",
+          "type": "cds.String",
+          "length": 15
+        },
+        "TransportZone": {
+          "@cds.persistence.name": "TRANSPORTZONE",
+          "type": "cds.String",
+          "length": 10
+        }
+      }
+    },
+    "API_OUTBOUND_DELIVERY_SRV.A_OutbDeliveryDocFlowType": {
+      "kind": "entity",
+      "@cds.persistence.name": "API_OUTBOUND_DELIVERY_SRV_A_OUTBDELIVERYDOCFLOWTYPE",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "PrecedingDocument": {
+          "@cds.persistence.name": "PRECEDINGDOCUMENT",
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "PrecedingDocumentItem": {
+          "@cds.persistence.name": "PRECEDINGDOCUMENTITEM",
+          "key": true,
+          "type": "cds.String",
+          "length": 6
+        },
+        "SubsequentDocumentCategory": {
+          "@cds.persistence.name": "SUBSEQUENTDOCUMENTCATEGORY",
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "Deliveryversion": {
+          "@cds.persistence.name": "DELIVERYVERSION",
+          "type": "cds.String",
+          "length": 4
+        },
+        "PrecedingDocumentCategory": {
+          "@cds.persistence.name": "PRECEDINGDOCUMENTCATEGORY",
+          "type": "cds.String",
+          "length": 4
+        },
+        "Subsequentdocument": {
+          "@cds.persistence.name": "SUBSEQUENTDOCUMENT",
+          "type": "cds.String",
+          "length": 10
+        },
+        "QuantityInBaseUnit": {
+          "@cds.persistence.name": "QUANTITYINBASEUNIT",
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 3
+        },
+        "SubsequentDocumentItem": {
+          "@cds.persistence.name": "SUBSEQUENTDOCUMENTITEM",
+          "type": "cds.String",
+          "length": 6
+        },
+        "SDFulfillmentCalculationRule": {
+          "@cds.persistence.name": "SDFULFILLMENTCALCULATIONRULE",
+          "type": "cds.String",
+          "length": 1
+        },
+        "TransferOrderInWrhsMgmtIsConfd": {
+          "@cds.persistence.name": "TRANSFERORDERINWRHSMGMTISCONFD",
+          "type": "cds.Boolean"
+        }
+      }
+    },
+    "API_OUTBOUND_DELIVERY_SRV.A_OutbDeliveryHeaderType": {
+      "kind": "entity",
+      "@cds.persistence.name": "API_OUTBOUND_DELIVERY_SRV_A_OUTBDELIVERYHEADERTYPE",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "DeliveryDocument": {
+          "@cds.persistence.name": "DELIVERYDOCUMENT",
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "Shippinglocationtimezone": {
+          "@cds.persistence.name": "SHIPPINGLOCATIONTIMEZONE",
+          "type": "cds.String",
+          "length": 6
+        },
+        "ActualDeliveryRoute": {
+          "@cds.persistence.name": "ACTUALDELIVERYROUTE",
+          "type": "cds.String",
+          "length": 6
+        },
+        "Receivinglocationtimezone": {
+          "@cds.persistence.name": "RECEIVINGLOCATIONTIMEZONE",
+          "type": "cds.String",
+          "length": 6
+        },
+        "ActualGoodsMovementDate": {
+          "@cds.persistence.name": "ACTUALGOODSMOVEMENTDATE",
+          "type": "cds.Timestamp"
+        },
+        "ActualGoodsMovementTime": {
+          "@cds.persistence.name": "ACTUALGOODSMOVEMENTTIME",
+          "type": "cds.Time"
+        },
+        "BillingDocumentDate": {
+          "@cds.persistence.name": "BILLINGDOCUMENTDATE",
+          "type": "cds.Timestamp"
+        },
+        "BillOfLading": {
+          "@cds.persistence.name": "BILLOFLADING",
+          "type": "cds.String",
+          "length": 35
+        },
+        "CompleteDeliveryIsDefined": {
+          "@cds.persistence.name": "COMPLETEDELIVERYISDEFINED",
+          "type": "cds.Boolean"
+        },
+        "ConfirmationTime": {
+          "@cds.persistence.name": "CONFIRMATIONTIME",
+          "type": "cds.Time"
+        },
+        "CreatedByUser": {
+          "@cds.persistence.name": "CREATEDBYUSER",
+          "type": "cds.String",
+          "length": 12
+        },
+        "CreationDate": {
+          "@cds.persistence.name": "CREATIONDATE",
+          "type": "cds.Timestamp"
+        },
+        "CreationTime": {
+          "@cds.persistence.name": "CREATIONTIME",
+          "type": "cds.Time"
+        },
+        "CustomerGroup": {
+          "@cds.persistence.name": "CUSTOMERGROUP",
+          "type": "cds.String",
+          "length": 2
+        },
+        "DeliveryBlockReason": {
+          "@cds.persistence.name": "DELIVERYBLOCKREASON",
+          "type": "cds.String",
+          "length": 2
+        },
+        "DeliveryDate": {
+          "@cds.persistence.name": "DELIVERYDATE",
+          "type": "cds.Timestamp"
+        },
+        "DeliveryDocumentBySupplier": {
+          "@cds.persistence.name": "DELIVERYDOCUMENTBYSUPPLIER",
+          "type": "cds.String",
+          "length": 35
+        },
+        "DeliveryDocumentType": {
+          "@cds.persistence.name": "DELIVERYDOCUMENTTYPE",
+          "type": "cds.String",
+          "length": 4
+        },
+        "DeliveryIsInPlant": {
+          "@cds.persistence.name": "DELIVERYISINPLANT",
+          "type": "cds.Boolean"
+        },
+        "DeliveryPriority": {
+          "@cds.persistence.name": "DELIVERYPRIORITY",
+          "type": "cds.String",
+          "length": 2
+        },
+        "DeliveryTime": {
+          "@cds.persistence.name": "DELIVERYTIME",
+          "type": "cds.Time"
+        },
+        "DeliveryVersion": {
+          "@cds.persistence.name": "DELIVERYVERSION",
+          "type": "cds.String",
+          "length": 4
+        },
+        "DepreciationPercentage": {
+          "@cds.persistence.name": "DEPRECIATIONPERCENTAGE",
+          "type": "cds.Decimal",
+          "precision": 5,
+          "scale": 2
+        },
+        "DistrStatusByDecentralizedWrhs": {
+          "@cds.persistence.name": "DISTRSTATUSBYDECENTRALIZEDWRHS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "DocumentDate": {
+          "@cds.persistence.name": "DOCUMENTDATE",
+          "type": "cds.Timestamp"
+        },
+        "ExternalIdentificationType": {
+          "@cds.persistence.name": "EXTERNALIDENTIFICATIONTYPE",
+          "type": "cds.String",
+          "length": 1
+        },
+        "ExternalTransportSystem": {
+          "@cds.persistence.name": "EXTERNALTRANSPORTSYSTEM",
+          "type": "cds.String",
+          "length": 5
+        },
+        "FactoryCalendarByCustomer": {
+          "@cds.persistence.name": "FACTORYCALENDARBYCUSTOMER",
+          "type": "cds.String",
+          "length": 2
+        },
+        "GoodsIssueOrReceiptSlipNumber": {
+          "@cds.persistence.name": "GOODSISSUEORRECEIPTSLIPNUMBER",
+          "type": "cds.String",
+          "length": 10
+        },
+        "GoodsIssueTime": {
+          "@cds.persistence.name": "GOODSISSUETIME",
+          "type": "cds.Time"
+        },
+        "HandlingUnitInStock": {
+          "@cds.persistence.name": "HANDLINGUNITINSTOCK",
+          "type": "cds.String",
+          "length": 1
+        },
+        "HdrGeneralIncompletionStatus": {
+          "@cds.persistence.name": "HDRGENERALINCOMPLETIONSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "HdrGoodsMvtIncompletionStatus": {
+          "@cds.persistence.name": "HDRGOODSMVTINCOMPLETIONSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "HeaderBillgIncompletionStatus": {
+          "@cds.persistence.name": "HEADERBILLGINCOMPLETIONSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "HeaderBillingBlockReason": {
+          "@cds.persistence.name": "HEADERBILLINGBLOCKREASON",
+          "type": "cds.String",
+          "length": 2
+        },
+        "HeaderDelivIncompletionStatus": {
+          "@cds.persistence.name": "HEADERDELIVINCOMPLETIONSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "HeaderGrossWeight": {
+          "@cds.persistence.name": "HEADERGROSSWEIGHT",
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 3
+        },
+        "HeaderNetWeight": {
+          "@cds.persistence.name": "HEADERNETWEIGHT",
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 3
+        },
+        "HeaderPackingIncompletionSts": {
+          "@cds.persistence.name": "HEADERPACKINGINCOMPLETIONSTS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "HeaderPickgIncompletionStatus": {
+          "@cds.persistence.name": "HEADERPICKGINCOMPLETIONSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "HeaderVolume": {
+          "@cds.persistence.name": "HEADERVOLUME",
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 3
+        },
+        "HeaderVolumeUnit": {
+          "@cds.persistence.name": "HEADERVOLUMEUNIT",
+          "type": "cds.String",
+          "length": 3
+        },
+        "HeaderWeightUnit": {
+          "@cds.persistence.name": "HEADERWEIGHTUNIT",
+          "type": "cds.String",
+          "length": 3
+        },
+        "IncotermsClassification": {
+          "@cds.persistence.name": "INCOTERMSCLASSIFICATION",
+          "type": "cds.String",
+          "length": 3
+        },
+        "IncotermsTransferLocation": {
+          "@cds.persistence.name": "INCOTERMSTRANSFERLOCATION",
+          "type": "cds.String",
+          "length": 28
+        },
+        "IntercompanyBillingDate": {
+          "@cds.persistence.name": "INTERCOMPANYBILLINGDATE",
+          "type": "cds.Timestamp"
+        },
+        "InternalFinancialDocument": {
+          "@cds.persistence.name": "INTERNALFINANCIALDOCUMENT",
+          "type": "cds.String",
+          "length": 10
+        },
+        "IsDeliveryForSingleWarehouse": {
+          "@cds.persistence.name": "ISDELIVERYFORSINGLEWAREHOUSE",
+          "type": "cds.String",
+          "length": 1
+        },
+        "IsExportDelivery": {
+          "@cds.persistence.name": "ISEXPORTDELIVERY",
+          "type": "cds.String",
+          "length": 1
+        },
+        "LastChangeDate": {
+          "@cds.persistence.name": "LASTCHANGEDATE",
+          "type": "cds.Timestamp"
+        },
+        "LastChangedByUser": {
+          "@cds.persistence.name": "LASTCHANGEDBYUSER",
+          "type": "cds.String",
+          "length": 12
+        },
+        "LoadingDate": {
+          "@cds.persistence.name": "LOADINGDATE",
+          "type": "cds.Timestamp"
+        },
+        "LoadingPoint": {
+          "@cds.persistence.name": "LOADINGPOINT",
+          "type": "cds.String",
+          "length": 2
+        },
+        "LoadingTime": {
+          "@cds.persistence.name": "LOADINGTIME",
+          "type": "cds.Time"
+        },
+        "MeansOfTransport": {
+          "@cds.persistence.name": "MEANSOFTRANSPORT",
+          "type": "cds.String",
+          "length": 20
+        },
+        "MeansOfTransportRefMaterial": {
+          "@cds.persistence.name": "MEANSOFTRANSPORTREFMATERIAL",
+          "type": "cds.String",
+          "length": 40
+        },
+        "MeansOfTransportType": {
+          "@cds.persistence.name": "MEANSOFTRANSPORTTYPE",
+          "type": "cds.String",
+          "length": 4
+        },
+        "OrderCombinationIsAllowed": {
+          "@cds.persistence.name": "ORDERCOMBINATIONISALLOWED",
+          "type": "cds.Boolean"
+        },
+        "OrderID": {
+          "@cds.persistence.name": "ORDERID",
+          "type": "cds.String",
+          "length": 12
+        },
+        "OverallDelivConfStatus": {
+          "@cds.persistence.name": "OVERALLDELIVCONFSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "OverallDelivReltdBillgStatus": {
+          "@cds.persistence.name": "OVERALLDELIVRELTDBILLGSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "OverallGoodsMovementStatus": {
+          "@cds.persistence.name": "OVERALLGOODSMOVEMENTSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "OverallIntcoBillingStatus": {
+          "@cds.persistence.name": "OVERALLINTCOBILLINGSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "OverallPackingStatus": {
+          "@cds.persistence.name": "OVERALLPACKINGSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "OverallPickingConfStatus": {
+          "@cds.persistence.name": "OVERALLPICKINGCONFSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "OverallPickingStatus": {
+          "@cds.persistence.name": "OVERALLPICKINGSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "OverallProofOfDeliveryStatus": {
+          "@cds.persistence.name": "OVERALLPROOFOFDELIVERYSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "OverallSDProcessStatus": {
+          "@cds.persistence.name": "OVERALLSDPROCESSSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "OverallWarehouseActivityStatus": {
+          "@cds.persistence.name": "OVERALLWAREHOUSEACTIVITYSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "OvrlItmDelivIncompletionSts": {
+          "@cds.persistence.name": "OVRLITMDELIVINCOMPLETIONSTS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "OvrlItmGdsMvtIncompletionSts": {
+          "@cds.persistence.name": "OVRLITMGDSMVTINCOMPLETIONSTS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "OvrlItmGeneralIncompletionSts": {
+          "@cds.persistence.name": "OVRLITMGENERALINCOMPLETIONSTS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "OvrlItmPackingIncompletionSts": {
+          "@cds.persistence.name": "OVRLITMPACKINGINCOMPLETIONSTS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "OvrlItmPickingIncompletionSts": {
+          "@cds.persistence.name": "OVRLITMPICKINGINCOMPLETIONSTS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "PaymentGuaranteeProcedure": {
+          "@cds.persistence.name": "PAYMENTGUARANTEEPROCEDURE",
+          "type": "cds.String",
+          "length": 6
+        },
+        "PickedItemsLocation": {
+          "@cds.persistence.name": "PICKEDITEMSLOCATION",
+          "type": "cds.String",
+          "length": 20
+        },
+        "PickingDate": {
+          "@cds.persistence.name": "PICKINGDATE",
+          "type": "cds.Timestamp"
+        },
+        "PickingTime": {
+          "@cds.persistence.name": "PICKINGTIME",
+          "type": "cds.Time"
+        },
+        "PlannedGoodsIssueDate": {
+          "@cds.persistence.name": "PLANNEDGOODSISSUEDATE",
+          "type": "cds.Timestamp"
+        },
+        "ProofOfDeliveryDate": {
+          "@cds.persistence.name": "PROOFOFDELIVERYDATE",
+          "type": "cds.Timestamp"
+        },
+        "ProposedDeliveryRoute": {
+          "@cds.persistence.name": "PROPOSEDDELIVERYROUTE",
+          "type": "cds.String",
+          "length": 6
+        },
+        "ReceivingPlant": {
+          "@cds.persistence.name": "RECEIVINGPLANT",
+          "type": "cds.String",
+          "length": 4
+        },
+        "RouteSchedule": {
+          "@cds.persistence.name": "ROUTESCHEDULE",
+          "type": "cds.String",
+          "length": 10
+        },
+        "SalesDistrict": {
+          "@cds.persistence.name": "SALESDISTRICT",
+          "type": "cds.String",
+          "length": 6
+        },
+        "SalesOffice": {
+          "@cds.persistence.name": "SALESOFFICE",
+          "type": "cds.String",
+          "length": 4
+        },
+        "SalesOrganization": {
+          "@cds.persistence.name": "SALESORGANIZATION",
+          "type": "cds.String",
+          "length": 4
+        },
+        "SDDocumentCategory": {
+          "@cds.persistence.name": "SDDOCUMENTCATEGORY",
+          "type": "cds.String",
+          "length": 4
+        },
+        "ShipmentBlockReason": {
+          "@cds.persistence.name": "SHIPMENTBLOCKREASON",
+          "type": "cds.String",
+          "length": 2
+        },
+        "ShippingCondition": {
+          "@cds.persistence.name": "SHIPPINGCONDITION",
+          "type": "cds.String",
+          "length": 2
+        },
+        "ShippingPoint": {
+          "@cds.persistence.name": "SHIPPINGPOINT",
+          "type": "cds.String",
+          "length": 4
+        },
+        "ShippingType": {
+          "@cds.persistence.name": "SHIPPINGTYPE",
+          "type": "cds.String",
+          "length": 2
+        },
+        "ShipToParty": {
+          "@cds.persistence.name": "SHIPTOPARTY",
+          "type": "cds.String",
+          "length": 10
+        },
+        "SoldToParty": {
+          "@cds.persistence.name": "SOLDTOPARTY",
+          "type": "cds.String",
+          "length": 10
+        },
+        "SpecialProcessingCode": {
+          "@cds.persistence.name": "SPECIALPROCESSINGCODE",
+          "type": "cds.String",
+          "length": 4
+        },
+        "StatisticsCurrency": {
+          "@cds.persistence.name": "STATISTICSCURRENCY",
+          "type": "cds.String",
+          "length": 5
+        },
+        "Supplier": {
+          "@cds.persistence.name": "SUPPLIER",
+          "type": "cds.String",
+          "length": 10
+        },
+        "TotalBlockStatus": {
+          "@cds.persistence.name": "TOTALBLOCKSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "TotalCreditCheckStatus": {
+          "@cds.persistence.name": "TOTALCREDITCHECKSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "TotalNumberOfPackage": {
+          "@cds.persistence.name": "TOTALNUMBEROFPACKAGE",
+          "type": "cds.String",
+          "length": 5
+        },
+        "TransactionCurrency": {
+          "@cds.persistence.name": "TRANSACTIONCURRENCY",
+          "type": "cds.String",
+          "length": 5
+        },
+        "TransportationGroup": {
+          "@cds.persistence.name": "TRANSPORTATIONGROUP",
+          "type": "cds.String",
+          "length": 4
+        },
+        "TransportationPlanningDate": {
+          "@cds.persistence.name": "TRANSPORTATIONPLANNINGDATE",
+          "type": "cds.Timestamp"
+        },
+        "TransportationPlanningStatus": {
+          "@cds.persistence.name": "TRANSPORTATIONPLANNINGSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "TransportationPlanningTime": {
+          "@cds.persistence.name": "TRANSPORTATIONPLANNINGTIME",
+          "type": "cds.Time"
+        },
+        "UnloadingPointName": {
+          "@cds.persistence.name": "UNLOADINGPOINTNAME",
+          "type": "cds.String",
+          "length": 25
+        },
+        "Warehouse": {
+          "@cds.persistence.name": "WAREHOUSE",
+          "type": "cds.String",
+          "length": 3
+        },
+        "WarehouseGate": {
+          "@cds.persistence.name": "WAREHOUSEGATE",
+          "type": "cds.String",
+          "length": 3
+        },
+        "WarehouseStagingArea": {
+          "@cds.persistence.name": "WAREHOUSESTAGINGAREA",
+          "type": "cds.String",
+          "length": 10
+        },
+        "to_DeliveryDocumentPartner": {
+          "@cds.persistence.name": "TO_DELIVERYDOCUMENTPARTNER",
+          "type": "cds.Association",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "API_OUTBOUND_DELIVERY_SRV.A_OutbDeliveryPartnerType",
+          "on": [
+            {
+              "ref": [
+                "to_DeliveryDocumentPartner",
+                "SDDocument"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "DeliveryDocument"
+              ]
+            }
+          ]
+        },
+        "to_DeliveryDocumentItem": {
+          "@cds.persistence.name": "TO_DELIVERYDOCUMENTITEM",
+          "type": "cds.Association",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "API_OUTBOUND_DELIVERY_SRV.A_OutbDeliveryItemType",
+          "on": [
+            {
+              "ref": [
+                "to_DeliveryDocumentItem",
+                "DeliveryDocument"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "DeliveryDocument"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "API_OUTBOUND_DELIVERY_SRV.A_OutbDeliveryItemType": {
+      "kind": "entity",
+      "@cds.persistence.name": "API_OUTBOUND_DELIVERY_SRV_A_OUTBDELIVERYITEMTYPE",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "DeliveryDocument": {
+          "@cds.persistence.name": "DELIVERYDOCUMENT",
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "DeliveryDocumentItem": {
+          "@cds.persistence.name": "DELIVERYDOCUMENTITEM",
+          "key": true,
+          "type": "cds.String",
+          "length": 6
+        },
+        "ActualDeliveredQtyInBaseUnit": {
+          "@cds.persistence.name": "ACTUALDELIVEREDQTYINBASEUNIT",
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "DeliveryVersion": {
+          "@cds.persistence.name": "DELIVERYVERSION",
+          "type": "cds.String",
+          "length": 4
+        },
+        "ActualDeliveryQuantity": {
+          "@cds.persistence.name": "ACTUALDELIVERYQUANTITY",
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "AdditionalCustomerGroup1": {
+          "@cds.persistence.name": "ADDITIONALCUSTOMERGROUP1",
+          "type": "cds.String",
+          "length": 3
+        },
+        "AdditionalCustomerGroup2": {
+          "@cds.persistence.name": "ADDITIONALCUSTOMERGROUP2",
+          "type": "cds.String",
+          "length": 3
+        },
+        "AdditionalCustomerGroup3": {
+          "@cds.persistence.name": "ADDITIONALCUSTOMERGROUP3",
+          "type": "cds.String",
+          "length": 3
+        },
+        "AdditionalCustomerGroup4": {
+          "@cds.persistence.name": "ADDITIONALCUSTOMERGROUP4",
+          "type": "cds.String",
+          "length": 3
+        },
+        "AdditionalCustomerGroup5": {
+          "@cds.persistence.name": "ADDITIONALCUSTOMERGROUP5",
+          "type": "cds.String",
+          "length": 3
+        },
+        "AdditionalMaterialGroup1": {
+          "@cds.persistence.name": "ADDITIONALMATERIALGROUP1",
+          "type": "cds.String",
+          "length": 3
+        },
+        "AdditionalMaterialGroup2": {
+          "@cds.persistence.name": "ADDITIONALMATERIALGROUP2",
+          "type": "cds.String",
+          "length": 3
+        },
+        "AdditionalMaterialGroup3": {
+          "@cds.persistence.name": "ADDITIONALMATERIALGROUP3",
+          "type": "cds.String",
+          "length": 3
+        },
+        "AdditionalMaterialGroup4": {
+          "@cds.persistence.name": "ADDITIONALMATERIALGROUP4",
+          "type": "cds.String",
+          "length": 3
+        },
+        "AdditionalMaterialGroup5": {
+          "@cds.persistence.name": "ADDITIONALMATERIALGROUP5",
+          "type": "cds.String",
+          "length": 3
+        },
+        "AlternateProductNumber": {
+          "@cds.persistence.name": "ALTERNATEPRODUCTNUMBER",
+          "type": "cds.String",
+          "length": 40
+        },
+        "BaseUnit": {
+          "@cds.persistence.name": "BASEUNIT",
+          "type": "cds.String",
+          "length": 3
+        },
+        "Batch": {
+          "@cds.persistence.name": "BATCH",
+          "type": "cds.String",
+          "length": 10
+        },
+        "BatchBySupplier": {
+          "@cds.persistence.name": "BATCHBYSUPPLIER",
+          "type": "cds.String",
+          "length": 15
+        },
+        "BatchClassification": {
+          "@cds.persistence.name": "BATCHCLASSIFICATION",
+          "type": "cds.String",
+          "length": 18
+        },
+        "BOMExplosion": {
+          "@cds.persistence.name": "BOMEXPLOSION",
+          "type": "cds.String",
+          "length": 8
+        },
+        "BusinessArea": {
+          "@cds.persistence.name": "BUSINESSAREA",
+          "type": "cds.String",
+          "length": 4
+        },
+        "ConsumptionPosting": {
+          "@cds.persistence.name": "CONSUMPTIONPOSTING",
+          "type": "cds.String",
+          "length": 1
+        },
+        "ControllingArea": {
+          "@cds.persistence.name": "CONTROLLINGAREA",
+          "type": "cds.String",
+          "length": 4
+        },
+        "CostCenter": {
+          "@cds.persistence.name": "COSTCENTER",
+          "type": "cds.String",
+          "length": 10
+        },
+        "CreatedByUser": {
+          "@cds.persistence.name": "CREATEDBYUSER",
+          "type": "cds.String",
+          "length": 12
+        },
+        "CreationDate": {
+          "@cds.persistence.name": "CREATIONDATE",
+          "type": "cds.Timestamp"
+        },
+        "CreationTime": {
+          "@cds.persistence.name": "CREATIONTIME",
+          "type": "cds.Time"
+        },
+        "CustEngineeringChgStatus": {
+          "@cds.persistence.name": "CUSTENGINEERINGCHGSTATUS",
+          "type": "cds.String",
+          "length": 17
+        },
+        "DeliveryDocumentItemCategory": {
+          "@cds.persistence.name": "DELIVERYDOCUMENTITEMCATEGORY",
+          "type": "cds.String",
+          "length": 4
+        },
+        "DeliveryDocumentItemText": {
+          "@cds.persistence.name": "DELIVERYDOCUMENTITEMTEXT",
+          "type": "cds.String",
+          "length": 40
+        },
+        "DeliveryGroup": {
+          "@cds.persistence.name": "DELIVERYGROUP",
+          "type": "cds.String",
+          "length": 3
+        },
+        "DeliveryQuantityUnit": {
+          "@cds.persistence.name": "DELIVERYQUANTITYUNIT",
+          "type": "cds.String",
+          "length": 3
+        },
+        "DeliveryRelatedBillingStatus": {
+          "@cds.persistence.name": "DELIVERYRELATEDBILLINGSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "DeliveryToBaseQuantityDnmntr": {
+          "@cds.persistence.name": "DELIVERYTOBASEQUANTITYDNMNTR",
+          "type": "cds.Decimal",
+          "precision": 5,
+          "scale": 0
+        },
+        "DeliveryToBaseQuantityNmrtr": {
+          "@cds.persistence.name": "DELIVERYTOBASEQUANTITYNMRTR",
+          "type": "cds.Decimal",
+          "precision": 5,
+          "scale": 0
+        },
+        "DepartmentClassificationByCust": {
+          "@cds.persistence.name": "DEPARTMENTCLASSIFICATIONBYCUST",
+          "type": "cds.String",
+          "length": 4
+        },
+        "DistributionChannel": {
+          "@cds.persistence.name": "DISTRIBUTIONCHANNEL",
+          "type": "cds.String",
+          "length": 2
+        },
+        "Division": {
+          "@cds.persistence.name": "DIVISION",
+          "type": "cds.String",
+          "length": 2
+        },
+        "FixedShipgProcgDurationInDays": {
+          "@cds.persistence.name": "FIXEDSHIPGPROCGDURATIONINDAYS",
+          "type": "cds.Decimal",
+          "precision": 5,
+          "scale": 2
+        },
+        "GLAccount": {
+          "@cds.persistence.name": "GLACCOUNT",
+          "type": "cds.String",
+          "length": 10
+        },
+        "GoodsMovementReasonCode": {
+          "@cds.persistence.name": "GOODSMOVEMENTREASONCODE",
+          "type": "cds.String",
+          "length": 4
+        },
+        "GoodsMovementStatus": {
+          "@cds.persistence.name": "GOODSMOVEMENTSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "GoodsMovementType": {
+          "@cds.persistence.name": "GOODSMOVEMENTTYPE",
+          "type": "cds.String",
+          "length": 3
+        },
+        "HigherLevelItem": {
+          "@cds.persistence.name": "HIGHERLEVELITEM",
+          "type": "cds.String",
+          "length": 6
+        },
+        "InspectionLot": {
+          "@cds.persistence.name": "INSPECTIONLOT",
+          "type": "cds.String",
+          "length": 12
+        },
+        "InspectionPartialLot": {
+          "@cds.persistence.name": "INSPECTIONPARTIALLOT",
+          "type": "cds.String",
+          "length": 6
+        },
+        "IntercompanyBillingStatus": {
+          "@cds.persistence.name": "INTERCOMPANYBILLINGSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "InternationalArticleNumber": {
+          "@cds.persistence.name": "INTERNATIONALARTICLENUMBER",
+          "type": "cds.String",
+          "length": 18
+        },
+        "InventorySpecialStockType": {
+          "@cds.persistence.name": "INVENTORYSPECIALSTOCKTYPE",
+          "type": "cds.String",
+          "length": 1
+        },
+        "InventoryValuationType": {
+          "@cds.persistence.name": "INVENTORYVALUATIONTYPE",
+          "type": "cds.String",
+          "length": 10
+        },
+        "IsCompletelyDelivered": {
+          "@cds.persistence.name": "ISCOMPLETELYDELIVERED",
+          "type": "cds.Boolean"
+        },
+        "IsNotGoodsMovementsRelevant": {
+          "@cds.persistence.name": "ISNOTGOODSMOVEMENTSRELEVANT",
+          "type": "cds.String",
+          "length": 1
+        },
+        "IsSeparateValuation": {
+          "@cds.persistence.name": "ISSEPARATEVALUATION",
+          "type": "cds.Boolean"
+        },
+        "IssgOrRcvgBatch": {
+          "@cds.persistence.name": "ISSGORRCVGBATCH",
+          "type": "cds.String",
+          "length": 10
+        },
+        "IssgOrRcvgMaterial": {
+          "@cds.persistence.name": "ISSGORRCVGMATERIAL",
+          "type": "cds.String",
+          "length": 40
+        },
+        "IssgOrRcvgSpclStockInd": {
+          "@cds.persistence.name": "ISSGORRCVGSPCLSTOCKIND",
+          "type": "cds.String",
+          "length": 1
+        },
+        "IssgOrRcvgStockCategory": {
+          "@cds.persistence.name": "ISSGORRCVGSTOCKCATEGORY",
+          "type": "cds.String",
+          "length": 1
+        },
+        "IssgOrRcvgValuationType": {
+          "@cds.persistence.name": "ISSGORRCVGVALUATIONTYPE",
+          "type": "cds.String",
+          "length": 10
+        },
+        "IssuingOrReceivingPlant": {
+          "@cds.persistence.name": "ISSUINGORRECEIVINGPLANT",
+          "type": "cds.String",
+          "length": 4
+        },
+        "IssuingOrReceivingStorageLoc": {
+          "@cds.persistence.name": "ISSUINGORRECEIVINGSTORAGELOC",
+          "type": "cds.String",
+          "length": 4
+        },
+        "ItemBillingBlockReason": {
+          "@cds.persistence.name": "ITEMBILLINGBLOCKREASON",
+          "type": "cds.String",
+          "length": 2
+        },
+        "ItemBillingIncompletionStatus": {
+          "@cds.persistence.name": "ITEMBILLINGINCOMPLETIONSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "ItemDeliveryIncompletionStatus": {
+          "@cds.persistence.name": "ITEMDELIVERYINCOMPLETIONSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "ItemGdsMvtIncompletionSts": {
+          "@cds.persistence.name": "ITEMGDSMVTINCOMPLETIONSTS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "ItemGeneralIncompletionStatus": {
+          "@cds.persistence.name": "ITEMGENERALINCOMPLETIONSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "ItemGrossWeight": {
+          "@cds.persistence.name": "ITEMGROSSWEIGHT",
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 3
+        },
+        "ItemIsBillingRelevant": {
+          "@cds.persistence.name": "ITEMISBILLINGRELEVANT",
+          "type": "cds.String",
+          "length": 1
+        },
+        "ItemNetWeight": {
+          "@cds.persistence.name": "ITEMNETWEIGHT",
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 3
+        },
+        "ItemPackingIncompletionStatus": {
+          "@cds.persistence.name": "ITEMPACKINGINCOMPLETIONSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "ItemPickingIncompletionStatus": {
+          "@cds.persistence.name": "ITEMPICKINGINCOMPLETIONSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "ItemVolume": {
+          "@cds.persistence.name": "ITEMVOLUME",
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 3
+        },
+        "ItemVolumeUnit": {
+          "@cds.persistence.name": "ITEMVOLUMEUNIT",
+          "type": "cds.String",
+          "length": 3
+        },
+        "ItemWeightUnit": {
+          "@cds.persistence.name": "ITEMWEIGHTUNIT",
+          "type": "cds.String",
+          "length": 3
+        },
+        "LastChangeDate": {
+          "@cds.persistence.name": "LASTCHANGEDATE",
+          "type": "cds.Timestamp"
+        },
+        "LoadingGroup": {
+          "@cds.persistence.name": "LOADINGGROUP",
+          "type": "cds.String",
+          "length": 4
+        },
+        "ManufactureDate": {
+          "@cds.persistence.name": "MANUFACTUREDATE",
+          "type": "cds.Timestamp"
+        },
+        "Material": {
+          "@cds.persistence.name": "MATERIAL",
+          "type": "cds.String",
+          "length": 40
+        },
+        "MaterialByCustomer": {
+          "@cds.persistence.name": "MATERIALBYCUSTOMER",
+          "type": "cds.String",
+          "length": 35
+        },
+        "MaterialFreightGroup": {
+          "@cds.persistence.name": "MATERIALFREIGHTGROUP",
+          "type": "cds.String",
+          "length": 8
+        },
+        "MaterialGroup": {
+          "@cds.persistence.name": "MATERIALGROUP",
+          "type": "cds.String",
+          "length": 9
+        },
+        "MaterialIsBatchManaged": {
+          "@cds.persistence.name": "MATERIALISBATCHMANAGED",
+          "type": "cds.Boolean"
+        },
+        "MaterialIsIntBatchManaged": {
+          "@cds.persistence.name": "MATERIALISINTBATCHMANAGED",
+          "type": "cds.Boolean"
+        },
+        "NumberOfSerialNumbers": {
+          "@cds.persistence.name": "NUMBEROFSERIALNUMBERS",
+          "type": "cds.Integer"
+        },
+        "OrderID": {
+          "@cds.persistence.name": "ORDERID",
+          "type": "cds.String",
+          "length": 12
+        },
+        "OrderItem": {
+          "@cds.persistence.name": "ORDERITEM",
+          "type": "cds.String",
+          "length": 4
+        },
+        "OriginalDeliveryQuantity": {
+          "@cds.persistence.name": "ORIGINALDELIVERYQUANTITY",
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "OriginallyRequestedMaterial": {
+          "@cds.persistence.name": "ORIGINALLYREQUESTEDMATERIAL",
+          "type": "cds.String",
+          "length": 40
+        },
+        "OverdelivTolrtdLmtRatioInPct": {
+          "@cds.persistence.name": "OVERDELIVTOLRTDLMTRATIOINPCT",
+          "type": "cds.Decimal",
+          "precision": 3,
+          "scale": 1
+        },
+        "PackingStatus": {
+          "@cds.persistence.name": "PACKINGSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "PartialDeliveryIsAllowed": {
+          "@cds.persistence.name": "PARTIALDELIVERYISALLOWED",
+          "type": "cds.String",
+          "length": 1
+        },
+        "PaymentGuaranteeForm": {
+          "@cds.persistence.name": "PAYMENTGUARANTEEFORM",
+          "type": "cds.String",
+          "length": 2
+        },
+        "PickingConfirmationStatus": {
+          "@cds.persistence.name": "PICKINGCONFIRMATIONSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "PickingControl": {
+          "@cds.persistence.name": "PICKINGCONTROL",
+          "type": "cds.String",
+          "length": 1
+        },
+        "PickingStatus": {
+          "@cds.persistence.name": "PICKINGSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "Plant": {
+          "@cds.persistence.name": "PLANT",
+          "type": "cds.String",
+          "length": 4
+        },
+        "PrimaryPostingSwitch": {
+          "@cds.persistence.name": "PRIMARYPOSTINGSWITCH",
+          "type": "cds.String",
+          "length": 1
+        },
+        "ProductAvailabilityDate": {
+          "@cds.persistence.name": "PRODUCTAVAILABILITYDATE",
+          "type": "cds.Timestamp"
+        },
+        "ProductAvailabilityTime": {
+          "@cds.persistence.name": "PRODUCTAVAILABILITYTIME",
+          "type": "cds.Time"
+        },
+        "ProductConfiguration": {
+          "@cds.persistence.name": "PRODUCTCONFIGURATION",
+          "type": "cds.String",
+          "length": 18
+        },
+        "ProductHierarchyNode": {
+          "@cds.persistence.name": "PRODUCTHIERARCHYNODE",
+          "type": "cds.String",
+          "length": 18
+        },
+        "ProfitabilitySegment": {
+          "@cds.persistence.name": "PROFITABILITYSEGMENT",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ProfitCenter": {
+          "@cds.persistence.name": "PROFITCENTER",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ProofOfDeliveryRelevanceCode": {
+          "@cds.persistence.name": "PROOFOFDELIVERYRELEVANCECODE",
+          "type": "cds.String",
+          "length": 1
+        },
+        "ProofOfDeliveryStatus": {
+          "@cds.persistence.name": "PROOFOFDELIVERYSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "QuantityIsFixed": {
+          "@cds.persistence.name": "QUANTITYISFIXED",
+          "type": "cds.Boolean"
+        },
+        "ReceivingPoint": {
+          "@cds.persistence.name": "RECEIVINGPOINT",
+          "type": "cds.String",
+          "length": 25
+        },
+        "ReferenceDocumentLogicalSystem": {
+          "@cds.persistence.name": "REFERENCEDOCUMENTLOGICALSYSTEM",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ReferenceSDDocument": {
+          "@cds.persistence.name": "REFERENCESDDOCUMENT",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ReferenceSDDocumentCategory": {
+          "@cds.persistence.name": "REFERENCESDDOCUMENTCATEGORY",
+          "type": "cds.String",
+          "length": 4
+        },
+        "ReferenceSDDocumentItem": {
+          "@cds.persistence.name": "REFERENCESDDOCUMENTITEM",
+          "type": "cds.String",
+          "length": 6
+        },
+        "RetailPromotion": {
+          "@cds.persistence.name": "RETAILPROMOTION",
+          "type": "cds.String",
+          "length": 10
+        },
+        "SalesDocumentItemType": {
+          "@cds.persistence.name": "SALESDOCUMENTITEMTYPE",
+          "type": "cds.String",
+          "length": 1
+        },
+        "SalesGroup": {
+          "@cds.persistence.name": "SALESGROUP",
+          "type": "cds.String",
+          "length": 3
+        },
+        "SalesOffice": {
+          "@cds.persistence.name": "SALESOFFICE",
+          "type": "cds.String",
+          "length": 4
+        },
+        "SDDocumentCategory": {
+          "@cds.persistence.name": "SDDOCUMENTCATEGORY",
+          "type": "cds.String",
+          "length": 4
+        },
+        "SDProcessStatus": {
+          "@cds.persistence.name": "SDPROCESSSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "ShelfLifeExpirationDate": {
+          "@cds.persistence.name": "SHELFLIFEEXPIRATIONDATE",
+          "type": "cds.Timestamp"
+        },
+        "StatisticsDate": {
+          "@cds.persistence.name": "STATISTICSDATE",
+          "type": "cds.Timestamp"
+        },
+        "StockType": {
+          "@cds.persistence.name": "STOCKTYPE",
+          "type": "cds.String",
+          "length": 1
+        },
+        "StorageBin": {
+          "@cds.persistence.name": "STORAGEBIN",
+          "type": "cds.String",
+          "length": 10
+        },
+        "StorageLocation": {
+          "@cds.persistence.name": "STORAGELOCATION",
+          "type": "cds.String",
+          "length": 4
+        },
+        "StorageType": {
+          "@cds.persistence.name": "STORAGETYPE",
+          "type": "cds.String",
+          "length": 3
+        },
+        "SubsequentMovementType": {
+          "@cds.persistence.name": "SUBSEQUENTMOVEMENTTYPE",
+          "type": "cds.String",
+          "length": 3
+        },
+        "TransportationGroup": {
+          "@cds.persistence.name": "TRANSPORTATIONGROUP",
+          "type": "cds.String",
+          "length": 4
+        },
+        "UnderdelivTolrtdLmtRatioInPct": {
+          "@cds.persistence.name": "UNDERDELIVTOLRTDLMTRATIOINPCT",
+          "type": "cds.Decimal",
+          "precision": 3,
+          "scale": 1
+        },
+        "UnlimitedOverdeliveryIsAllowed": {
+          "@cds.persistence.name": "UNLIMITEDOVERDELIVERYISALLOWED",
+          "type": "cds.Boolean"
+        },
+        "VarblShipgProcgDurationInDays": {
+          "@cds.persistence.name": "VARBLSHIPGPROCGDURATIONINDAYS",
+          "type": "cds.Decimal",
+          "precision": 5,
+          "scale": 2
+        },
+        "Warehouse": {
+          "@cds.persistence.name": "WAREHOUSE",
+          "type": "cds.String",
+          "length": 3
+        },
+        "WarehouseActivityStatus": {
+          "@cds.persistence.name": "WAREHOUSEACTIVITYSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "WarehouseStagingArea": {
+          "@cds.persistence.name": "WAREHOUSESTAGINGAREA",
+          "type": "cds.String",
+          "length": 10
+        },
+        "WarehouseStockCategory": {
+          "@cds.persistence.name": "WAREHOUSESTOCKCATEGORY",
+          "type": "cds.String",
+          "length": 1
+        },
+        "WarehouseStorageBin": {
+          "@cds.persistence.name": "WAREHOUSESTORAGEBIN",
+          "type": "cds.String",
+          "length": 10
+        },
+        "to_DocumentFlow": {
+          "@cds.persistence.name": "TO_DOCUMENTFLOW",
+          "type": "cds.Association",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "API_OUTBOUND_DELIVERY_SRV.A_OutbDeliveryDocFlowType",
+          "on": [
+            {
+              "ref": [
+                "to_DocumentFlow",
+                "PrecedingDocument"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "DeliveryDocument"
+              ]
+            },
+            "and",
+            {
+              "ref": [
+                "to_DocumentFlow",
+                "PrecedingDocumentItem"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "DeliveryDocumentItem"
+              ]
+            }
+          ]
+        },
+        "to_SerialDeliveryItem": {
+          "@cds.persistence.name": "TO_SERIALDELIVERYITEM",
+          "type": "cds.Association",
+          "target": "API_OUTBOUND_DELIVERY_SRV.A_SerialNmbrDeliveryType",
+          "on": [
+            {
+              "ref": [
+                "to_SerialDeliveryItem",
+                "DeliveryDocument"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "DeliveryDocument"
+              ]
+            },
+            "and",
+            {
+              "ref": [
+                "to_SerialDeliveryItem",
+                "DeliveryDocumentItem"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "DeliveryDocumentItem"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "API_OUTBOUND_DELIVERY_SRV.A_OutbDeliveryPartnerType": {
+      "kind": "entity",
+      "@cds.persistence.name": "API_OUTBOUND_DELIVERY_SRV_A_OUTBDELIVERYPARTNERTYPE",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "PartnerFunction": {
+          "@cds.persistence.name": "PARTNERFUNCTION",
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "SDDocument": {
+          "@cds.persistence.name": "SDDOCUMENT",
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "AddressID": {
+          "@cds.persistence.name": "ADDRESSID",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ContactPerson": {
+          "@cds.persistence.name": "CONTACTPERSON",
+          "type": "cds.String",
+          "length": 10
+        },
+        "Customer": {
+          "@cds.persistence.name": "CUSTOMER",
+          "type": "cds.String",
+          "length": 10
+        },
+        "Personnel": {
+          "@cds.persistence.name": "PERSONNEL",
+          "type": "cds.String",
+          "length": 8
+        },
+        "SDDocumentItem": {
+          "@cds.persistence.name": "SDDOCUMENTITEM",
+          "type": "cds.String",
+          "length": 6
+        },
+        "Supplier": {
+          "@cds.persistence.name": "SUPPLIER",
+          "type": "cds.String",
+          "length": 10
+        },
+        "to_Address": {
+          "@cds.persistence.name": "TO_ADDRESS",
+          "type": "cds.Association",
+          "target": "API_OUTBOUND_DELIVERY_SRV.A_OutbDeliveryAddressType",
+          "keys": [
+            {
+              "ref": [
+                "AddressID"
+              ],
+              "$generatedFieldName": "to_Address_AddressID"
+            }
+          ]
+        },
+        "to_Address_AddressID": {
+          "@cds.persistence.name": "TO_ADDRESS_ADDRESSID",
+          "@odata.foreignKey4": "to_Address",
+          "type": "cds.String",
+          "length": 10
+        }
+      }
+    },
+    "API_OUTBOUND_DELIVERY_SRV.A_SerialNmbrDeliveryType": {
+      "kind": "entity",
+      "@cds.persistence.name": "API_OUTBOUND_DELIVERY_SRV_A_SERIALNMBRDELIVERYTYPE",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "MaintenanceItemObjectList": {
+          "@cds.persistence.name": "MAINTENANCEITEMOBJECTLIST",
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "DeliveryDate": {
+          "@cds.persistence.name": "DELIVERYDATE",
+          "type": "cds.Timestamp"
+        },
+        "DeliveryDocument": {
+          "@cds.persistence.name": "DELIVERYDOCUMENT",
+          "type": "cds.String",
+          "length": 10
+        },
+        "DeliveryDocumentItem": {
+          "@cds.persistence.name": "DELIVERYDOCUMENTITEM",
+          "type": "cds.String",
+          "length": 6
+        },
+        "SDDocumentCategory": {
+          "@cds.persistence.name": "SDDOCUMENTCATEGORY",
+          "type": "cds.String",
+          "length": 4
+        },
+        "to_MaintenanceItemObject": {
+          "@cds.persistence.name": "TO_MAINTENANCEITEMOBJECT",
+          "type": "cds.Association",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "API_OUTBOUND_DELIVERY_SRV.A_MaintenanceItemObjectType",
+          "on": [
+            {
+              "ref": [
+                "to_MaintenanceItemObject",
+                "MaintenanceItemObjectList"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "MaintenanceItemObjectList"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "API_OUTBOUND_DELIVERY_SRV.PickingReport": {
+      "kind": "type",
+      "@cds.persistence.name": "API_OUTBOUND_DELIVERY_SRV_PICKINGREPORT",
+      "elements": {
+        "SystemMessageIdentification": {
+          "@cds.persistence.name": "SYSTEMMESSAGEIDENTIFICATION",
+          "type": "cds.String",
+          "length": 20
+        },
+        "SystemMessageNumber": {
+          "@cds.persistence.name": "SYSTEMMESSAGENUMBER",
+          "type": "cds.String",
+          "length": 3
+        },
+        "SystemMessageType": {
+          "@cds.persistence.name": "SYSTEMMESSAGETYPE",
+          "type": "cds.String",
+          "length": 1
+        },
+        "SystemMessageVariable1": {
+          "@cds.persistence.name": "SYSTEMMESSAGEVARIABLE1",
+          "type": "cds.String",
+          "length": 50
+        },
+        "SystemMessageVariable2": {
+          "@cds.persistence.name": "SYSTEMMESSAGEVARIABLE2",
+          "type": "cds.String",
+          "length": 50
+        },
+        "SystemMessageVariable3": {
+          "@cds.persistence.name": "SYSTEMMESSAGEVARIABLE3",
+          "type": "cds.String",
+          "length": 50
+        },
+        "SystemMessageVariable4": {
+          "@cds.persistence.name": "SYSTEMMESSAGEVARIABLE4",
+          "type": "cds.String",
+          "length": 50
+        },
+        "Batch": {
+          "@cds.persistence.name": "BATCH",
+          "type": "cds.String",
+          "length": 10
+        },
+        "DeliveryQuantityUnit": {
+          "@cds.persistence.name": "DELIVERYQUANTITYUNIT",
+          "type": "cds.String",
+          "length": 3
+        },
+        "ActualDeliveryQuantity": {
+          "@cds.persistence.name": "ACTUALDELIVERYQUANTITY",
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "DeliveryDocumentItemText": {
+          "@cds.persistence.name": "DELIVERYDOCUMENTITEMTEXT",
+          "type": "cds.String",
+          "length": 40
+        },
+        "Material": {
+          "@cds.persistence.name": "MATERIAL",
+          "type": "cds.String",
+          "length": 40
+        },
+        "DeliveryDocumentItem": {
+          "@cds.persistence.name": "DELIVERYDOCUMENTITEM",
+          "type": "cds.String",
+          "length": 6
+        },
+        "DeliveryDocument": {
+          "@cds.persistence.name": "DELIVERYDOCUMENT",
+          "type": "cds.String",
+          "length": 6
+        }
+      }
+    },
+    "API_OUTBOUND_DELIVERY_SRV.Return": {
+      "kind": "type",
+      "@cds.persistence.name": "API_OUTBOUND_DELIVERY_SRV_RETURN",
+      "elements": {
+        "CollectiveProcessing": {
+          "@cds.persistence.name": "COLLECTIVEPROCESSING",
+          "type": "cds.String",
+          "length": 10
+        },
+        "DeliveryDocument": {
+          "@cds.persistence.name": "DELIVERYDOCUMENT",
+          "type": "cds.String",
+          "length": 10
+        },
+        "DeliveryDocumentItem": {
+          "@cds.persistence.name": "DELIVERYDOCUMENTITEM",
+          "type": "cds.String",
+          "length": 6
+        },
+        "ScheduleLine": {
+          "@cds.persistence.name": "SCHEDULELINE",
+          "type": "cds.String",
+          "length": 4
+        },
+        "CollectiveProcessingMsgCounter": {
+          "@cds.persistence.name": "COLLECTIVEPROCESSINGMSGCOUNTER",
+          "type": "cds.String",
+          "length": 2
+        },
+        "SystemMessageIdentification": {
+          "@cds.persistence.name": "SYSTEMMESSAGEIDENTIFICATION",
+          "type": "cds.String",
+          "length": 20
+        },
+        "SystemMessageNumber": {
+          "@cds.persistence.name": "SYSTEMMESSAGENUMBER",
+          "type": "cds.String",
+          "length": 3
+        },
+        "SystemMessageType": {
+          "@cds.persistence.name": "SYSTEMMESSAGETYPE",
+          "type": "cds.String",
+          "length": 1
+        },
+        "SystemMessageVariable1": {
+          "@cds.persistence.name": "SYSTEMMESSAGEVARIABLE1",
+          "type": "cds.String",
+          "length": 50
+        },
+        "SystemMessageVariable2": {
+          "@cds.persistence.name": "SYSTEMMESSAGEVARIABLE2",
+          "type": "cds.String",
+          "length": 50
+        },
+        "SystemMessageVariable3": {
+          "@cds.persistence.name": "SYSTEMMESSAGEVARIABLE3",
+          "type": "cds.String",
+          "length": 50
+        },
+        "SystemMessageVariable4": {
+          "@cds.persistence.name": "SYSTEMMESSAGEVARIABLE4",
+          "type": "cds.String",
+          "length": 50
+        },
+        "CollectiveProcessingType": {
+          "@cds.persistence.name": "COLLECTIVEPROCESSINGTYPE",
+          "type": "cds.String",
+          "length": 1
+        }
+      }
+    },
+    "OutboundDeliveryService": {
+      "kind": "service",
+      "@source": "srv/delivery-service.cds"
+    },
+    "OutboundDeliveryService.A_OutbDeliveryHeader": {
+      "kind": "entity",
+      "@cds.persistence.name": "OUTBOUNDDELIVERYSERVICE_A_OUTBDELIVERYHEADER",
+      "@cds.persistence.skip": true,
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "API_OUTBOUND_DELIVERY_SRV.A_OutbDeliveryHeaderType"
+            ]
+          },
+          "excluding": [
+            "to_DeliveryDocumentPartner"
+          ]
+        }
+      },
+      "elements": {
+        "DeliveryDocument": {
+          "@cds.persistence.name": "DELIVERYDOCUMENT",
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "Shippinglocationtimezone": {
+          "@cds.persistence.name": "SHIPPINGLOCATIONTIMEZONE",
+          "type": "cds.String",
+          "length": 6
+        },
+        "ActualDeliveryRoute": {
+          "@cds.persistence.name": "ACTUALDELIVERYROUTE",
+          "type": "cds.String",
+          "length": 6
+        },
+        "Receivinglocationtimezone": {
+          "@cds.persistence.name": "RECEIVINGLOCATIONTIMEZONE",
+          "type": "cds.String",
+          "length": 6
+        },
+        "ActualGoodsMovementDate": {
+          "@cds.persistence.name": "ACTUALGOODSMOVEMENTDATE",
+          "type": "cds.Timestamp"
+        },
+        "ActualGoodsMovementTime": {
+          "@cds.persistence.name": "ACTUALGOODSMOVEMENTTIME",
+          "type": "cds.Time"
+        },
+        "BillingDocumentDate": {
+          "@cds.persistence.name": "BILLINGDOCUMENTDATE",
+          "type": "cds.Timestamp"
+        },
+        "BillOfLading": {
+          "@cds.persistence.name": "BILLOFLADING",
+          "type": "cds.String",
+          "length": 35
+        },
+        "CompleteDeliveryIsDefined": {
+          "@cds.persistence.name": "COMPLETEDELIVERYISDEFINED",
+          "type": "cds.Boolean"
+        },
+        "ConfirmationTime": {
+          "@cds.persistence.name": "CONFIRMATIONTIME",
+          "type": "cds.Time"
+        },
+        "CreatedByUser": {
+          "@cds.persistence.name": "CREATEDBYUSER",
+          "type": "cds.String",
+          "length": 12
+        },
+        "CreationDate": {
+          "@cds.persistence.name": "CREATIONDATE",
+          "type": "cds.Timestamp"
+        },
+        "CreationTime": {
+          "@cds.persistence.name": "CREATIONTIME",
+          "type": "cds.Time"
+        },
+        "CustomerGroup": {
+          "@cds.persistence.name": "CUSTOMERGROUP",
+          "type": "cds.String",
+          "length": 2
+        },
+        "DeliveryBlockReason": {
+          "@cds.persistence.name": "DELIVERYBLOCKREASON",
+          "type": "cds.String",
+          "length": 2
+        },
+        "DeliveryDate": {
+          "@cds.persistence.name": "DELIVERYDATE",
+          "type": "cds.Timestamp"
+        },
+        "DeliveryDocumentBySupplier": {
+          "@cds.persistence.name": "DELIVERYDOCUMENTBYSUPPLIER",
+          "type": "cds.String",
+          "length": 35
+        },
+        "DeliveryDocumentType": {
+          "@cds.persistence.name": "DELIVERYDOCUMENTTYPE",
+          "type": "cds.String",
+          "length": 4
+        },
+        "DeliveryIsInPlant": {
+          "@cds.persistence.name": "DELIVERYISINPLANT",
+          "type": "cds.Boolean"
+        },
+        "DeliveryPriority": {
+          "@cds.persistence.name": "DELIVERYPRIORITY",
+          "type": "cds.String",
+          "length": 2
+        },
+        "DeliveryTime": {
+          "@cds.persistence.name": "DELIVERYTIME",
+          "type": "cds.Time"
+        },
+        "DeliveryVersion": {
+          "@cds.persistence.name": "DELIVERYVERSION",
+          "type": "cds.String",
+          "length": 4
+        },
+        "DepreciationPercentage": {
+          "@cds.persistence.name": "DEPRECIATIONPERCENTAGE",
+          "type": "cds.Decimal",
+          "precision": 5,
+          "scale": 2
+        },
+        "DistrStatusByDecentralizedWrhs": {
+          "@cds.persistence.name": "DISTRSTATUSBYDECENTRALIZEDWRHS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "DocumentDate": {
+          "@cds.persistence.name": "DOCUMENTDATE",
+          "type": "cds.Timestamp"
+        },
+        "ExternalIdentificationType": {
+          "@cds.persistence.name": "EXTERNALIDENTIFICATIONTYPE",
+          "type": "cds.String",
+          "length": 1
+        },
+        "ExternalTransportSystem": {
+          "@cds.persistence.name": "EXTERNALTRANSPORTSYSTEM",
+          "type": "cds.String",
+          "length": 5
+        },
+        "FactoryCalendarByCustomer": {
+          "@cds.persistence.name": "FACTORYCALENDARBYCUSTOMER",
+          "type": "cds.String",
+          "length": 2
+        },
+        "GoodsIssueOrReceiptSlipNumber": {
+          "@cds.persistence.name": "GOODSISSUEORRECEIPTSLIPNUMBER",
+          "type": "cds.String",
+          "length": 10
+        },
+        "GoodsIssueTime": {
+          "@cds.persistence.name": "GOODSISSUETIME",
+          "type": "cds.Time"
+        },
+        "HandlingUnitInStock": {
+          "@cds.persistence.name": "HANDLINGUNITINSTOCK",
+          "type": "cds.String",
+          "length": 1
+        },
+        "HdrGeneralIncompletionStatus": {
+          "@cds.persistence.name": "HDRGENERALINCOMPLETIONSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "HdrGoodsMvtIncompletionStatus": {
+          "@cds.persistence.name": "HDRGOODSMVTINCOMPLETIONSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "HeaderBillgIncompletionStatus": {
+          "@cds.persistence.name": "HEADERBILLGINCOMPLETIONSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "HeaderBillingBlockReason": {
+          "@cds.persistence.name": "HEADERBILLINGBLOCKREASON",
+          "type": "cds.String",
+          "length": 2
+        },
+        "HeaderDelivIncompletionStatus": {
+          "@cds.persistence.name": "HEADERDELIVINCOMPLETIONSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "HeaderGrossWeight": {
+          "@cds.persistence.name": "HEADERGROSSWEIGHT",
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 3
+        },
+        "HeaderNetWeight": {
+          "@cds.persistence.name": "HEADERNETWEIGHT",
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 3
+        },
+        "HeaderPackingIncompletionSts": {
+          "@cds.persistence.name": "HEADERPACKINGINCOMPLETIONSTS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "HeaderPickgIncompletionStatus": {
+          "@cds.persistence.name": "HEADERPICKGINCOMPLETIONSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "HeaderVolume": {
+          "@cds.persistence.name": "HEADERVOLUME",
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 3
+        },
+        "HeaderVolumeUnit": {
+          "@cds.persistence.name": "HEADERVOLUMEUNIT",
+          "type": "cds.String",
+          "length": 3
+        },
+        "HeaderWeightUnit": {
+          "@cds.persistence.name": "HEADERWEIGHTUNIT",
+          "type": "cds.String",
+          "length": 3
+        },
+        "IncotermsClassification": {
+          "@cds.persistence.name": "INCOTERMSCLASSIFICATION",
+          "type": "cds.String",
+          "length": 3
+        },
+        "IncotermsTransferLocation": {
+          "@cds.persistence.name": "INCOTERMSTRANSFERLOCATION",
+          "type": "cds.String",
+          "length": 28
+        },
+        "IntercompanyBillingDate": {
+          "@cds.persistence.name": "INTERCOMPANYBILLINGDATE",
+          "type": "cds.Timestamp"
+        },
+        "InternalFinancialDocument": {
+          "@cds.persistence.name": "INTERNALFINANCIALDOCUMENT",
+          "type": "cds.String",
+          "length": 10
+        },
+        "IsDeliveryForSingleWarehouse": {
+          "@cds.persistence.name": "ISDELIVERYFORSINGLEWAREHOUSE",
+          "type": "cds.String",
+          "length": 1
+        },
+        "IsExportDelivery": {
+          "@cds.persistence.name": "ISEXPORTDELIVERY",
+          "type": "cds.String",
+          "length": 1
+        },
+        "LastChangeDate": {
+          "@cds.persistence.name": "LASTCHANGEDATE",
+          "type": "cds.Timestamp"
+        },
+        "LastChangedByUser": {
+          "@cds.persistence.name": "LASTCHANGEDBYUSER",
+          "type": "cds.String",
+          "length": 12
+        },
+        "LoadingDate": {
+          "@cds.persistence.name": "LOADINGDATE",
+          "type": "cds.Timestamp"
+        },
+        "LoadingPoint": {
+          "@cds.persistence.name": "LOADINGPOINT",
+          "type": "cds.String",
+          "length": 2
+        },
+        "LoadingTime": {
+          "@cds.persistence.name": "LOADINGTIME",
+          "type": "cds.Time"
+        },
+        "MeansOfTransport": {
+          "@cds.persistence.name": "MEANSOFTRANSPORT",
+          "type": "cds.String",
+          "length": 20
+        },
+        "MeansOfTransportRefMaterial": {
+          "@cds.persistence.name": "MEANSOFTRANSPORTREFMATERIAL",
+          "type": "cds.String",
+          "length": 40
+        },
+        "MeansOfTransportType": {
+          "@cds.persistence.name": "MEANSOFTRANSPORTTYPE",
+          "type": "cds.String",
+          "length": 4
+        },
+        "OrderCombinationIsAllowed": {
+          "@cds.persistence.name": "ORDERCOMBINATIONISALLOWED",
+          "type": "cds.Boolean"
+        },
+        "OrderID": {
+          "@cds.persistence.name": "ORDERID",
+          "type": "cds.String",
+          "length": 12
+        },
+        "OverallDelivConfStatus": {
+          "@cds.persistence.name": "OVERALLDELIVCONFSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "OverallDelivReltdBillgStatus": {
+          "@cds.persistence.name": "OVERALLDELIVRELTDBILLGSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "OverallGoodsMovementStatus": {
+          "@cds.persistence.name": "OVERALLGOODSMOVEMENTSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "OverallIntcoBillingStatus": {
+          "@cds.persistence.name": "OVERALLINTCOBILLINGSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "OverallPackingStatus": {
+          "@cds.persistence.name": "OVERALLPACKINGSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "OverallPickingConfStatus": {
+          "@cds.persistence.name": "OVERALLPICKINGCONFSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "OverallPickingStatus": {
+          "@cds.persistence.name": "OVERALLPICKINGSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "OverallProofOfDeliveryStatus": {
+          "@cds.persistence.name": "OVERALLPROOFOFDELIVERYSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "OverallSDProcessStatus": {
+          "@cds.persistence.name": "OVERALLSDPROCESSSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "OverallWarehouseActivityStatus": {
+          "@cds.persistence.name": "OVERALLWAREHOUSEACTIVITYSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "OvrlItmDelivIncompletionSts": {
+          "@cds.persistence.name": "OVRLITMDELIVINCOMPLETIONSTS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "OvrlItmGdsMvtIncompletionSts": {
+          "@cds.persistence.name": "OVRLITMGDSMVTINCOMPLETIONSTS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "OvrlItmGeneralIncompletionSts": {
+          "@cds.persistence.name": "OVRLITMGENERALINCOMPLETIONSTS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "OvrlItmPackingIncompletionSts": {
+          "@cds.persistence.name": "OVRLITMPACKINGINCOMPLETIONSTS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "OvrlItmPickingIncompletionSts": {
+          "@cds.persistence.name": "OVRLITMPICKINGINCOMPLETIONSTS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "PaymentGuaranteeProcedure": {
+          "@cds.persistence.name": "PAYMENTGUARANTEEPROCEDURE",
+          "type": "cds.String",
+          "length": 6
+        },
+        "PickedItemsLocation": {
+          "@cds.persistence.name": "PICKEDITEMSLOCATION",
+          "type": "cds.String",
+          "length": 20
+        },
+        "PickingDate": {
+          "@cds.persistence.name": "PICKINGDATE",
+          "type": "cds.Timestamp"
+        },
+        "PickingTime": {
+          "@cds.persistence.name": "PICKINGTIME",
+          "type": "cds.Time"
+        },
+        "PlannedGoodsIssueDate": {
+          "@cds.persistence.name": "PLANNEDGOODSISSUEDATE",
+          "type": "cds.Timestamp"
+        },
+        "ProofOfDeliveryDate": {
+          "@cds.persistence.name": "PROOFOFDELIVERYDATE",
+          "type": "cds.Timestamp"
+        },
+        "ProposedDeliveryRoute": {
+          "@cds.persistence.name": "PROPOSEDDELIVERYROUTE",
+          "type": "cds.String",
+          "length": 6
+        },
+        "ReceivingPlant": {
+          "@cds.persistence.name": "RECEIVINGPLANT",
+          "type": "cds.String",
+          "length": 4
+        },
+        "RouteSchedule": {
+          "@cds.persistence.name": "ROUTESCHEDULE",
+          "type": "cds.String",
+          "length": 10
+        },
+        "SalesDistrict": {
+          "@cds.persistence.name": "SALESDISTRICT",
+          "type": "cds.String",
+          "length": 6
+        },
+        "SalesOffice": {
+          "@cds.persistence.name": "SALESOFFICE",
+          "type": "cds.String",
+          "length": 4
+        },
+        "SalesOrganization": {
+          "@cds.persistence.name": "SALESORGANIZATION",
+          "type": "cds.String",
+          "length": 4
+        },
+        "SDDocumentCategory": {
+          "@cds.persistence.name": "SDDOCUMENTCATEGORY",
+          "type": "cds.String",
+          "length": 4
+        },
+        "ShipmentBlockReason": {
+          "@cds.persistence.name": "SHIPMENTBLOCKREASON",
+          "type": "cds.String",
+          "length": 2
+        },
+        "ShippingCondition": {
+          "@cds.persistence.name": "SHIPPINGCONDITION",
+          "type": "cds.String",
+          "length": 2
+        },
+        "ShippingPoint": {
+          "@cds.persistence.name": "SHIPPINGPOINT",
+          "type": "cds.String",
+          "length": 4
+        },
+        "ShippingType": {
+          "@cds.persistence.name": "SHIPPINGTYPE",
+          "type": "cds.String",
+          "length": 2
+        },
+        "ShipToParty": {
+          "@cds.persistence.name": "SHIPTOPARTY",
+          "type": "cds.String",
+          "length": 10
+        },
+        "SoldToParty": {
+          "@cds.persistence.name": "SOLDTOPARTY",
+          "type": "cds.String",
+          "length": 10
+        },
+        "SpecialProcessingCode": {
+          "@cds.persistence.name": "SPECIALPROCESSINGCODE",
+          "type": "cds.String",
+          "length": 4
+        },
+        "StatisticsCurrency": {
+          "@cds.persistence.name": "STATISTICSCURRENCY",
+          "type": "cds.String",
+          "length": 5
+        },
+        "Supplier": {
+          "@cds.persistence.name": "SUPPLIER",
+          "type": "cds.String",
+          "length": 10
+        },
+        "TotalBlockStatus": {
+          "@cds.persistence.name": "TOTALBLOCKSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "TotalCreditCheckStatus": {
+          "@cds.persistence.name": "TOTALCREDITCHECKSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "TotalNumberOfPackage": {
+          "@cds.persistence.name": "TOTALNUMBEROFPACKAGE",
+          "type": "cds.String",
+          "length": 5
+        },
+        "TransactionCurrency": {
+          "@cds.persistence.name": "TRANSACTIONCURRENCY",
+          "type": "cds.String",
+          "length": 5
+        },
+        "TransportationGroup": {
+          "@cds.persistence.name": "TRANSPORTATIONGROUP",
+          "type": "cds.String",
+          "length": 4
+        },
+        "TransportationPlanningDate": {
+          "@cds.persistence.name": "TRANSPORTATIONPLANNINGDATE",
+          "type": "cds.Timestamp"
+        },
+        "TransportationPlanningStatus": {
+          "@cds.persistence.name": "TRANSPORTATIONPLANNINGSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "TransportationPlanningTime": {
+          "@cds.persistence.name": "TRANSPORTATIONPLANNINGTIME",
+          "type": "cds.Time"
+        },
+        "UnloadingPointName": {
+          "@cds.persistence.name": "UNLOADINGPOINTNAME",
+          "type": "cds.String",
+          "length": 25
+        },
+        "Warehouse": {
+          "@cds.persistence.name": "WAREHOUSE",
+          "type": "cds.String",
+          "length": 3
+        },
+        "WarehouseGate": {
+          "@cds.persistence.name": "WAREHOUSEGATE",
+          "type": "cds.String",
+          "length": 3
+        },
+        "WarehouseStagingArea": {
+          "@cds.persistence.name": "WAREHOUSESTAGINGAREA",
+          "type": "cds.String",
+          "length": 10
+        },
+        "to_DeliveryDocumentItem": {
+          "@cds.persistence.name": "TO_DELIVERYDOCUMENTITEM",
+          "type": "cds.Association",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "OutboundDeliveryService.A_OutbDeliveryItem",
+          "on": [
+            {
+              "ref": [
+                "to_DeliveryDocumentItem",
+                "DeliveryDocument"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "DeliveryDocument"
+              ]
+            }
+          ]
+        }
+      },
+      "$syntax": "projection"
+    },
+    "OutboundDeliveryService.A_OutbDeliveryItem": {
+      "kind": "entity",
+      "@cds.persistence.name": "OUTBOUNDDELIVERYSERVICE_A_OUTBDELIVERYITEM",
+      "@cds.persistence.skip": true,
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "API_OUTBOUND_DELIVERY_SRV.A_OutbDeliveryItemType"
+            ]
+          },
+          "excluding": [
+            "to_DocumentFlow",
+            "to_SerialDeliveryItem"
+          ]
+        }
+      },
+      "elements": {
+        "DeliveryDocument": {
+          "@cds.persistence.name": "DELIVERYDOCUMENT",
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "DeliveryDocumentItem": {
+          "@cds.persistence.name": "DELIVERYDOCUMENTITEM",
+          "key": true,
+          "type": "cds.String",
+          "length": 6
+        },
+        "ActualDeliveredQtyInBaseUnit": {
+          "@cds.persistence.name": "ACTUALDELIVEREDQTYINBASEUNIT",
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "DeliveryVersion": {
+          "@cds.persistence.name": "DELIVERYVERSION",
+          "type": "cds.String",
+          "length": 4
+        },
+        "ActualDeliveryQuantity": {
+          "@cds.persistence.name": "ACTUALDELIVERYQUANTITY",
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "AdditionalCustomerGroup1": {
+          "@cds.persistence.name": "ADDITIONALCUSTOMERGROUP1",
+          "type": "cds.String",
+          "length": 3
+        },
+        "AdditionalCustomerGroup2": {
+          "@cds.persistence.name": "ADDITIONALCUSTOMERGROUP2",
+          "type": "cds.String",
+          "length": 3
+        },
+        "AdditionalCustomerGroup3": {
+          "@cds.persistence.name": "ADDITIONALCUSTOMERGROUP3",
+          "type": "cds.String",
+          "length": 3
+        },
+        "AdditionalCustomerGroup4": {
+          "@cds.persistence.name": "ADDITIONALCUSTOMERGROUP4",
+          "type": "cds.String",
+          "length": 3
+        },
+        "AdditionalCustomerGroup5": {
+          "@cds.persistence.name": "ADDITIONALCUSTOMERGROUP5",
+          "type": "cds.String",
+          "length": 3
+        },
+        "AdditionalMaterialGroup1": {
+          "@cds.persistence.name": "ADDITIONALMATERIALGROUP1",
+          "type": "cds.String",
+          "length": 3
+        },
+        "AdditionalMaterialGroup2": {
+          "@cds.persistence.name": "ADDITIONALMATERIALGROUP2",
+          "type": "cds.String",
+          "length": 3
+        },
+        "AdditionalMaterialGroup3": {
+          "@cds.persistence.name": "ADDITIONALMATERIALGROUP3",
+          "type": "cds.String",
+          "length": 3
+        },
+        "AdditionalMaterialGroup4": {
+          "@cds.persistence.name": "ADDITIONALMATERIALGROUP4",
+          "type": "cds.String",
+          "length": 3
+        },
+        "AdditionalMaterialGroup5": {
+          "@cds.persistence.name": "ADDITIONALMATERIALGROUP5",
+          "type": "cds.String",
+          "length": 3
+        },
+        "AlternateProductNumber": {
+          "@cds.persistence.name": "ALTERNATEPRODUCTNUMBER",
+          "type": "cds.String",
+          "length": 40
+        },
+        "BaseUnit": {
+          "@cds.persistence.name": "BASEUNIT",
+          "type": "cds.String",
+          "length": 3
+        },
+        "Batch": {
+          "@cds.persistence.name": "BATCH",
+          "type": "cds.String",
+          "length": 10
+        },
+        "BatchBySupplier": {
+          "@cds.persistence.name": "BATCHBYSUPPLIER",
+          "type": "cds.String",
+          "length": 15
+        },
+        "BatchClassification": {
+          "@cds.persistence.name": "BATCHCLASSIFICATION",
+          "type": "cds.String",
+          "length": 18
+        },
+        "BOMExplosion": {
+          "@cds.persistence.name": "BOMEXPLOSION",
+          "type": "cds.String",
+          "length": 8
+        },
+        "BusinessArea": {
+          "@cds.persistence.name": "BUSINESSAREA",
+          "type": "cds.String",
+          "length": 4
+        },
+        "ConsumptionPosting": {
+          "@cds.persistence.name": "CONSUMPTIONPOSTING",
+          "type": "cds.String",
+          "length": 1
+        },
+        "ControllingArea": {
+          "@cds.persistence.name": "CONTROLLINGAREA",
+          "type": "cds.String",
+          "length": 4
+        },
+        "CostCenter": {
+          "@cds.persistence.name": "COSTCENTER",
+          "type": "cds.String",
+          "length": 10
+        },
+        "CreatedByUser": {
+          "@cds.persistence.name": "CREATEDBYUSER",
+          "type": "cds.String",
+          "length": 12
+        },
+        "CreationDate": {
+          "@cds.persistence.name": "CREATIONDATE",
+          "type": "cds.Timestamp"
+        },
+        "CreationTime": {
+          "@cds.persistence.name": "CREATIONTIME",
+          "type": "cds.Time"
+        },
+        "CustEngineeringChgStatus": {
+          "@cds.persistence.name": "CUSTENGINEERINGCHGSTATUS",
+          "type": "cds.String",
+          "length": 17
+        },
+        "DeliveryDocumentItemCategory": {
+          "@cds.persistence.name": "DELIVERYDOCUMENTITEMCATEGORY",
+          "type": "cds.String",
+          "length": 4
+        },
+        "DeliveryDocumentItemText": {
+          "@cds.persistence.name": "DELIVERYDOCUMENTITEMTEXT",
+          "type": "cds.String",
+          "length": 40
+        },
+        "DeliveryGroup": {
+          "@cds.persistence.name": "DELIVERYGROUP",
+          "type": "cds.String",
+          "length": 3
+        },
+        "DeliveryQuantityUnit": {
+          "@cds.persistence.name": "DELIVERYQUANTITYUNIT",
+          "type": "cds.String",
+          "length": 3
+        },
+        "DeliveryRelatedBillingStatus": {
+          "@cds.persistence.name": "DELIVERYRELATEDBILLINGSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "DeliveryToBaseQuantityDnmntr": {
+          "@cds.persistence.name": "DELIVERYTOBASEQUANTITYDNMNTR",
+          "type": "cds.Decimal",
+          "precision": 5,
+          "scale": 0
+        },
+        "DeliveryToBaseQuantityNmrtr": {
+          "@cds.persistence.name": "DELIVERYTOBASEQUANTITYNMRTR",
+          "type": "cds.Decimal",
+          "precision": 5,
+          "scale": 0
+        },
+        "DepartmentClassificationByCust": {
+          "@cds.persistence.name": "DEPARTMENTCLASSIFICATIONBYCUST",
+          "type": "cds.String",
+          "length": 4
+        },
+        "DistributionChannel": {
+          "@cds.persistence.name": "DISTRIBUTIONCHANNEL",
+          "type": "cds.String",
+          "length": 2
+        },
+        "Division": {
+          "@cds.persistence.name": "DIVISION",
+          "type": "cds.String",
+          "length": 2
+        },
+        "FixedShipgProcgDurationInDays": {
+          "@cds.persistence.name": "FIXEDSHIPGPROCGDURATIONINDAYS",
+          "type": "cds.Decimal",
+          "precision": 5,
+          "scale": 2
+        },
+        "GLAccount": {
+          "@cds.persistence.name": "GLACCOUNT",
+          "type": "cds.String",
+          "length": 10
+        },
+        "GoodsMovementReasonCode": {
+          "@cds.persistence.name": "GOODSMOVEMENTREASONCODE",
+          "type": "cds.String",
+          "length": 4
+        },
+        "GoodsMovementStatus": {
+          "@cds.persistence.name": "GOODSMOVEMENTSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "GoodsMovementType": {
+          "@cds.persistence.name": "GOODSMOVEMENTTYPE",
+          "type": "cds.String",
+          "length": 3
+        },
+        "HigherLevelItem": {
+          "@cds.persistence.name": "HIGHERLEVELITEM",
+          "type": "cds.String",
+          "length": 6
+        },
+        "InspectionLot": {
+          "@cds.persistence.name": "INSPECTIONLOT",
+          "type": "cds.String",
+          "length": 12
+        },
+        "InspectionPartialLot": {
+          "@cds.persistence.name": "INSPECTIONPARTIALLOT",
+          "type": "cds.String",
+          "length": 6
+        },
+        "IntercompanyBillingStatus": {
+          "@cds.persistence.name": "INTERCOMPANYBILLINGSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "InternationalArticleNumber": {
+          "@cds.persistence.name": "INTERNATIONALARTICLENUMBER",
+          "type": "cds.String",
+          "length": 18
+        },
+        "InventorySpecialStockType": {
+          "@cds.persistence.name": "INVENTORYSPECIALSTOCKTYPE",
+          "type": "cds.String",
+          "length": 1
+        },
+        "InventoryValuationType": {
+          "@cds.persistence.name": "INVENTORYVALUATIONTYPE",
+          "type": "cds.String",
+          "length": 10
+        },
+        "IsCompletelyDelivered": {
+          "@cds.persistence.name": "ISCOMPLETELYDELIVERED",
+          "type": "cds.Boolean"
+        },
+        "IsNotGoodsMovementsRelevant": {
+          "@cds.persistence.name": "ISNOTGOODSMOVEMENTSRELEVANT",
+          "type": "cds.String",
+          "length": 1
+        },
+        "IsSeparateValuation": {
+          "@cds.persistence.name": "ISSEPARATEVALUATION",
+          "type": "cds.Boolean"
+        },
+        "IssgOrRcvgBatch": {
+          "@cds.persistence.name": "ISSGORRCVGBATCH",
+          "type": "cds.String",
+          "length": 10
+        },
+        "IssgOrRcvgMaterial": {
+          "@cds.persistence.name": "ISSGORRCVGMATERIAL",
+          "type": "cds.String",
+          "length": 40
+        },
+        "IssgOrRcvgSpclStockInd": {
+          "@cds.persistence.name": "ISSGORRCVGSPCLSTOCKIND",
+          "type": "cds.String",
+          "length": 1
+        },
+        "IssgOrRcvgStockCategory": {
+          "@cds.persistence.name": "ISSGORRCVGSTOCKCATEGORY",
+          "type": "cds.String",
+          "length": 1
+        },
+        "IssgOrRcvgValuationType": {
+          "@cds.persistence.name": "ISSGORRCVGVALUATIONTYPE",
+          "type": "cds.String",
+          "length": 10
+        },
+        "IssuingOrReceivingPlant": {
+          "@cds.persistence.name": "ISSUINGORRECEIVINGPLANT",
+          "type": "cds.String",
+          "length": 4
+        },
+        "IssuingOrReceivingStorageLoc": {
+          "@cds.persistence.name": "ISSUINGORRECEIVINGSTORAGELOC",
+          "type": "cds.String",
+          "length": 4
+        },
+        "ItemBillingBlockReason": {
+          "@cds.persistence.name": "ITEMBILLINGBLOCKREASON",
+          "type": "cds.String",
+          "length": 2
+        },
+        "ItemBillingIncompletionStatus": {
+          "@cds.persistence.name": "ITEMBILLINGINCOMPLETIONSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "ItemDeliveryIncompletionStatus": {
+          "@cds.persistence.name": "ITEMDELIVERYINCOMPLETIONSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "ItemGdsMvtIncompletionSts": {
+          "@cds.persistence.name": "ITEMGDSMVTINCOMPLETIONSTS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "ItemGeneralIncompletionStatus": {
+          "@cds.persistence.name": "ITEMGENERALINCOMPLETIONSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "ItemGrossWeight": {
+          "@cds.persistence.name": "ITEMGROSSWEIGHT",
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 3
+        },
+        "ItemIsBillingRelevant": {
+          "@cds.persistence.name": "ITEMISBILLINGRELEVANT",
+          "type": "cds.String",
+          "length": 1
+        },
+        "ItemNetWeight": {
+          "@cds.persistence.name": "ITEMNETWEIGHT",
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 3
+        },
+        "ItemPackingIncompletionStatus": {
+          "@cds.persistence.name": "ITEMPACKINGINCOMPLETIONSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "ItemPickingIncompletionStatus": {
+          "@cds.persistence.name": "ITEMPICKINGINCOMPLETIONSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "ItemVolume": {
+          "@cds.persistence.name": "ITEMVOLUME",
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 3
+        },
+        "ItemVolumeUnit": {
+          "@cds.persistence.name": "ITEMVOLUMEUNIT",
+          "type": "cds.String",
+          "length": 3
+        },
+        "ItemWeightUnit": {
+          "@cds.persistence.name": "ITEMWEIGHTUNIT",
+          "type": "cds.String",
+          "length": 3
+        },
+        "LastChangeDate": {
+          "@cds.persistence.name": "LASTCHANGEDATE",
+          "type": "cds.Timestamp"
+        },
+        "LoadingGroup": {
+          "@cds.persistence.name": "LOADINGGROUP",
+          "type": "cds.String",
+          "length": 4
+        },
+        "ManufactureDate": {
+          "@cds.persistence.name": "MANUFACTUREDATE",
+          "type": "cds.Timestamp"
+        },
+        "Material": {
+          "@cds.persistence.name": "MATERIAL",
+          "type": "cds.String",
+          "length": 40
+        },
+        "MaterialByCustomer": {
+          "@cds.persistence.name": "MATERIALBYCUSTOMER",
+          "type": "cds.String",
+          "length": 35
+        },
+        "MaterialFreightGroup": {
+          "@cds.persistence.name": "MATERIALFREIGHTGROUP",
+          "type": "cds.String",
+          "length": 8
+        },
+        "MaterialGroup": {
+          "@cds.persistence.name": "MATERIALGROUP",
+          "type": "cds.String",
+          "length": 9
+        },
+        "MaterialIsBatchManaged": {
+          "@cds.persistence.name": "MATERIALISBATCHMANAGED",
+          "type": "cds.Boolean"
+        },
+        "MaterialIsIntBatchManaged": {
+          "@cds.persistence.name": "MATERIALISINTBATCHMANAGED",
+          "type": "cds.Boolean"
+        },
+        "NumberOfSerialNumbers": {
+          "@cds.persistence.name": "NUMBEROFSERIALNUMBERS",
+          "type": "cds.Integer"
+        },
+        "OrderID": {
+          "@cds.persistence.name": "ORDERID",
+          "type": "cds.String",
+          "length": 12
+        },
+        "OrderItem": {
+          "@cds.persistence.name": "ORDERITEM",
+          "type": "cds.String",
+          "length": 4
+        },
+        "OriginalDeliveryQuantity": {
+          "@cds.persistence.name": "ORIGINALDELIVERYQUANTITY",
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "OriginallyRequestedMaterial": {
+          "@cds.persistence.name": "ORIGINALLYREQUESTEDMATERIAL",
+          "type": "cds.String",
+          "length": 40
+        },
+        "OverdelivTolrtdLmtRatioInPct": {
+          "@cds.persistence.name": "OVERDELIVTOLRTDLMTRATIOINPCT",
+          "type": "cds.Decimal",
+          "precision": 3,
+          "scale": 1
+        },
+        "PackingStatus": {
+          "@cds.persistence.name": "PACKINGSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "PartialDeliveryIsAllowed": {
+          "@cds.persistence.name": "PARTIALDELIVERYISALLOWED",
+          "type": "cds.String",
+          "length": 1
+        },
+        "PaymentGuaranteeForm": {
+          "@cds.persistence.name": "PAYMENTGUARANTEEFORM",
+          "type": "cds.String",
+          "length": 2
+        },
+        "PickingConfirmationStatus": {
+          "@cds.persistence.name": "PICKINGCONFIRMATIONSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "PickingControl": {
+          "@cds.persistence.name": "PICKINGCONTROL",
+          "type": "cds.String",
+          "length": 1
+        },
+        "PickingStatus": {
+          "@cds.persistence.name": "PICKINGSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "Plant": {
+          "@cds.persistence.name": "PLANT",
+          "type": "cds.String",
+          "length": 4
+        },
+        "PrimaryPostingSwitch": {
+          "@cds.persistence.name": "PRIMARYPOSTINGSWITCH",
+          "type": "cds.String",
+          "length": 1
+        },
+        "ProductAvailabilityDate": {
+          "@cds.persistence.name": "PRODUCTAVAILABILITYDATE",
+          "type": "cds.Timestamp"
+        },
+        "ProductAvailabilityTime": {
+          "@cds.persistence.name": "PRODUCTAVAILABILITYTIME",
+          "type": "cds.Time"
+        },
+        "ProductConfiguration": {
+          "@cds.persistence.name": "PRODUCTCONFIGURATION",
+          "type": "cds.String",
+          "length": 18
+        },
+        "ProductHierarchyNode": {
+          "@cds.persistence.name": "PRODUCTHIERARCHYNODE",
+          "type": "cds.String",
+          "length": 18
+        },
+        "ProfitabilitySegment": {
+          "@cds.persistence.name": "PROFITABILITYSEGMENT",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ProfitCenter": {
+          "@cds.persistence.name": "PROFITCENTER",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ProofOfDeliveryRelevanceCode": {
+          "@cds.persistence.name": "PROOFOFDELIVERYRELEVANCECODE",
+          "type": "cds.String",
+          "length": 1
+        },
+        "ProofOfDeliveryStatus": {
+          "@cds.persistence.name": "PROOFOFDELIVERYSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "QuantityIsFixed": {
+          "@cds.persistence.name": "QUANTITYISFIXED",
+          "type": "cds.Boolean"
+        },
+        "ReceivingPoint": {
+          "@cds.persistence.name": "RECEIVINGPOINT",
+          "type": "cds.String",
+          "length": 25
+        },
+        "ReferenceDocumentLogicalSystem": {
+          "@cds.persistence.name": "REFERENCEDOCUMENTLOGICALSYSTEM",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ReferenceSDDocument": {
+          "@cds.persistence.name": "REFERENCESDDOCUMENT",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ReferenceSDDocumentCategory": {
+          "@cds.persistence.name": "REFERENCESDDOCUMENTCATEGORY",
+          "type": "cds.String",
+          "length": 4
+        },
+        "ReferenceSDDocumentItem": {
+          "@cds.persistence.name": "REFERENCESDDOCUMENTITEM",
+          "type": "cds.String",
+          "length": 6
+        },
+        "RetailPromotion": {
+          "@cds.persistence.name": "RETAILPROMOTION",
+          "type": "cds.String",
+          "length": 10
+        },
+        "SalesDocumentItemType": {
+          "@cds.persistence.name": "SALESDOCUMENTITEMTYPE",
+          "type": "cds.String",
+          "length": 1
+        },
+        "SalesGroup": {
+          "@cds.persistence.name": "SALESGROUP",
+          "type": "cds.String",
+          "length": 3
+        },
+        "SalesOffice": {
+          "@cds.persistence.name": "SALESOFFICE",
+          "type": "cds.String",
+          "length": 4
+        },
+        "SDDocumentCategory": {
+          "@cds.persistence.name": "SDDOCUMENTCATEGORY",
+          "type": "cds.String",
+          "length": 4
+        },
+        "SDProcessStatus": {
+          "@cds.persistence.name": "SDPROCESSSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "ShelfLifeExpirationDate": {
+          "@cds.persistence.name": "SHELFLIFEEXPIRATIONDATE",
+          "type": "cds.Timestamp"
+        },
+        "StatisticsDate": {
+          "@cds.persistence.name": "STATISTICSDATE",
+          "type": "cds.Timestamp"
+        },
+        "StockType": {
+          "@cds.persistence.name": "STOCKTYPE",
+          "type": "cds.String",
+          "length": 1
+        },
+        "StorageBin": {
+          "@cds.persistence.name": "STORAGEBIN",
+          "type": "cds.String",
+          "length": 10
+        },
+        "StorageLocation": {
+          "@cds.persistence.name": "STORAGELOCATION",
+          "type": "cds.String",
+          "length": 4
+        },
+        "StorageType": {
+          "@cds.persistence.name": "STORAGETYPE",
+          "type": "cds.String",
+          "length": 3
+        },
+        "SubsequentMovementType": {
+          "@cds.persistence.name": "SUBSEQUENTMOVEMENTTYPE",
+          "type": "cds.String",
+          "length": 3
+        },
+        "TransportationGroup": {
+          "@cds.persistence.name": "TRANSPORTATIONGROUP",
+          "type": "cds.String",
+          "length": 4
+        },
+        "UnderdelivTolrtdLmtRatioInPct": {
+          "@cds.persistence.name": "UNDERDELIVTOLRTDLMTRATIOINPCT",
+          "type": "cds.Decimal",
+          "precision": 3,
+          "scale": 1
+        },
+        "UnlimitedOverdeliveryIsAllowed": {
+          "@cds.persistence.name": "UNLIMITEDOVERDELIVERYISALLOWED",
+          "type": "cds.Boolean"
+        },
+        "VarblShipgProcgDurationInDays": {
+          "@cds.persistence.name": "VARBLSHIPGPROCGDURATIONINDAYS",
+          "type": "cds.Decimal",
+          "precision": 5,
+          "scale": 2
+        },
+        "Warehouse": {
+          "@cds.persistence.name": "WAREHOUSE",
+          "type": "cds.String",
+          "length": 3
+        },
+        "WarehouseActivityStatus": {
+          "@cds.persistence.name": "WAREHOUSEACTIVITYSTATUS",
+          "type": "cds.String",
+          "length": 1
+        },
+        "WarehouseStagingArea": {
+          "@cds.persistence.name": "WAREHOUSESTAGINGAREA",
+          "type": "cds.String",
+          "length": 10
+        },
+        "WarehouseStockCategory": {
+          "@cds.persistence.name": "WAREHOUSESTOCKCATEGORY",
+          "type": "cds.String",
+          "length": 1
+        },
+        "WarehouseStorageBin": {
+          "@cds.persistence.name": "WAREHOUSESTORAGEBIN",
+          "type": "cds.String",
+          "length": 10
+        }
+      },
+      "$syntax": "projection"
+    }
+  },
+  "version": {
+    "csn": "1.0"
+  },
+  "meta": {
+    "creator": "CDS Compiler v1.19.2"
+  },
+  "$version": "1.0",
+  "@sql_mapping": "plain"
+}

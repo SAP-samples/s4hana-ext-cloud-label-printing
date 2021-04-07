@@ -1,0 +1,42 @@
+[
+  {
+    "formName": "form 1",
+    "templates": [
+      {
+        "templateName": "template 1"
+      },
+      {
+        "templateName": "template 2"
+      }
+    ]
+  },
+  {
+    "formName": "form 2",
+    "templates": [
+      {
+        "templateName": "template 1"
+      }
+    ]
+  },
+  {
+    "formName": "form 3",
+    "templates": [
+      {
+        "templateName": "template 1"
+      },
+      {
+        "templateName": "template 2"
+      },
+      {
+        "templateName": "Not Existing Template"
+      }
+    ]
+  },
+  {
+    "formName" : "Form with empty template",
+    "templates": []
+  },
+  {
+    "formName" : "Form with no template field"
+  }
+]

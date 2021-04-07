@@ -1,0 +1,240 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <name>print - Application</name>
+    <description>print - Application</description>
+
+    <artifactId>print-application</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>war</packaging>
+    
+	<properties>
+		<packageName>com.sap.s4hana.print.odata</packageName>
+		<cds.skip>true</cds.skip> <!-- run with -Dcds.skip=false to import EDMX and build CDS services -->
+	</properties>
+
+    <parent>
+        <groupId>com.sap.s4hana</groupId>
+        <artifactId>print</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.checkerframework</groupId>
+                        <artifactId>checker-qual</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+    	<!-- SAP Cloud SDK -->
+        <dependency>
+            <groupId>com.sap.cloud.sdk.cloudplatform</groupId>
+            <artifactId>scp-cf</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.sap.cloud.sdk.s4hana</groupId>
+            <artifactId>s4hana-all</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.sap.cloud.sdk.cloudplatform</groupId>
+            <artifactId>security-servlet</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        
+        <!-- Cloud Application Programming model dependencies -->
+		<dependency>
+			<groupId>com.sap.cloud.servicesdk.prov</groupId>
+			<artifactId>odatav2-prov</artifactId>
+			<exclusions>
+				<!-- provided by the platform -->
+				<exclusion>
+					<groupId>javax.ws.rs</groupId>
+					<artifactId>javax.ws.rs-api</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.sap.cloud.servicesdk.prov</groupId>
+			<artifactId>odatav2-hybrid</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.sap.cloud.servicesdk.prov</groupId>
+			<artifactId>odata2.web</artifactId>
+		</dependency>
+
+		<!-- Cloud Foundry logging dependencies -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+
+		<!-- SAP Business Technology Platform Cloud Foundry TomEE 7 Runtime -->
+        <dependency>
+            <groupId>org.apache.tomee</groupId>
+            <artifactId>tomee-jaxrs</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        
+        <!-- boilerplate code generator -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		
+		<!-- REST Client with declarative API -->
+		<dependency>
+			<groupId>io.github.openfeign</groupId>
+			<artifactId>feign-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.github.openfeign</groupId>
+			<artifactId>feign-jackson</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.github.openfeign</groupId>
+			<artifactId>feign-slf4j</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.github.openfeign</groupId>
+			<artifactId>feign-httpclient</artifactId>
+		</dependency>
+		
+		<!-- JSON Provider for CXF -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.jaxrs</groupId>
+			<artifactId>jackson-jaxrs-json-provider</artifactId>
+		</dependency>
+		
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+
+        <plugins>
+		
+			<!-- Build CDS -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<configuration>
+					<executable>npm</executable>
+					<workingDirectory>${project.basedir}/../</workingDirectory>
+					<skip>${cds.skip}</skip>
+				</configuration>
+				<executions>
+					<!-- Install CDS tools using Node Package Manager (NPM) -->
+					<execution>
+						<?m2e execute onConfiguration?>
+						<id>npm install</id>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+						<phase>generate-sources</phase>
+						<configuration>
+							<arguments>
+								<argument>install</argument>
+							</arguments>
+						</configuration>
+					</execution>
+					<!-- Convert metadata from S/4HANA in EDMX format to CSN -->
+					<execution>
+						<?m2e execute onConfiguration?>
+						<id>npm run import</id>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+						<phase>generate-sources</phase>
+						<configuration>
+							<arguments>
+								<argument>run</argument>
+								<argument>import</argument>
+							</arguments>
+						</configuration>
+					</execution>
+					<!-- Build CDS services for CAP -->
+					<execution>
+						<?m2e execute onConfiguration?>
+						<id>npm run build</id>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+						<phase>generate-sources</phase>
+						<configuration>
+							<arguments>
+								<argument>run</argument>
+								<argument>build</argument>
+							</arguments>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.2.2</version>
+                <configuration>
+                    <attachClasses>true</attachClasses>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.tomee.maven</groupId>
+                <artifactId>tomee-maven-plugin</artifactId>
+                <version>7.0.5</version>
+                <configuration>
+                    <tomeeClassifier>webprofile</tomeeClassifier>
+                    <context>ROOT</context>
+                    <libs>
+                        <lib>remove:slf4j-jdk14</lib>
+                    </libs>
+                    <tomeeShutdownPort>8006</tomeeShutdownPort>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>com.sap.cloud.sdk.plugins</groupId>
+                <artifactId>usage-analytics-maven-plugin</artifactId>
+                <version>3.6.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>usage-analytics</goal>
+                        </goals>
+                        <configuration>
+                            <skipUsageAnalytics>true</skipUsageAnalytics>
+                            <generateSalt>true</generateSalt>
+                            <!--
+                            Note: A random salt is auto-generated once the project is built for the first time.
+                            Please keep the generated salt in the POM file, for example, when pushing to git.
+
+                            To learn more, visit: https://blogs.sap.com/2018/10/23/usage-analytics-s4sdk/
+                            -->
+                            <salt />
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,1569 @@
+{
+    "version": {
+        "csn": "1.0"
+    },
+    "definitions": {
+        "API_OUTBOUND_DELIVERY_SRV.PickingReport": {
+            "kind": "type",
+            "elements": {
+                "SystemMessageIdentification": {
+                    "type": "cds.String",
+                    "length": 20
+                },
+                "SystemMessageNumber": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "SystemMessageType": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "SystemMessageVariable1": {
+                    "type": "cds.String",
+                    "length": 50
+                },
+                "SystemMessageVariable2": {
+                    "type": "cds.String",
+                    "length": 50
+                },
+                "SystemMessageVariable3": {
+                    "type": "cds.String",
+                    "length": 50
+                },
+                "SystemMessageVariable4": {
+                    "type": "cds.String",
+                    "length": 50
+                },
+                "Batch": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "DeliveryQuantityUnit": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "ActualDeliveryQuantity": {
+                    "type": "cds.Decimal",
+                    "precision": 13,
+                    "scale": 3
+                },
+                "DeliveryDocumentItemText": {
+                    "type": "cds.String",
+                    "length": 40
+                },
+                "Material": {
+                    "type": "cds.String",
+                    "length": 40
+                },
+                "DeliveryDocumentItem": {
+                    "type": "cds.String",
+                    "length": 6
+                },
+                "DeliveryDocument": {
+                    "type": "cds.String",
+                    "length": 6
+                }
+            }
+        },
+        "API_OUTBOUND_DELIVERY_SRV.Return": {
+            "kind": "type",
+            "elements": {
+                "CollectiveProcessing": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "DeliveryDocument": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "DeliveryDocumentItem": {
+                    "type": "cds.String",
+                    "length": 6
+                },
+                "ScheduleLine": {
+                    "type": "cds.String",
+                    "length": 4
+                },
+                "CollectiveProcessingMsgCounter": {
+                    "type": "cds.String",
+                    "length": 2
+                },
+                "SystemMessageIdentification": {
+                    "type": "cds.String",
+                    "length": 20
+                },
+                "SystemMessageNumber": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "SystemMessageType": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "SystemMessageVariable1": {
+                    "type": "cds.String",
+                    "length": 50
+                },
+                "SystemMessageVariable2": {
+                    "type": "cds.String",
+                    "length": 50
+                },
+                "SystemMessageVariable3": {
+                    "type": "cds.String",
+                    "length": 50
+                },
+                "SystemMessageVariable4": {
+                    "type": "cds.String",
+                    "length": 50
+                },
+                "CollectiveProcessingType": {
+                    "type": "cds.String",
+                    "length": 1
+                }
+            }
+        },
+        "API_OUTBOUND_DELIVERY_SRV.A_OutbDeliveryItemType": {
+            "kind": "entity",
+            "@cds.persistence.skip": true,
+            "elements": {
+                "DeliveryDocument": {
+                    "key": true,
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "DeliveryDocumentItem": {
+                    "key": true,
+                    "type": "cds.String",
+                    "length": 6
+                },
+                "ActualDeliveredQtyInBaseUnit": {
+                    "type": "cds.Decimal",
+                    "precision": 13,
+                    "scale": 3
+                },
+                "DeliveryVersion": {
+                    "type": "cds.String",
+                    "length": 4
+                },
+                "ActualDeliveryQuantity": {
+                    "type": "cds.Decimal",
+                    "precision": 13,
+                    "scale": 3
+                },
+                "AdditionalCustomerGroup1": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "AdditionalCustomerGroup2": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "AdditionalCustomerGroup3": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "AdditionalCustomerGroup4": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "AdditionalCustomerGroup5": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "AdditionalMaterialGroup1": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "AdditionalMaterialGroup2": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "AdditionalMaterialGroup3": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "AdditionalMaterialGroup4": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "AdditionalMaterialGroup5": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "AlternateProductNumber": {
+                    "type": "cds.String",
+                    "length": 40
+                },
+                "BaseUnit": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "Batch": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "BatchBySupplier": {
+                    "type": "cds.String",
+                    "length": 15
+                },
+                "BatchClassification": {
+                    "type": "cds.String",
+                    "length": 18
+                },
+                "BOMExplosion": {
+                    "type": "cds.String",
+                    "length": 8
+                },
+                "BusinessArea": {
+                    "type": "cds.String",
+                    "length": 4
+                },
+                "ConsumptionPosting": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "ControllingArea": {
+                    "type": "cds.String",
+                    "length": 4
+                },
+                "CostCenter": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "CreatedByUser": {
+                    "type": "cds.String",
+                    "length": 12
+                },
+                "CreationDate": {
+                    "type": "cds.Timestamp"
+                },
+                "CreationTime": {
+                    "type": "cds.Time"
+                },
+                "CustEngineeringChgStatus": {
+                    "type": "cds.String",
+                    "length": 17
+                },
+                "DeliveryDocumentItemCategory": {
+                    "type": "cds.String",
+                    "length": 4
+                },
+                "DeliveryDocumentItemText": {
+                    "type": "cds.String",
+                    "length": 40
+                },
+                "DeliveryGroup": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "DeliveryQuantityUnit": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "DeliveryRelatedBillingStatus": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "DeliveryToBaseQuantityDnmntr": {
+                    "type": "cds.Decimal",
+                    "precision": 5,
+                    "scale": 0
+                },
+                "DeliveryToBaseQuantityNmrtr": {
+                    "type": "cds.Decimal",
+                    "precision": 5,
+                    "scale": 0
+                },
+                "DepartmentClassificationByCust": {
+                    "type": "cds.String",
+                    "length": 4
+                },
+                "DistributionChannel": {
+                    "type": "cds.String",
+                    "length": 2
+                },
+                "Division": {
+                    "type": "cds.String",
+                    "length": 2
+                },
+                "FixedShipgProcgDurationInDays": {
+                    "type": "cds.Decimal",
+                    "precision": 5,
+                    "scale": 2
+                },
+                "GLAccount": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "GoodsMovementReasonCode": {
+                    "type": "cds.String",
+                    "length": 4
+                },
+                "GoodsMovementStatus": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "GoodsMovementType": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "HigherLevelItem": {
+                    "type": "cds.String",
+                    "length": 6
+                },
+                "InspectionLot": {
+                    "type": "cds.String",
+                    "length": 12
+                },
+                "InspectionPartialLot": {
+                    "type": "cds.String",
+                    "length": 6
+                },
+                "IntercompanyBillingStatus": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "InternationalArticleNumber": {
+                    "type": "cds.String",
+                    "length": 18
+                },
+                "InventorySpecialStockType": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "InventoryValuationType": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "IsCompletelyDelivered": {
+                    "type": "cds.Boolean"
+                },
+                "IsNotGoodsMovementsRelevant": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "IsSeparateValuation": {
+                    "type": "cds.Boolean"
+                },
+                "IssgOrRcvgBatch": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "IssgOrRcvgMaterial": {
+                    "type": "cds.String",
+                    "length": 40
+                },
+                "IssgOrRcvgSpclStockInd": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "IssgOrRcvgStockCategory": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "IssgOrRcvgValuationType": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "IssuingOrReceivingPlant": {
+                    "type": "cds.String",
+                    "length": 4
+                },
+                "IssuingOrReceivingStorageLoc": {
+                    "type": "cds.String",
+                    "length": 4
+                },
+                "ItemBillingBlockReason": {
+                    "type": "cds.String",
+                    "length": 2
+                },
+                "ItemBillingIncompletionStatus": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "ItemDeliveryIncompletionStatus": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "ItemGdsMvtIncompletionSts": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "ItemGeneralIncompletionStatus": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "ItemGrossWeight": {
+                    "type": "cds.Decimal",
+                    "precision": 15,
+                    "scale": 3
+                },
+                "ItemIsBillingRelevant": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "ItemNetWeight": {
+                    "type": "cds.Decimal",
+                    "precision": 15,
+                    "scale": 3
+                },
+                "ItemPackingIncompletionStatus": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "ItemPickingIncompletionStatus": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "ItemVolume": {
+                    "type": "cds.Decimal",
+                    "precision": 15,
+                    "scale": 3
+                },
+                "ItemVolumeUnit": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "ItemWeightUnit": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "LastChangeDate": {
+                    "type": "cds.Timestamp"
+                },
+                "LoadingGroup": {
+                    "type": "cds.String",
+                    "length": 4
+                },
+                "ManufactureDate": {
+                    "type": "cds.Timestamp"
+                },
+                "Material": {
+                    "type": "cds.String",
+                    "length": 40
+                },
+                "MaterialByCustomer": {
+                    "type": "cds.String",
+                    "length": 35
+                },
+                "MaterialFreightGroup": {
+                    "type": "cds.String",
+                    "length": 8
+                },
+                "MaterialGroup": {
+                    "type": "cds.String",
+                    "length": 9
+                },
+                "MaterialIsBatchManaged": {
+                    "type": "cds.Boolean"
+                },
+                "MaterialIsIntBatchManaged": {
+                    "type": "cds.Boolean"
+                },
+                "NumberOfSerialNumbers": {
+                    "type": "cds.Integer"
+                },
+                "OrderID": {
+                    "type": "cds.String",
+                    "length": 12
+                },
+                "OrderItem": {
+                    "type": "cds.String",
+                    "length": 4
+                },
+                "OriginalDeliveryQuantity": {
+                    "type": "cds.Decimal",
+                    "precision": 13,
+                    "scale": 3
+                },
+                "OriginallyRequestedMaterial": {
+                    "type": "cds.String",
+                    "length": 40
+                },
+                "OverdelivTolrtdLmtRatioInPct": {
+                    "type": "cds.Decimal",
+                    "precision": 3,
+                    "scale": 1
+                },
+                "PackingStatus": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "PartialDeliveryIsAllowed": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "PaymentGuaranteeForm": {
+                    "type": "cds.String",
+                    "length": 2
+                },
+                "PickingConfirmationStatus": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "PickingControl": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "PickingStatus": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "Plant": {
+                    "type": "cds.String",
+                    "length": 4
+                },
+                "PrimaryPostingSwitch": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "ProductAvailabilityDate": {
+                    "type": "cds.Timestamp"
+                },
+                "ProductAvailabilityTime": {
+                    "type": "cds.Time"
+                },
+                "ProductConfiguration": {
+                    "type": "cds.String",
+                    "length": 18
+                },
+                "ProductHierarchyNode": {
+                    "type": "cds.String",
+                    "length": 18
+                },
+                "ProfitabilitySegment": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "ProfitCenter": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "ProofOfDeliveryRelevanceCode": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "ProofOfDeliveryStatus": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "QuantityIsFixed": {
+                    "type": "cds.Boolean"
+                },
+                "ReceivingPoint": {
+                    "type": "cds.String",
+                    "length": 25
+                },
+                "ReferenceDocumentLogicalSystem": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "ReferenceSDDocument": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "ReferenceSDDocumentCategory": {
+                    "type": "cds.String",
+                    "length": 4
+                },
+                "ReferenceSDDocumentItem": {
+                    "type": "cds.String",
+                    "length": 6
+                },
+                "RetailPromotion": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "SalesDocumentItemType": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "SalesGroup": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "SalesOffice": {
+                    "type": "cds.String",
+                    "length": 4
+                },
+                "SDDocumentCategory": {
+                    "type": "cds.String",
+                    "length": 4
+                },
+                "SDProcessStatus": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "ShelfLifeExpirationDate": {
+                    "type": "cds.Timestamp"
+                },
+                "StatisticsDate": {
+                    "type": "cds.Timestamp"
+                },
+                "StockType": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "StorageBin": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "StorageLocation": {
+                    "type": "cds.String",
+                    "length": 4
+                },
+                "StorageType": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "SubsequentMovementType": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "TransportationGroup": {
+                    "type": "cds.String",
+                    "length": 4
+                },
+                "UnderdelivTolrtdLmtRatioInPct": {
+                    "type": "cds.Decimal",
+                    "precision": 3,
+                    "scale": 1
+                },
+                "UnlimitedOverdeliveryIsAllowed": {
+                    "type": "cds.Boolean"
+                },
+                "VarblShipgProcgDurationInDays": {
+                    "type": "cds.Decimal",
+                    "precision": 5,
+                    "scale": 2
+                },
+                "Warehouse": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "WarehouseActivityStatus": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "WarehouseStagingArea": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "WarehouseStockCategory": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "WarehouseStorageBin": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "to_DocumentFlow": {
+                    "type": "cds.Association",
+                    "target": "API_OUTBOUND_DELIVERY_SRV.A_OutbDeliveryDocFlowType",
+                    "cardinality": {
+                        "max": "*"
+                    },
+                    "on": [
+                        {
+                            "ref": [
+                                "to_DocumentFlow",
+                                "PrecedingDocument"
+                            ]
+                        },
+                        "=",
+                        {
+                            "ref": [
+                                "DeliveryDocument"
+                            ]
+                        },
+                        "and",
+                        {
+                            "ref": [
+                                "to_DocumentFlow",
+                                "PrecedingDocumentItem"
+                            ]
+                        },
+                        "=",
+                        {
+                            "ref": [
+                                "DeliveryDocumentItem"
+                            ]
+                        }
+                    ]
+                },
+                "to_SerialDeliveryItem": {
+                    "type": "cds.Association",
+                    "target": "API_OUTBOUND_DELIVERY_SRV.A_SerialNmbrDeliveryType",
+                    "on": [
+                        {
+                            "ref": [
+                                "to_SerialDeliveryItem",
+                                "DeliveryDocument"
+                            ]
+                        },
+                        "=",
+                        {
+                            "ref": [
+                                "DeliveryDocument"
+                            ]
+                        },
+                        "and",
+                        {
+                            "ref": [
+                                "to_SerialDeliveryItem",
+                                "DeliveryDocumentItem"
+                            ]
+                        },
+                        "=",
+                        {
+                            "ref": [
+                                "DeliveryDocumentItem"
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "API_OUTBOUND_DELIVERY_SRV.A_OutbDeliveryHeaderType": {
+            "kind": "entity",
+            "@cds.persistence.skip": true,
+            "elements": {
+                "DeliveryDocument": {
+                    "key": true,
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "Shippinglocationtimezone": {
+                    "type": "cds.String",
+                    "length": 6
+                },
+                "ActualDeliveryRoute": {
+                    "type": "cds.String",
+                    "length": 6
+                },
+                "Receivinglocationtimezone": {
+                    "type": "cds.String",
+                    "length": 6
+                },
+                "ActualGoodsMovementDate": {
+                    "type": "cds.Timestamp"
+                },
+                "ActualGoodsMovementTime": {
+                    "type": "cds.Time"
+                },
+                "BillingDocumentDate": {
+                    "type": "cds.Timestamp"
+                },
+                "BillOfLading": {
+                    "type": "cds.String",
+                    "length": 35
+                },
+                "CompleteDeliveryIsDefined": {
+                    "type": "cds.Boolean"
+                },
+                "ConfirmationTime": {
+                    "type": "cds.Time"
+                },
+                "CreatedByUser": {
+                    "type": "cds.String",
+                    "length": 12
+                },
+                "CreationDate": {
+                    "type": "cds.Timestamp"
+                },
+                "CreationTime": {
+                    "type": "cds.Time"
+                },
+                "CustomerGroup": {
+                    "type": "cds.String",
+                    "length": 2
+                },
+                "DeliveryBlockReason": {
+                    "type": "cds.String",
+                    "length": 2
+                },
+                "DeliveryDate": {
+                    "type": "cds.Timestamp"
+                },
+                "DeliveryDocumentBySupplier": {
+                    "type": "cds.String",
+                    "length": 35
+                },
+                "DeliveryDocumentType": {
+                    "type": "cds.String",
+                    "length": 4
+                },
+                "DeliveryIsInPlant": {
+                    "type": "cds.Boolean"
+                },
+                "DeliveryPriority": {
+                    "type": "cds.String",
+                    "length": 2
+                },
+                "DeliveryTime": {
+                    "type": "cds.Time"
+                },
+                "DeliveryVersion": {
+                    "type": "cds.String",
+                    "length": 4
+                },
+                "DepreciationPercentage": {
+                    "type": "cds.Decimal",
+                    "precision": 5,
+                    "scale": 2
+                },
+                "DistrStatusByDecentralizedWrhs": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "DocumentDate": {
+                    "type": "cds.Timestamp"
+                },
+                "ExternalIdentificationType": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "ExternalTransportSystem": {
+                    "type": "cds.String",
+                    "length": 5
+                },
+                "FactoryCalendarByCustomer": {
+                    "type": "cds.String",
+                    "length": 2
+                },
+                "GoodsIssueOrReceiptSlipNumber": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "GoodsIssueTime": {
+                    "type": "cds.Time"
+                },
+                "HandlingUnitInStock": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "HdrGeneralIncompletionStatus": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "HdrGoodsMvtIncompletionStatus": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "HeaderBillgIncompletionStatus": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "HeaderBillingBlockReason": {
+                    "type": "cds.String",
+                    "length": 2
+                },
+                "HeaderDelivIncompletionStatus": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "HeaderGrossWeight": {
+                    "type": "cds.Decimal",
+                    "precision": 15,
+                    "scale": 3
+                },
+                "HeaderNetWeight": {
+                    "type": "cds.Decimal",
+                    "precision": 15,
+                    "scale": 3
+                },
+                "HeaderPackingIncompletionSts": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "HeaderPickgIncompletionStatus": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "HeaderVolume": {
+                    "type": "cds.Decimal",
+                    "precision": 15,
+                    "scale": 3
+                },
+                "HeaderVolumeUnit": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "HeaderWeightUnit": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "IncotermsClassification": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "IncotermsTransferLocation": {
+                    "type": "cds.String",
+                    "length": 28
+                },
+                "IntercompanyBillingDate": {
+                    "type": "cds.Timestamp"
+                },
+                "InternalFinancialDocument": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "IsDeliveryForSingleWarehouse": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "IsExportDelivery": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "LastChangeDate": {
+                    "type": "cds.Timestamp"
+                },
+                "LastChangedByUser": {
+                    "type": "cds.String",
+                    "length": 12
+                },
+                "LoadingDate": {
+                    "type": "cds.Timestamp"
+                },
+                "LoadingPoint": {
+                    "type": "cds.String",
+                    "length": 2
+                },
+                "LoadingTime": {
+                    "type": "cds.Time"
+                },
+                "MeansOfTransport": {
+                    "type": "cds.String",
+                    "length": 20
+                },
+                "MeansOfTransportRefMaterial": {
+                    "type": "cds.String",
+                    "length": 40
+                },
+                "MeansOfTransportType": {
+                    "type": "cds.String",
+                    "length": 4
+                },
+                "OrderCombinationIsAllowed": {
+                    "type": "cds.Boolean"
+                },
+                "OrderID": {
+                    "type": "cds.String",
+                    "length": 12
+                },
+                "OverallDelivConfStatus": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "OverallDelivReltdBillgStatus": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "OverallGoodsMovementStatus": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "OverallIntcoBillingStatus": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "OverallPackingStatus": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "OverallPickingConfStatus": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "OverallPickingStatus": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "OverallProofOfDeliveryStatus": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "OverallSDProcessStatus": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "OverallWarehouseActivityStatus": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "OvrlItmDelivIncompletionSts": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "OvrlItmGdsMvtIncompletionSts": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "OvrlItmGeneralIncompletionSts": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "OvrlItmPackingIncompletionSts": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "OvrlItmPickingIncompletionSts": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "PaymentGuaranteeProcedure": {
+                    "type": "cds.String",
+                    "length": 6
+                },
+                "PickedItemsLocation": {
+                    "type": "cds.String",
+                    "length": 20
+                },
+                "PickingDate": {
+                    "type": "cds.Timestamp"
+                },
+                "PickingTime": {
+                    "type": "cds.Time"
+                },
+                "PlannedGoodsIssueDate": {
+                    "type": "cds.Timestamp"
+                },
+                "ProofOfDeliveryDate": {
+                    "type": "cds.Timestamp"
+                },
+                "ProposedDeliveryRoute": {
+                    "type": "cds.String",
+                    "length": 6
+                },
+                "ReceivingPlant": {
+                    "type": "cds.String",
+                    "length": 4
+                },
+                "RouteSchedule": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "SalesDistrict": {
+                    "type": "cds.String",
+                    "length": 6
+                },
+                "SalesOffice": {
+                    "type": "cds.String",
+                    "length": 4
+                },
+                "SalesOrganization": {
+                    "type": "cds.String",
+                    "length": 4
+                },
+                "SDDocumentCategory": {
+                    "type": "cds.String",
+                    "length": 4
+                },
+                "ShipmentBlockReason": {
+                    "type": "cds.String",
+                    "length": 2
+                },
+                "ShippingCondition": {
+                    "type": "cds.String",
+                    "length": 2
+                },
+                "ShippingPoint": {
+                    "type": "cds.String",
+                    "length": 4
+                },
+                "ShippingType": {
+                    "type": "cds.String",
+                    "length": 2
+                },
+                "ShipToParty": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "SoldToParty": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "SpecialProcessingCode": {
+                    "type": "cds.String",
+                    "length": 4
+                },
+                "StatisticsCurrency": {
+                    "type": "cds.String",
+                    "length": 5
+                },
+                "Supplier": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "TotalBlockStatus": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "TotalCreditCheckStatus": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "TotalNumberOfPackage": {
+                    "type": "cds.String",
+                    "length": 5
+                },
+                "TransactionCurrency": {
+                    "type": "cds.String",
+                    "length": 5
+                },
+                "TransportationGroup": {
+                    "type": "cds.String",
+                    "length": 4
+                },
+                "TransportationPlanningDate": {
+                    "type": "cds.Timestamp"
+                },
+                "TransportationPlanningStatus": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "TransportationPlanningTime": {
+                    "type": "cds.Time"
+                },
+                "UnloadingPointName": {
+                    "type": "cds.String",
+                    "length": 25
+                },
+                "Warehouse": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "WarehouseGate": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "WarehouseStagingArea": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "to_DeliveryDocumentPartner": {
+                    "type": "cds.Association",
+                    "target": "API_OUTBOUND_DELIVERY_SRV.A_OutbDeliveryPartnerType",
+                    "cardinality": {
+                        "max": "*"
+                    },
+                    "on": [
+                        {
+                            "ref": [
+                                "to_DeliveryDocumentPartner",
+                                "SDDocument"
+                            ]
+                        },
+                        "=",
+                        {
+                            "ref": [
+                                "DeliveryDocument"
+                            ]
+                        }
+                    ]
+                },
+                "to_DeliveryDocumentItem": {
+                    "type": "cds.Association",
+                    "target": "API_OUTBOUND_DELIVERY_SRV.A_OutbDeliveryItemType",
+                    "cardinality": {
+                        "max": "*"
+                    },
+                    "on": [
+                        {
+                            "ref": [
+                                "to_DeliveryDocumentItem",
+                                "DeliveryDocument"
+                            ]
+                        },
+                        "=",
+                        {
+                            "ref": [
+                                "DeliveryDocument"
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "API_OUTBOUND_DELIVERY_SRV.A_OutbDeliveryDocFlowType": {
+            "kind": "entity",
+            "@cds.persistence.skip": true,
+            "elements": {
+                "PrecedingDocument": {
+                    "key": true,
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "PrecedingDocumentItem": {
+                    "key": true,
+                    "type": "cds.String",
+                    "length": 6
+                },
+                "SubsequentDocumentCategory": {
+                    "key": true,
+                    "type": "cds.String",
+                    "length": 4
+                },
+                "Deliveryversion": {
+                    "type": "cds.String",
+                    "length": 4
+                },
+                "PrecedingDocumentCategory": {
+                    "type": "cds.String",
+                    "length": 4
+                },
+                "Subsequentdocument": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "QuantityInBaseUnit": {
+                    "type": "cds.Decimal",
+                    "precision": 15,
+                    "scale": 3
+                },
+                "SubsequentDocumentItem": {
+                    "type": "cds.String",
+                    "length": 6
+                },
+                "SDFulfillmentCalculationRule": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "TransferOrderInWrhsMgmtIsConfd": {
+                    "type": "cds.Boolean"
+                }
+            }
+        },
+        "API_OUTBOUND_DELIVERY_SRV.A_MaintenanceItemObjectType": {
+            "kind": "entity",
+            "@cds.persistence.skip": true,
+            "elements": {
+                "MaintenanceItemObject": {
+                    "key": true,
+                    "type": "cds.Integer"
+                },
+                "MaintenanceItemObjectList": {
+                    "key": true,
+                    "type": "cds.Integer"
+                },
+                "Assembly": {
+                    "type": "cds.String",
+                    "length": 40
+                },
+                "Equipment": {
+                    "type": "cds.String",
+                    "length": 18
+                },
+                "FunctionalLocation": {
+                    "type": "cds.String",
+                    "length": 40
+                },
+                "MaintenanceNotification": {
+                    "type": "cds.String",
+                    "length": 12
+                },
+                "MaintObjectLocAcctAssgmtNmbr": {
+                    "type": "cds.String",
+                    "length": 12
+                },
+                "Material": {
+                    "type": "cds.String",
+                    "length": 40
+                },
+                "SerialNumber": {
+                    "type": "cds.String",
+                    "length": 18
+                }
+            }
+        },
+        "API_OUTBOUND_DELIVERY_SRV.A_SerialNmbrDeliveryType": {
+            "kind": "entity",
+            "@cds.persistence.skip": true,
+            "elements": {
+                "MaintenanceItemObjectList": {
+                    "key": true,
+                    "type": "cds.Integer"
+                },
+                "DeliveryDate": {
+                    "type": "cds.Timestamp"
+                },
+                "DeliveryDocument": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "DeliveryDocumentItem": {
+                    "type": "cds.String",
+                    "length": 6
+                },
+                "SDDocumentCategory": {
+                    "type": "cds.String",
+                    "length": 4
+                },
+                "to_MaintenanceItemObject": {
+                    "type": "cds.Association",
+                    "target": "API_OUTBOUND_DELIVERY_SRV.A_MaintenanceItemObjectType",
+                    "cardinality": {
+                        "max": "*"
+                    },
+                    "on": [
+                        {
+                            "ref": [
+                                "to_MaintenanceItemObject",
+                                "MaintenanceItemObjectList"
+                            ]
+                        },
+                        "=",
+                        {
+                            "ref": [
+                                "MaintenanceItemObjectList"
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "API_OUTBOUND_DELIVERY_SRV.A_OutbDeliveryPartnerType": {
+            "kind": "entity",
+            "@cds.persistence.skip": true,
+            "elements": {
+                "PartnerFunction": {
+                    "key": true,
+                    "type": "cds.String",
+                    "length": 2
+                },
+                "SDDocument": {
+                    "key": true,
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "AddressID": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "ContactPerson": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "Customer": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "Personnel": {
+                    "type": "cds.String",
+                    "length": 8
+                },
+                "SDDocumentItem": {
+                    "type": "cds.String",
+                    "length": 6
+                },
+                "Supplier": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "to_Address": {
+                    "type": "cds.Association",
+                    "target": "API_OUTBOUND_DELIVERY_SRV.A_OutbDeliveryAddressType"
+                }
+            }
+        },
+        "API_OUTBOUND_DELIVERY_SRV.A_OutbDeliveryAddressType": {
+            "kind": "entity",
+            "@cds.persistence.skip": true,
+            "elements": {
+                "AddressID": {
+                    "key": true,
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "AdditionalStreetPrefixName": {
+                    "type": "cds.String",
+                    "length": 40
+                },
+                "AdditionalStreetSuffixName": {
+                    "type": "cds.String",
+                    "length": 40
+                },
+                "AddressTimeZone": {
+                    "type": "cds.String",
+                    "length": 6
+                },
+                "Building": {
+                    "type": "cds.String",
+                    "length": 20
+                },
+                "BusinessPartnerName1": {
+                    "type": "cds.String",
+                    "length": 40
+                },
+                "BusinessPartnerName2": {
+                    "type": "cds.String",
+                    "length": 40
+                },
+                "BusinessPartnerName3": {
+                    "type": "cds.String",
+                    "length": 40
+                },
+                "BusinessPartnerName4": {
+                    "type": "cds.String",
+                    "length": 40
+                },
+                "CareOfName": {
+                    "type": "cds.String",
+                    "length": 40
+                },
+                "CityCode": {
+                    "type": "cds.String",
+                    "length": 12
+                },
+                "CityName": {
+                    "type": "cds.String",
+                    "length": 40
+                },
+                "CitySearch": {
+                    "type": "cds.String",
+                    "length": 25
+                },
+                "CompanyPostalCode": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "CorrespondenceLanguage": {
+                    "type": "cds.String",
+                    "length": 2
+                },
+                "Country": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "County": {
+                    "type": "cds.String",
+                    "length": 40
+                },
+                "DeliveryServiceNumber": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "DeliveryServiceTypeCode": {
+                    "type": "cds.String",
+                    "length": 4
+                },
+                "District": {
+                    "type": "cds.String",
+                    "length": 40
+                },
+                "FaxNumber": {
+                    "type": "cds.String",
+                    "length": 30
+                },
+                "Floor": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "FormOfAddress": {
+                    "type": "cds.String",
+                    "length": 4
+                },
+                "FullName": {
+                    "type": "cds.String",
+                    "length": 80
+                },
+                "HomeCityName": {
+                    "type": "cds.String",
+                    "length": 40
+                },
+                "HouseNumber": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "HouseNumberSupplementText": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "Nation": {
+                    "type": "cds.String",
+                    "length": 1
+                },
+                "Person": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "PhoneNumber": {
+                    "type": "cds.String",
+                    "length": 30
+                },
+                "POBox": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "POBoxDeviatingCityName": {
+                    "type": "cds.String",
+                    "length": 40
+                },
+                "POBoxDeviatingCountry": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "POBoxDeviatingRegion": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "POBoxIsWithoutNumber": {
+                    "type": "cds.Boolean"
+                },
+                "POBoxLobbyName": {
+                    "type": "cds.String",
+                    "length": 40
+                },
+                "POBoxPostalCode": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "PostalCode": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "PrfrdCommMediumType": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "Region": {
+                    "type": "cds.String",
+                    "length": 3
+                },
+                "RoomNumber": {
+                    "type": "cds.String",
+                    "length": 10
+                },
+                "SearchTerm1": {
+                    "type": "cds.String",
+                    "length": 20
+                },
+                "StreetName": {
+                    "type": "cds.String",
+                    "length": 60
+                },
+                "StreetPrefixName": {
+                    "type": "cds.String",
+                    "length": 40
+                },
+                "StreetSearch": {
+                    "type": "cds.String",
+                    "length": 25
+                },
+                "StreetSuffixName": {
+                    "type": "cds.String",
+                    "length": 40
+                },
+                "TaxJurisdiction": {
+                    "type": "cds.String",
+                    "length": 15
+                },
+                "TransportZone": {
+                    "type": "cds.String",
+                    "length": 10
+                }
+            }
+        }
+    }
+}

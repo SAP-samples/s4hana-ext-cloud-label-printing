@@ -1,0 +1,45 @@
+<mvc:View
+        controllerName="sap.ui.s4hana.extends4.print.controller.Home"
+        xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+        xmlns:smartTable="sap.ui.comp.smarttable"
+        displayBlock="true"
+        xmlns="sap.m"
+        xmlns:mvc="sap.ui.core.mvc">
+    <Page
+            id="page"
+            title="{i18n>title}">
+        <content>
+            <smartFilterBar:SmartFilterBar
+                    id="smartFilterBar"
+                    entitySet="A_OutbDeliveryHeader"
+                    persistencyKey="sap.ui.s4hana.extends4.print.home.filterBar">
+            </smartFilterBar:SmartFilterBar>
+            <smartTable:SmartTable
+                    entitySet="A_OutbDeliveryHeader"
+                    smartFilterId="smartFilterBar"
+                    tableType="ResponsiveTable"
+                    useExportToExcel="false"
+                    useVariantManagement="false"
+                    useTablePersonalisation="true"
+                    header="{i18n>xtit.HomeTableTitle}"
+                    showRowCount="true"
+                    persistencyKey="sap.ui.s4hana.extends4.print.home.smartTable"
+                    enableAutoBinding="true"
+                    demandPopin="true"
+                    initiallyVisibleFields="DeliveryDocument,CreatedByUser,ShipToParty,CreationDate"
+                    class="sapUiResponsiveContentPadding">
+                <Table width="auto" class="sapUiResponsiveMargin sapUiNoMarginTop"
+                       mode="None"
+                       growing="true" growingThreshold="15">
+                    <items>
+                        <ColumnListItem
+                                press="onNavigationPress"
+                                type="Navigation">
+                        </ColumnListItem>
+                    </items>
+                </Table>
+
+            </smartTable:SmartTable>
+        </content>
+    </Page>
+</mvc:View>

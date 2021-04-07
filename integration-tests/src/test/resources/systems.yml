@@ -1,0 +1,10 @@
+--- 
+# unit tests configuration for MockUtils of SAP Cloud SDK
+erp:
+  default: "ErpQueryEndpoint"
+  systems:
+    - alias: "ErpQueryEndpoint"
+      uri: "http://127.0.0.1:31337"
+      # Not recommended: Put your S/4HANA system's uri and proxy server (if needed) in case you want to unit test the service against a real S/4HANA system not using WireMock stubs
+      # uri: "https://myXXXXX-api.s4hana.ondemand.com/"
+      # proxy: "http://{proxy_address}:{proxy_port}"

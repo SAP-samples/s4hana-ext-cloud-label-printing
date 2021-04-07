@@ -1,0 +1,21 @@
+[
+	{
+		"formName": "printLabel1",
+		"templates": [
+			{
+				"templateName": "printLabel_en"
+			},
+			{
+				"templateName": "printLabel_de"
+			}
+		]
+	},
+	{
+		"formName": "printLabel2",
+		"templates": [
+			{
+				"templateName": "printLabel_fr"
+			}
+		]
+	}
+]

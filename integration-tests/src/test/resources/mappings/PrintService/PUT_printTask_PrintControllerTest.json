@@ -1,0 +1,39 @@
+{
+	"request": {
+		"method": "PUT",
+		"urlPattern": "/qm/api/v1/rest/print-tasks/[0-9a-fA-F]{8}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{12}",
+		"headers": {
+			"Content-Type": {
+				"equalTo": "application/json",
+        		"caseInsensitive": true
+			},
+			"If-None-Match": {
+				"equalTo": "*"
+			}
+		},
+		"bodyPatterns": [
+			{
+				"equalToJson": {
+					"qname": "expected_queue_name",
+					"numberOfCopies": 100500,
+					"username": "expected user name",
+					"printContents": [
+						{
+							"documentName": "expected_name.pdf"
+						}
+					]
+				},
+				"ignoreExtraElements": true
+			},
+			{
+				"matchesJsonPath": "$[?(@.printContents.size() == 1)]"
+			},
+			{
+				"matchesJsonPath": "$.printContents[?(@.objectKey =~ /[0-9a-fA-F]{8}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{12}/i)]"
+			}
+		]
+	},
+	"response": {
+		"status": 204
+	}
+}

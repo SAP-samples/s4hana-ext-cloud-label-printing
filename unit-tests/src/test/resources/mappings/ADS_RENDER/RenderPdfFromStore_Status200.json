@@ -1,0 +1,28 @@
+{
+	"request": {
+		"method": "POST",
+		"urlPattern": "/ads.restapi/v1/adsRender/pdf\\?templateSource=storageName",
+		"headers": {
+	    	"Content-Type": {
+				"equalTo": "application/json",
+				"caseInsensitive": true
+			}
+	    },
+		"bodyPatterns": [
+			{
+				"equalToJson": {
+					"xdpTemplate": "expected_form_name", 
+					"xmlData": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48Zm9ybT5lYXN0ZXIgZWdnPC9mb3JtPg=="
+				},
+				"ignoreExtraElements": true
+			}
+		]
+	},
+	"response": {
+		"status": 200,
+		"jsonBody": {
+			"fileName": "expectedFilename",
+			"fileContent": "ZWFzdGVyIGVnZw=="
+		}
+	}
+}

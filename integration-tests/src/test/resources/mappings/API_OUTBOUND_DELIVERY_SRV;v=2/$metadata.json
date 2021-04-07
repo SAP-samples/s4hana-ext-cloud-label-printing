@@ -1,0 +1,13 @@
+{
+    "request": {
+        "method": "GET",
+        "url": "/sap/opu/odata/sap/API_OUTBOUND_DELIVERY_SRV;v=0002/$metadata"
+    },
+    "response": {
+        "status": 200,
+        "bodyFileName": "API_OUTBOUND_DELIVERY_SRV;v=2/$metadata.xml",
+        "headers": {
+            "Content-Type": "application/xml"
+        }
+    }
+}

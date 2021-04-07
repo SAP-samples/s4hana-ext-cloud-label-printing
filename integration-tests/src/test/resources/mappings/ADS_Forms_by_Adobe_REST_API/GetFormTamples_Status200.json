@@ -1,0 +1,33 @@
+{
+	"request": {
+		"method": "GET",
+		"urlPattern": "/ads.restapi/v1/forms\\?select=formData\\&select=templateData"
+	},
+	"response": {
+		"status": 200,
+		"headers": {
+			"Content-Type": "application/json"
+		},
+		"jsonBody": [
+			{
+				"formName": "printLabel1",
+				"templates": [
+					{
+						"templateName": "printLabel_en"
+					},
+					{
+						"templateName": "printLabel_de"
+					}
+				]
+			},
+			{
+				"formName": "printLabel2",
+				"templates": [
+					{
+						"templateName": "printLabel_fr"
+					}
+				]
+			}
+		]
+	}
+}
