@@ -1,0 +1,16 @@
+{
+    "build": {
+        "target": ".",
+        "tasks": [
+            {
+                "for": "java-cf",
+                "src": "srv",
+                "options": {
+                    "model": [
+                        "srv"
+                    ]
+                }
+            }
+        ]
+    }
+}
