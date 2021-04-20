@@ -71,6 +71,10 @@
 			<groupId>com.sap.cloud.servicesdk.prov</groupId>
 			<artifactId>odata2.web</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.sap.cloud.servicesdk.prov</groupId>
+			<artifactId>odata2.xsa</artifactId>
+		</dependency>
 
 		<!-- Cloud Foundry logging dependencies -->
         <dependency>
@@ -136,6 +140,7 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.6.0</version>
 				<configuration>
 					<executable>npm</executable>
 					<workingDirectory>${project.basedir}/../</workingDirectory>

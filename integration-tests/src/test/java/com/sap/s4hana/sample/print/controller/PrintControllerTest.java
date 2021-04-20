@@ -65,7 +65,7 @@ public class PrintControllerTest {
 	 * This test uses WireMock stubs defined in the following files:
 	 * <ul>
 	 * <li>ADS_Forms_by_Adobe_REST_API/RenderPdfFromStore_PrintControllerTest.json</li>
-	 * <li>PrintService/PUT_printDocument_PrintControllerTest.json</li>
+	 * <li>PrintService/POST_printDocument_PrintControllerTest.json</li>
 	 * <li>PrintService/PUT_printTask_PrintControllerTest.json</li>
 	 * </ul>
 	 */
@@ -98,12 +98,13 @@ public class PrintControllerTest {
 	/**
 	 * This test uses WireMock stubs defined in the following file:
 	 * <ul>
-	 * <li>PrintService/PUT_printDocument_PrintControllerTest.json</li>
+	 * <li>PrintService/POST_printDocument_PrintControllerTest.json</li>
 	 * <li>PrintService/PUT_printTask_PrintControllerTest.json</li>
 	 * </ul>
 	 */
 	@Test
 	public void testPrintFileMultipart() throws IOException {
+
 		final String file = TestUtil.loadFileAsString("/__files/PrintService/not.pdf");
 		given().
 			multiPart("file", 

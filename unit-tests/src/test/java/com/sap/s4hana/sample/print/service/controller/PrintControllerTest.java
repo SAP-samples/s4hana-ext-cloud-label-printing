@@ -6,6 +6,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.io.IOException;
+import java.io.StringReader;
 import java.util.UUID;
 
 import org.junit.Before;
@@ -25,6 +26,8 @@ import com.sap.s4hana.sample.print.model.PrintTask;
 import com.sap.s4hana.sample.print.service.PrintService;
 import com.sap.s4hana.sample.render.service.AdsService;
 
+import feign.Response;
+
 @RunWith(MockitoJUnitRunner.Silent.class)
 public class PrintControllerTest {
 	
@@ -39,6 +42,12 @@ public class PrintControllerTest {
 	
 	@Mock
 	private PrintTask printTaskMock;
+
+	@Mock
+	private Response response;
+
+	@Mock
+	private Response.Body body;
 	
 	@Mock
 	private PrintContent printContentMock;
@@ -62,9 +71,12 @@ public class PrintControllerTest {
 	public void testPrintFileWithValidContents() throws IOException {
 		// Given
 		final String expectedFileContents = "fileContents";
+		StringReader reader = new StringReader(UUID.randomUUID().toString());
 		when(printContentMock.getObjectKey()).thenReturn("uuid");
-		when(printService.putPrintDocument(expectedFileContents.getBytes())).thenReturn(UUID.randomUUID().toString());
-		
+		when(printService.putPrintDocument(expectedFileContents.getBytes())).thenReturn(response);
+		when(response.body()).thenReturn(body);
+		when(body.asReader()).thenReturn(reader);
+
 		// When
 		testee.printFile(printTaskMock, expectedFileContents.getBytes());
 		

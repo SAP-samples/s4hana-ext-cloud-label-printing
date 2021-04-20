@@ -3,6 +3,8 @@ package com.sap.s4hana.sample.print.controller;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.Reader;
 import java.util.List;
 import java.util.UUID;
 
@@ -14,6 +16,8 @@ import javax.validation.groups.Default;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
+import com.google.common.io.CharStreams;
+import feign.Feign;
 import org.apache.bval.constraints.NotEmpty;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.cxf.jaxrs.ext.multipart.Multipart;
@@ -49,7 +53,7 @@ public class PrintController {
 	}
 
 	@POST
-    public void renderAndPrint(@Valid @NotNull RenderAndPrintRequest body) {
+    public void renderAndPrint(@Valid @NotNull RenderAndPrintRequest body) throws IOException {
 		log.info("POST {} with request {}", PATH, body);
 
 		// render a PDF file using SAP Forms service by Adobe
@@ -58,7 +62,7 @@ public class PrintController {
 		// upload the rendered PDF to the object store
 
 		final byte[] decodedFile = Base64.decodeBase64(adsRenderResponse.getFileContent().getBytes(UTF_8));
-		final String objectKey = printService.putPrintDocument(decodedFile).body().toString();
+		final String objectKey = CharStreams.toString(printService.putPrintDocument(decodedFile).body().asReader());
 
 		final PrintTask printTask = body.getPrintTask();
 		printTask.getPrintContents().setObjectKey(objectKey);
@@ -81,7 +85,7 @@ public class PrintController {
 		log.info("Print PDF file with settings: {}", printTask);
 
 		// upload the PDF file to the object store
-		final String objectKey = printService.putPrintDocument(body).body().toString();
+		String objectKey = CharStreams.toString(printService.putPrintDocument(body).body().asReader());
 
 		// create a print task using the uploaded PDF
 		final PrintContent printContent = printTask.getPrintContents();
