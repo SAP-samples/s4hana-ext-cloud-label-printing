@@ -1,0 +1,50 @@
+---
+applications:
+
+- name: approuter
+  routes:
+   # TODO replace a placeholder with the value of your choice
+  - route: <main-url>
+  path: approuter
+  memory: 128M
+  buildpacks:
+  - nodejs_buildpack
+  env:
+    # TODO replace placeholders with the previously chosen routes
+    destinations: '[
+      {"name": "backend", "url": "https://<backend-service-url>", "forwardAuthToken": true},
+      {"name": "frontend", "url": "https://<frontend-service-url>"}
+    ]'
+  services:
+  # TODO replace placeholder with the name of the same instance that is used by the backend application
+  - <xsuaa-service-instance>
+
+- name: backend
+  memory: 1024M
+  timeout: 300
+  routes:
+   # TODO replace a placeholder with the value of your choice
+  - route: <backend-service-url>
+  path: srv/target/print-application.war
+  buildpacks:
+  - sap_java_buildpack
+  env:
+    TARGET_RUNTIME: tomee7
+    SET_LOGGING_LEVEL: '{ROOT: INFO, com.sap.cloud.sdk: INFO}'
+    JBP_CONFIG_SAPJVM_MEMORY_SIZES: 'metaspace:128m..'
+  services:
+  # TODO replace placeholders with the existing service instances names
+  - <xsuaa-service-instance>
+  - <destination-service-instance>
+  - <print-application-service-instance>
+    
+- name: frontend
+  routes:
+  # TODO replace a placeholder with the value of your choice
+  - route: <frontend-service-url>
+  path: frontend/webapp
+  root: WebContent
+  memory: 64M
+  disk_quota: 128M
+  buildpacks: 
+  - staticfile_buildpack

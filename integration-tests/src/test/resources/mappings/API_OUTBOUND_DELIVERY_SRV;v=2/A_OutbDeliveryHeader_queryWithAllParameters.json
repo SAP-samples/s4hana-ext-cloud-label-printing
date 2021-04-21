@@ -1,0 +1,69 @@
+{
+	"request": {
+		"method": "GET",
+		"urlPath": "/sap/opu/odata/sap/API_OUTBOUND_DELIVERY_SRV;v=0002/A_OutbDeliveryHeader",
+		"queryParameters": {
+			"$top": {
+				"equalTo": "3"
+			},
+			"$skip": {
+				"equalTo": "2"
+			},
+			"$inlinecount": {
+				"equalTo": "allpages"
+			},			
+			"$format": {
+				"equalTo": "json"
+			},
+			"$select": {
+				"equalTo": "DeliveryDocument"
+			},
+			"$orderby": {
+				"equalTo": "CreationDate,DeliveryDocument desc"
+			},
+			"$filter": {
+				"equalTo": "DeliveryDocument ne '80000000'"
+			}
+		}
+	},
+	"response": {
+		"status": 200,
+		"headers": {
+			"Content-Type": "application/json"
+		},
+		"jsonBody": {
+		   "d":{
+		      "__count":"22",
+		      "results":[
+		         {
+		            "__metadata":{
+		               "id":"https://myXXXXXX-api.s4hana.ondemand.com/sap/opu/odata/sap/API_OUTBOUND_DELIVERY_SRV/A_OutbDeliveryHeader('80000119')",
+		               "uri":"https://myXXXXXX-api.s4hana.ondemand.com/sap/opu/odata/sap/API_OUTBOUND_DELIVERY_SRV/A_OutbDeliveryHeader('80000119')",
+		               "type":"API_OUTBOUND_DELIVERY_SRV.A_OutbDeliveryHeaderType",
+		               "etag":"W/\"'0001'\""
+		            },
+		            "DeliveryDocument":"80000119"
+		         },
+		         {
+		            "__metadata":{
+		               "id":"https://myXXXXXX-api.s4hana.ondemand.com/sap/opu/odata/sap/API_OUTBOUND_DELIVERY_SRV/A_OutbDeliveryHeader('80000118')",
+		               "uri":"https://myXXXXXX-api.s4hana.ondemand.com/sap/opu/odata/sap/API_OUTBOUND_DELIVERY_SRV/A_OutbDeliveryHeader('80000118')",
+		               "type":"API_OUTBOUND_DELIVERY_SRV.A_OutbDeliveryHeaderType",
+		               "etag":"W/\"'0003'\""
+		            },
+		            "DeliveryDocument":"80000118"
+		         },
+		         {
+		            "__metadata":{
+		               "id":"https://myXXXXXX-api.s4hana.ondemand.com/sap/opu/odata/sap/API_OUTBOUND_DELIVERY_SRV/A_OutbDeliveryHeader('80000117')",
+		               "uri":"https://myXXXXXX-api.s4hana.ondemand.com/sap/opu/odata/sap/API_OUTBOUND_DELIVERY_SRV/A_OutbDeliveryHeader('80000117')",
+		               "type":"API_OUTBOUND_DELIVERY_SRV.A_OutbDeliveryHeaderType",
+		               "etag":"W/\"'0001'\""
+		            },
+		            "DeliveryDocument":"80000117"
+		         }
+		      ]
+		   }
+		}
+	}
+}

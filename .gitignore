@@ -1,0 +1,16 @@
+**/credentials.*
+**/target/
+**/bin/
+/s4hana_pipeline
+**/*.log
+**/*.trc
+**/.settings/
+**/.project
+**/.classpath
+**/.idea
+**/*.iml
+**/.vscode
+**/coverage/
+**/node_modules
+**/package-lock.json
+**/.DS_Store

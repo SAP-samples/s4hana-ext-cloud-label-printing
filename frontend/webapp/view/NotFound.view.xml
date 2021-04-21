@@ -1,0 +1,11 @@
+<mvc:View
+   controllerName="sap.ui.s4hana.extends4.print.controller.BaseController"
+   xmlns="sap.m"
+   xmlns:mvc="sap.ui.core.mvc">
+   <MessagePage
+      title="{i18n>xtit.notFound}"
+      text="{i18n>xtxt.notFoundText}"
+      description="{i18n>xtxt.NotFoundDescription}"
+      navButtonPress="onNavBack"
+      showNavButton="true"/>
+</mvc:View>

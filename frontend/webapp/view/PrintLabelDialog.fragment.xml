@@ -1,0 +1,57 @@
+<core:FragmentDefinition
+        xmlns="sap.m"
+        xmlns:core="sap.ui.core"
+        xmlns:l="sap.ui.layout"
+        xmlns:f="sap.ui.layout.form">
+    <Dialog title="{i18n>xtit.PrintDialog}"
+            beforeClose="onBeforeClose"
+            busy="{viewModel>/busy}">
+
+        <VBox class="sapUiSmallMargin">
+            <f:SimpleForm editable="true"
+                          layout="ResponsiveGridLayout"
+                          labelSpanXL="3"
+                          labelSpanL="3"
+                          labelSpanM="3"
+                          labelSpanS="12"
+                          adjustLabelSpan="false"
+                          emptySpanXL="4"
+                          emptySpanL="4"
+                          emptySpanM="4"
+                          emptySpanS="0"
+                          columnsXL="1"
+                          columnsL="1"
+                          columnsM="1"
+                          singleContainerFullSize="false" >
+                <f:content>
+                    <Label text="Template" />
+                    <ComboBox items="{templateModel>/}"
+                              id="idComboBoxTemplate"
+                              change="onTemplateSelect">
+                        <core:Item key="{templateModel>path}" text="{templateModel>path}" />
+                    </ComboBox>
+                    <Label text="Print Queue" />
+                    <ComboBox items="{queueModel>/}"
+                              id="idComboBoxQueue"
+                              change="onQueueSelect">
+                        <core:Item key="{queueModel>qname}" text="{queueModel>qname}" />
+                    </ComboBox>
+                </f:content>
+            </f:SimpleForm>
+        </VBox>
+
+        <buttons>
+            <Button text="{i18n>xbtn.DialogCloseButtonText}"
+                    press="closeDialog"
+                    visible="{:= !${device>/system/desktop}}"/>
+            <Button text="{i18n>xbtn.DialogPreviewButtonText}"
+                    press="onPreview"
+                    visible="true"
+                    enabled="{= ${printPayloadModel>/renderRequest/templatePath} !== ''}"/>
+            <Button text="{i18n>xbtn.DialogPrintButtonText}"
+                    press="onPrint"
+                    enabled="{= ${printPayloadModel>/printTask/qname} !== '' &amp;&amp; ${printPayloadModel>/renderRequest/templatePath} !== ''}"/>
+        </buttons>
+
+    </Dialog>
+</core:FragmentDefinition>

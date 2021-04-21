@@ -1,0 +1,147 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "sap.ui.s4hana.extends4.print",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"resources": "resources.json",
+		"dataSources": {
+			"mainService": {
+				"uri": "/backend/odata/v2/OutboundDeliveryService/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			}
+		},
+		"ach": "ach"
+	},
+
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "sap.ui.s4hana.extends4.print.view.App",
+			"type": "XML",
+			"async": true,
+			"id": "app"
+		},
+		"dependencies": {
+			"minUI5Version": "1.60.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "sap.ui.s4hana.extends4.print.i18n.i18n"
+				}
+			},
+			"": {
+				"dataSource": "mainService",
+				"settings": {
+					"defaultBindingMode": "TwoWay"
+				}
+			},
+			"queueModel": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "/backend/api/v1/PrintQueues",
+				"preload": false,
+				"settings": {
+					"defaultBindingMode": "OneWay"
+				}
+			},
+			"templateModel": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "/backend/api/v1/Store",
+				"preload": false,
+				"settings": {
+					"defaultBindingMode": "OneWay"
+				}
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "sap.ui.s4hana.extends4.print.view",
+				"controlId": "app",
+				"controlAggregation": "pages",
+				"bypassed": {
+					"target": "notFound"
+				 },
+				"async": true
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "home",
+					"target": ["home"]
+				},
+				{
+					"pattern": "/PrintLabel/{deliveryId}",
+					"name": "printLabel",
+					"target": ["printLabel"]
+				}
+			],
+			"targets": {
+				"home": {
+					"viewName": "Home",
+					"viewId": "home",
+					"viewLevel": 1,
+					"title": "{i18n>title}"
+				},
+				"printLabel": {
+					"viewName": "PrintLabel",
+					"viewId": "printLabel",
+					"viewLevel": 2,
+					"title": "{i18n>xtit.PrintLabelPage}"
+				},
+				"technicalError":{
+					"viewName": "TechnicalError",
+					"viewLevel": 2,
+					"viewID": "technicalError"
+				},
+				"notFound": {
+					"viewId": "notFound",
+					"viewLevel": 2,
+					"viewName": "NotFound"
+				 }
+			}
+		}
+	}
+}

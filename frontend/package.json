@@ -1,0 +1,28 @@
+{
+  "name": "PrintServiceSample",
+  "version": "1.0.0",
+  "author": "SAP SE",
+  "description": "ExtendS4 - Print Service Sample",
+  "private": true,
+  "scripts": {
+    "start": "ui5 serve",
+    "lint": "eslint webapp",
+    "watch": "karma start",
+    "karma-ci": "karma start karma-ci.conf.js"
+  },
+  "dependencies": {
+    "@openui5/sap.m": "^1.71.2",
+    "@openui5/sap.ui.core": "^1.71.2",
+    "@openui5/sap.ui.layout": "^1.71.2",
+    "@openui5/themelib_sap_belize": "^1.71.2"
+  },
+  "devDependencies": {
+    "@sap/approuter": "^6.7.0",
+    "@ui5/cli": "^1.12.1",
+    "eslint": "^4.19.1",
+    "karma": "^4.1.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-coverage": "^1.1.2",
+    "karma-ui5": "^1.0.0"
+  }
+}

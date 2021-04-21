@@ -1,0 +1,28 @@
+{
+	"request": {
+		"method": "GET",
+		"urlPattern": "/ads.restapi/v1/forms\\?select=formData&select=templateData",
+		"headers": {
+	    	"Accept": {
+				"equalTo": "application/json",
+				"caseInsensitive": true
+			}
+	    }
+	},
+	"response": {
+		"status": 200,
+		"jsonBody":	[
+		    {
+		        "formName": "FormA",
+		               "templates": [
+		            {
+		                "templateName": "ExpectedTemplate1"
+		            },
+		            {
+		                "templateName": "ExpectedTemplate2"
+		            }
+		        ]
+		    }
+		]
+	}
+}

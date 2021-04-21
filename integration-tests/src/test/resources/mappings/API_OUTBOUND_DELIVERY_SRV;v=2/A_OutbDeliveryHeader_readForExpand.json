@@ -1,0 +1,33 @@
+{
+	"request": {
+		"method": "GET",
+		"urlPath": "/sap/opu/odata/sap/API_OUTBOUND_DELIVERY_SRV;v=0002/A_OutbDeliveryHeader('80000000')",
+		"queryParameters": {
+			"$format": {
+				"equalTo": "json"
+			}
+		}
+	},
+	"response": {
+		"status": 200,
+		"headers": {
+			"Content-Type": "application/json"
+		},
+		"jsonBody": {
+		   "d":{
+		      "__metadata":{
+		         "id":"https://myXXXXXX-api.s4hana.ondemand.com/sap/opu/odata/sap/API_OUTBOUND_DELIVERY_SRV;v=0002/A_OutbDeliveryHeader('80000000')",
+		         "uri":"https://myXXXXXX-api.s4hana.ondemand.com/sap/opu/odata/sap/API_OUTBOUND_DELIVERY_SRV;v=0002/A_OutbDeliveryHeader('80000000')",
+		         "type":"API_OUTBOUND_DELIVERY_SRV.A_OutbDeliveryHeaderType",
+		         "etag":"W/\"'0002'\""
+		      },
+		      "DeliveryDocument": "80000000",
+		      "to_DeliveryDocumentItem":{
+		         "__deferred":{
+		            "uri":"https://myXXXXXX-api.s4hana.ondemand.com/sap/opu/odata/sap/API_OUTBOUND_DELIVERY_SRV;v=0002/A_OutbDeliveryHeader('80000000')/to_DeliveryDocumentItem"
+		         }
+		      }
+		   }
+		}
+	}
+}

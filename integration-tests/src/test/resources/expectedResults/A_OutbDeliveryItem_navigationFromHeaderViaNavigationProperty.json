@@ -1,0 +1,13 @@
+{
+	"d": {
+		"results": [
+			{
+				"__metadata": {
+					"type": "OutboundDeliveryService.A_OutbDeliveryItem"
+				},
+				"DeliveryDocument": "80000000",
+				"DeliveryDocumentItem": "000010"
+			}
+		]
+	}
+}

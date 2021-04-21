@@ -1,0 +1,94 @@
+<mvc:View
+        controllerName="sap.ui.s4hana.extends4.print.controller.PrintLabel"
+        displayBlock="true"
+        xmlns="sap.m"
+        xmlns:mvc="sap.ui.core.mvc">
+    <Page title="{i18n>xtit.PrintLabelPage}"
+          busy="{printLabelView>/busy}"
+          navButtonPress="onNavBack"
+          showNavButton="true">
+        <ObjectHeader
+                title="{printLabelView>/headerTitle}"
+                backgroundDesign="Solid">
+            <attributes>
+                <ObjectAttribute title="{i18n>xlbl.DeliveryShipToParty}" text="{ShipToParty}"/>
+                <ObjectAttribute title="{i18n>xlbl.DeliverySoldToParty}" text="{SoldToParty}"/>
+            </attributes>
+            <statuses>
+                <ObjectStatus title="{i18n>xlbl.OverallStatus}"
+                              text="{ path: 'OverallSDProcessStatus',
+                                      formatter: '.formatter.formatOverallStatus'}"
+                              state="{ path: 'OverallSDProcessStatus',
+                                      formatter: '.formatter.formatOverallStatusState'}"/>
+                <ObjectStatus title="{i18n>xlbl.DeliveryDate}"
+                              text="{ path: 'DeliveryDate',
+                                      type: 'sap.ui.model.type.Date',
+                                      formatOptions: {
+                                          style: 'short'
+                                      }}"
+                              state="{ path: 'DeliveryDate',
+                                      formatter: '.formatter.formatDeliveryDateState'}"/>
+            </statuses>
+        </ObjectHeader>
+        <Table
+            id="id_itemsTable"
+            updateFinished="onTableUpdateFinish"
+            items="{
+                path: 'itemsModel>/',
+                sorter: {
+                    path: 'DeliveryDocumentItem'
+                }
+		    }">
+
+            <headerToolbar>
+                <Toolbar>
+                    <Title text="{printLabelView>/tableTitle}"/>
+                </Toolbar>
+            </headerToolbar>
+
+            <columns>
+                <Column>
+                    <Text text="{i18n>xcol.ItemsTablePosition}"/>
+                </Column>
+               <Column>
+                    <Text text="{i18n>xcol.ItemsTableMaterial}"/>
+                </Column>
+               <Column>
+                    <Text text="{i18n>xcol.ItemsTableQuantity}"/>
+                </Column>
+                <Column>
+                    <Text text="{i18n>xcol.ItemsTablePackages}"/>
+                </Column>
+            </columns>
+
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Text text="{itemsModel>DeliveryDocumentItem}"/>
+                        <Text text="{itemsModel>Material}"/>
+                        <Text text="{
+                                path: 'itemsModel>ActualDeliveryQuantity',
+                                formatter: 'Number.parseInt'}
+                            {itemsModel>BaseUnit}"/>
+                        <Input
+                            value="{itemsModel>NumberOfPackages}"
+                            change="onQuantityInput"
+                            tooltip="{:= Number.parseInt(${itemsModel>ActualDeliveryQuantity}) === 0 ? ${i18n>xtip.ZeroQuantityTooltip} : ${i18n>xtip.NumberOfPackageTooltip} }"
+                            enabled="{:= Number.parseInt(${itemsModel>ActualDeliveryQuantity}) === 0 ? false : true }"
+                        />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+
+        <footer>
+            <OverflowToolbar>
+                <ToolbarSpacer/>
+                <Button text="{i18n>xbtn.Print}"
+                        press="onPrintPressed"
+                        enabled="{= ${printLabelView>/atLeastOneInputHasNonEmptyValue} &amp;&amp; ${printLabelView>/isOverallValueStateSuccess} }"/>
+            </OverflowToolbar>
+        </footer>
+
+    </Page>
+</mvc:View>

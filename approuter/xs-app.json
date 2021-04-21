@@ -1,0 +1,15 @@
+{
+  "routes": [
+  {
+    "source": "/backend",
+    "target": "/",
+    "destination": "backend",
+	"authenticationType": "xsuaa"
+  },
+  {
+    "source": "/",
+    "target": "/",
+    "destination": "frontend",
+	"authenticationType": "xsuaa"
+  }]
+}

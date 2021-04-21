@@ -1,0 +1,28 @@
+{
+   "d":{
+      "__count":"45",
+      "results":[
+         {
+            "__metadata":{
+               "type":"OutboundDeliveryService.A_OutbDeliveryItem"
+            },
+            "DeliveryDocument":"80000103",
+            "DeliveryDocumentItem":"000010"
+         },
+         {
+            "__metadata":{
+               "type":"OutboundDeliveryService.A_OutbDeliveryItem"
+            },
+            "DeliveryDocument":"80000102",
+            "DeliveryDocumentItem":"000010"
+         },
+         {
+            "__metadata":{
+               "type":"OutboundDeliveryService.A_OutbDeliveryItem"
+            },
+            "DeliveryDocument":"80000104",
+            "DeliveryDocumentItem":"000010"
+         }
+      ]
+   }
+}

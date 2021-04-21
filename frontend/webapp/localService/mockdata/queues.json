@@ -1,0 +1,26 @@
+[
+  {
+    "qname": "queue 1",
+    "format": "ACROBAT6",
+    "technicalUserName": "cpm",
+    "description": "test",
+    "cleanupPeriod": 1,
+    "status": "R"
+  },
+  {
+    "qname": "queue 2",
+    "format": "ACROBAT6",
+    "technicalUserName": "cpm",
+    "description": "metering issue",
+    "cleanupPeriod": 7,
+    "status": "R"
+  },
+  {
+    "qname": "queue 3",
+    "format": "ACROBAT6",
+    "technicalUserName": "cpm",
+    "description": "metering issue",
+    "cleanupPeriod": 7,
+    "status": "R"
+  }
+]

@@ -1,0 +1,23 @@
+{
+	"d": {
+		"results": [
+			{
+				"__metadata": {
+					"type": "OutboundDeliveryService.A_OutbDeliveryHeader"
+				},
+				"DeliveryDocument": "80000000",
+				"to_DeliveryDocumentItem": {
+					"results": [
+						{
+							"__metadata": {
+								"type": "OutboundDeliveryService.A_OutbDeliveryItem"
+							},
+							"DeliveryDocument": "80000000",
+							"DeliveryDocumentItem": "000010"
+						}
+					]
+				}
+			}
+		]
+	}
+}

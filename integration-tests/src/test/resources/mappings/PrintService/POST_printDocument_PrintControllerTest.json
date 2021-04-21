@@ -1,0 +1,27 @@
+{
+	"request": {
+		"method": "POST",
+		"urlPattern": "/dm/api/v1/rest/print-documents",
+		"headers": {
+			"Content-Type": {
+				"equalTo": "application/octet-stream",
+        		"caseInsensitive": true
+			},
+			"If-None-Match": {
+				"equalTo": "*"
+			}
+		},
+		"bodyPatterns": [
+			{
+				"binaryEqualTo": "ZWFzdGVyIGVnZw=="
+			}
+		]
+	},
+	"response": {
+		"status": 201,
+		"body": "db236db1-e6dd-4489-8bcc-5fa1eec4b6c3",
+		"headers": {
+			"Content-Type": "text/plain"
+		}
+	}
+}
