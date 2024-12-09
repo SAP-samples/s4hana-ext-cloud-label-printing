@@ -35,11 +35,7 @@ sap.ui.define([
 						errorMessage: "Cannot find or press the list item"
 					});
 				},
-
-				iPressOnTheItem103: function () {
-					return this._createPressOnAnItemQueueItem("/A_OutbDeliveryHeader('80000103')")
-				},
-
+				
 				iPressOnTheItem105: function () {
 					return this._createPressOnAnItemQueueItem("/A_OutbDeliveryHeader('80000105')")
 				},

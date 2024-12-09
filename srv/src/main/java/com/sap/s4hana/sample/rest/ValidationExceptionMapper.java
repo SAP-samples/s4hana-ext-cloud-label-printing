@@ -33,7 +33,7 @@ public class ValidationExceptionMapper implements ExceptionMapper<ConstraintViol
 	
 	/**
 	 * The error code that will be used for each of
-	 * {@link ExceptionResponse#getCause()}
+	 * {@link ExceptionResponse#getMessage()}
 	 */
 	public static final String CAUSE_ERROR_CODE = "ConstraintViolation";
 

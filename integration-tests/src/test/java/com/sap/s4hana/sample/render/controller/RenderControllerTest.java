@@ -1,12 +1,12 @@
 package com.sap.s4hana.sample.render.controller;
 
-import static io.restassured.RestAssured.given;
-import static io.restassured.http.ContentType.JSON;
-import static io.restassured.http.ContentType.BINARY;
-import static org.hamcrest.Matchers.*;
-
-import java.net.URL;
-
+import com.github.tomakehurst.wiremock.junit.WireMockRule;
+import com.sap.cloud.sdk.testutil.MockUtil;
+import com.sap.s4hana.sample.TestUtil;
+import com.sap.s4hana.sample.print.service.TestPrintServiceProducer;
+import com.sap.s4hana.sample.render.service.TestAdsServiceProducer;
+import com.sap.s4hana.sample.rest.RestApplication;
+import io.restassured.RestAssured;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.arquillian.test.api.ArquillianResource;
@@ -17,16 +17,13 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import com.github.tomakehurst.wiremock.junit.WireMockRule;
-import com.sap.cloud.sdk.testutil.MockUtil;
-import com.sap.s4hana.sample.TestUtil;
-import com.sap.s4hana.sample.print.service.TestPrintServiceProducer;
-import com.sap.s4hana.sample.render.controller.RenderController;
-import com.sap.s4hana.sample.render.service.AdsService;
-import com.sap.s4hana.sample.render.service.AdsServiceProducer;
-import com.sap.s4hana.sample.rest.RestApplication;
+import java.net.URL;
 
-import io.restassured.RestAssured;
+import static io.restassured.RestAssured.given;
+import static io.restassured.http.ContentType.BINARY;
+import static io.restassured.http.ContentType.JSON;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.is;
 
 @RunWith(Arquillian.class)
 public class RenderControllerTest {
@@ -34,7 +31,7 @@ public class RenderControllerTest {
 	private static final MockUtil mockUtil = new MockUtil();
 	
 	@Rule
-	public WireMockRule adsWireMockRule = mockUtil.mockErpServer(AdsService.DESTINATION_NAME);
+	public WireMockRule adsWireMockRule = mockUtil.mockErpServer(TestAdsServiceProducer.DESTINATION_NAME);
 	
 	@Rule
 	public WireMockRule printWireMockRule = mockUtil.mockErpServer(TestPrintServiceProducer.DESTINATION_NAME);
@@ -46,7 +43,7 @@ public class RenderControllerTest {
 	public static WebArchive createDeployment() {
 		return TestUtil
 				.createDeployment(RenderController.class,
-						AdsServiceProducer.class)
+						TestAdsServiceProducer.class)
 				.addPackages(/* recursive = */ true, "com.sap.s4hana.sample.rest")
 				.addAsWebInfResource("web.xml");
 	}

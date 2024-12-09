@@ -1,17 +1,16 @@
 package com.sap.s4hana.sample.print.model;
 
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.sap.s4hana.sample.print.controller.PrintController;
 import com.sap.s4hana.sample.render.model.AdsRenderRequest;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 /**
  * Used in {@link PrintController#renderAndPrint(RenderAndPrintRequest)}
@@ -27,7 +26,7 @@ public class RenderAndPrintRequest {
 	@NotNull
 	@JsonProperty("renderRequest")
 	private AdsRenderRequest renderRequest;
-	
+
 	/**
 	 * {@link JsonIgnoreProperties} annotation makes sure that print contents are
 	 * ignored even if specified explicitly as they are generated automatically by
@@ -37,5 +36,5 @@ public class RenderAndPrintRequest {
 	@NotNull
 	@JsonProperty("printTask")
 	private PrintTask printTask;
-	
+
 }

@@ -71,10 +71,6 @@
 			<groupId>com.sap.cloud.servicesdk.prov</groupId>
 			<artifactId>odata2.web</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>com.sap.cloud.servicesdk.prov</groupId>
-			<artifactId>odata2.xsa</artifactId>
-		</dependency>
 
 		<!-- Cloud Foundry logging dependencies -->
         <dependency>
@@ -91,7 +87,6 @@
             <artifactId>logback-classic</artifactId>
         </dependency>
 
-		<!-- SAP Business Technology Platform Cloud Foundry TomEE 7 Runtime -->
         <dependency>
             <groupId>org.apache.tomee</groupId>
             <artifactId>tomee-jaxrs</artifactId>
@@ -109,6 +104,10 @@
 		<dependency>
 			<groupId>io.github.openfeign</groupId>
 			<artifactId>feign-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.github.openfeign</groupId>
+			<artifactId>feign-jaxrs</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>io.github.openfeign</groupId>
@@ -140,7 +139,6 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
-				<version>1.6.0</version>
 				<configuration>
 					<executable>npm</executable>
 					<workingDirectory>${project.basedir}/../</workingDirectory>

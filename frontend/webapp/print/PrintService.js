@@ -17,10 +17,6 @@ sap.ui.define("PrintService", [
 		},
 
 		print: function (printRequestPayload) {
-			let printTaskPayload = printRequestPayload.printTask;
-			let documentName = "OutboundDelivery_" + printRequestPayload.renderRequest.printData.form1.LabelForm[0].DeliveryId + ".pdf"
-			printTaskPayload.printContents = {"documentName": documentName};
-
 			if (this._renderer.hasPdfForPayload(printRequestPayload.renderRequest))
 				return this._printExistingPdf(printRequestPayload);
 			else
@@ -31,6 +27,7 @@ sap.ui.define("PrintService", [
 			let token = await helpers.getCSRFToken();
 			let pdf = await this._renderer.getPdfForPayload(printRequestPayload.renderRequest);
 			let printTaskPayload = printRequestPayload.printTask;
+			printTaskPayload.printContents = {"documentName": "print.pdf"};
 
 			const fd = new FormData();
 			fd.append('file', pdf, /*filename*/ "Labels.pdf");

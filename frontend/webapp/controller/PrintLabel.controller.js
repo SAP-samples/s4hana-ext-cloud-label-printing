@@ -4,20 +4,17 @@ sap.ui.define([
 	"sap/ui/core/routing/History",
 	"../model/formatter",
 	"../model/numberOfPackagesValidator",
-	"./PrintLabelDialog",
-	"sap/m/MessageBox"
-], function(BaseController, JSONModel, History, formatter, numberOfPackagesValidator, PrintLabelDialog, MessageBox) {
+	"./PrintLabelDialog"
+], function(BaseController, JSONModel, History, formatter, numberOfPackagesValidator, PrintLabelDialog) {
 	"use strict";
 
 	return BaseController.extend("sap.ui.s4hana.extends4.print.controller.PrintLabel", {
 
 		formatter: formatter,
-		_resourceBundle: null,
 
 		onInit: function () {
 			this._dataModel = this.getOwnerComponent().getModel();
 			this._view = this.getView();
-			this._resourceBundle = this.getOwnerComponent().getModel("i18n").getResourceBundle();
 
 			this.getRouter().getRoute("printLabel").attachPatternMatched(this._onPatternMatched, this);
 		},
@@ -173,34 +170,17 @@ sap.ui.define([
 		},
 
 		onPrintPressed: function (event) {
+			if (!this._printDialog) {
+				this._viewModel.setProperty("/busy", true);
 
-			var atLeastOneEnabledInputHasEmptyValue = Boolean(this._inputComponents.find( inputComponent  => {
-				return inputComponent.getEnabled()
-					&& (inputComponent.getValue().trim() === "" || inputComponent.getValue().trim() === "0");
-			}));
-
-			if (atLeastOneEnabledInputHasEmptyValue) {
-				MessageBox.error(
-					this._resourceBundle.getText("notAllDeliveryItemsSelectedErrorText"),
-					{
-						actions: sap.m.MessageBox.Action.CLOSE
-					}
-				)
-			} else {
-				if (!this._printDialog) {
-					this._viewModel.setProperty("/busy", true);
-
-					this._printDialog = new PrintLabelDialog();
-					this._printDialog.onFragmentCreated().then( fragment => {
-						this._viewModel.setProperty("/busy", false);
-						this.getView().addDependent(fragment);
-						this._printDialog.open();
-					});
-				} else
+				this._printDialog = new PrintLabelDialog();
+				this._printDialog.onFragmentCreated().then( fragment => {
+					this._viewModel.setProperty("/busy", false);
+					this.getView().addDependent(fragment);
 					this._printDialog.open();
-			}
-
-
+				});
+			} else
+				this._printDialog.open();
 
 		}
 

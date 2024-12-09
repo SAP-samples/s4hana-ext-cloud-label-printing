@@ -1,10 +1,10 @@
 {
 	"request": {
 		"method": "GET",
-		"urlPattern": "/ads.restapi/v1/forms\\?select=formData&select=templateData",
-		"headers": {
-	    	"Accept": {
-				"equalTo": "application/json",
+		"urlPattern": "/ads.restapi/v1/forms\\?select=formData,templateData",
+		"headers" : {
+	    	"Content-Type" : {
+				"equalTo" : "application/json",
 				"caseInsensitive": true
 			}
 	    }

@@ -1,0 +1,28 @@
+{
+	"request": {
+		"method": "POST",
+		"urlPattern": "/oauth/token",
+		"headers": {
+			"Content-Type": {
+				"equalTo": "application/x-www-form-urlencoded",
+        		"caseInsensitive": true
+			},
+			"Accept": {
+				"equalTo": "application/json",
+        		"caseInsensitive": true
+			}
+		},
+		"bodyPatterns" : [
+			{
+				"matchesJsonPath": "$.grant_type[?(@ == 'client_credentials')]"
+			}
+		]
+	},
+	"response": {
+		"status": 200,
+		"body": "{\"access_token\": \"access_token\", \"token_type\": \"Bearer\", \"expires_in\": 3600}",
+		"headers": {
+			"Content-Type": "application/json"
+		}
+	}
+}

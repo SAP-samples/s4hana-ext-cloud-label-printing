@@ -8,20 +8,19 @@
         		"caseInsensitive": true
 			},
 			"If-None-Match": {
-				"equalTo": "*"
+				"equalTo": "*",
+        		"caseInsensitive": true
 			}
 		},
-		"bodyPatterns": [
+		"bodyPatterns" : [
 			{
-				"binaryEqualTo": "ZWFzdGVyIGVnZw=="
+				"matches": ".*",
+				"ignoreExtraElements" : true
 			}
 		]
 	},
 	"response": {
 		"status": 201,
-		"body": "db236db1-e6dd-4489-8bcc-5fa1eec4b6c3",
-		"headers": {
-			"Content-Type": "text/plain"
-		}
+		"body": "d127f215-1928-466a-b76f-dbea4a71f786"
 	}
 }

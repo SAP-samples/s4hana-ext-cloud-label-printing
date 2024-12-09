@@ -164,8 +164,14 @@
 			<version>2.6.3</version>
 			<scope>test</scope>
 		</dependency>
-		
-    </dependencies>
+		<dependency>
+			<groupId>com.github.stefanbirkner</groupId>
+			<artifactId>system-rules</artifactId>
+			<version>1.19.0</version>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
 
     <build>
         <plugins>
@@ -204,7 +210,6 @@
                     <forkCount>${surefire.forkCount}</forkCount>
                     <reuseForks>false</reuseForks>
                     <groups>${surefire.groups}</groups>
-					<argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
                     <excludedGroups>${surefire.excludedGroups}</excludedGroups>
                     <systemPropertyVariables>
                         <surefire.forkDir>${project.build.directory}/surefire-fork/${surefire.forkNumber}/</surefire.forkDir>

@@ -31,7 +31,7 @@ There are two ways to run the tests; using your browser and using _karma test ru
 1. **Run the tests in the browser**
 The application should be started in the local server with _ui5-cli_ as described above.
 Then, to run the unit tests, you can navigate to `test/unit/unitTests.qunit.html`.
-To run the OPA tests, you can navigate to `test/integration//opaTests.qunit.html`.
+Ro run the OPA tests, you can navigate to `test/integration//opaTests.qunit.html`.
 2. **Run the tests in with karma**
 Run the command `npm run watch` in the root foler.
 This command will use the configuration in the `karma.conf.js` file to run the tests with karma test runner.

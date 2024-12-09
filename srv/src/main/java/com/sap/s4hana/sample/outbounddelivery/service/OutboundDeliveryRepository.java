@@ -21,7 +21,7 @@ import com.sap.cloud.sdk.service.prov.api.response.ReadResponse;
 
 /**
  * Converts SAP Cloud Application Programming model (CAP) OData requests to
- * OData requests to SAP S/4HANA Cloud executed via destination on SAP Business Technology
+ * OData requests to SAP S/4HANA Cloud executed via destination on SAP Cloud
  * Platform {@link OutboundDeliveryRepository#S4HANA_DESTINATION_NAME}
  *
  */

@@ -172,7 +172,51 @@
                     </compilerArgs>                    
                 </configuration>
    			</plugin>
-   		
+   			
+   			<!-- generate license files -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>license-maven-plugin</artifactId>
+				<version>${maven.license.version}</version>
+				<inherited>false</inherited> <!-- do not execute on children modules -->
+				<configuration>
+					<!-- CREDITS file settings -->
+					<outputDirectory>.</outputDirectory>
+					<thirdPartyFilename>CREDITS</thirdPartyFilename>
+					<fileTemplate>./srv/src/main/build/third-party-file.ftl</fileTemplate>
+					<sortArtifactByName>true</sortArtifactByName>
+					<excludeTransitiveDependencies>true</excludeTransitiveDependencies>
+					<includeTransitiveDependencies>false</includeTransitiveDependencies>
+				</configuration>
+				<executions>	
+					<!-- NOTICE file -->						
+					<execution>
+						<id>update-notice</id>
+						<goals>
+							<goal>update-project-license</goal>
+						</goals>
+						<configuration>
+							<force>true</force>
+							<licenseResolver>${project.baseUri}/srv/src/main/build</licenseResolver>
+							<licenseFile>NOTICE</licenseFile>
+							<licenseName>notice</licenseName>
+							<inceptionYear>2020</inceptionYear>
+							<organizationName>SAP SE or an SAP affiliate company</organizationName>
+						</configuration>
+					</execution>
+					
+					<!-- CREDITS file is not generated automatically
+					call "mvn clean install license:aggregate-add-third-party" to generate it -->
+					<execution>
+						<id>aggregate-add-third-party</id>
+						<phase>none</phase>
+						<goals>
+							<goal>aggregate-add-third-party</goal>
+						</goals>
+					</execution>					
+				</executions>
+			</plugin>
+        
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
