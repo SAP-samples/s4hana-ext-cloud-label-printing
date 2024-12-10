@@ -21,17 +21,17 @@ SAP Extensibility Explorer is a central place where anyone involved in the exten
 
 ## Requirements
 
-- An SAP Business Technology Platform subaccount in the Neo environment with the SAP Forms service by Adobe enabled.
+- An SAP Business Technology Platform subaccount in the Cloud Foundry environment with the SAP Forms service by Adobe enabled.
 - An SAP Business Technology Platform subaccount in the Cloud Foundry environment with the Print Service enabled.
 - An SAP S/4HANA Cloud tenant. **This is a commercial paid product.**
-- [Java SE 8 Development Kit (JDK)](https://www.oracle.com/technetwork/java/javase/downloads/index.html) to compile the Java application.
+- This sample application requires a Java 21 compatible JDK. We recommend using [SapMachine 21](https://sap.github.io/SapMachine/) to compile the Java application.
 - [Apache Maven](http://maven.apache.org/download.cgi) to build the Java application.
 
 ## Download and Installation
 
 This repository is a part of the [Download the Application](https://help.sap.com/viewer/24c083dc31104041a202933f34bd2af2/SHIP/en-US/29c512fa3d22440eac8ccbc4884cb277.html) step in the tutorial. Instructions for use can be found in that step.
 
-[Please download the zip file by clicking here](https://github.com/SAP-samples/s4hana-ext-cloud-label-printing/archive/master.zip) so that the code can be used in the tutorial.
+Please download the zip file by clicking [here](https://github.com/SAP-samples/s4hana-ext-cloud-label-printing/archive/master.zip) so that the code can be used in the tutorial.
 
 ## Known Issues
 
@@ -49,4 +49,4 @@ proxyPort = 8080
 For additional support, [ask a question in SAP Community](https://answers.sap.com/questions/ask.html).
 
 ## License
-Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSES/Apache-2.0.txt) file.
+Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSES/Apache-2.0.txt) file.
