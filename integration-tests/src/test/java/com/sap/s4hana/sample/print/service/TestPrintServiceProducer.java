@@ -1,22 +1,20 @@
 package com.sap.s4hana.sample.print.service;
 
+import com.github.tomakehurst.wiremock.junit.WireMockRule;
+import com.sap.cloud.sdk.testutil.MockUtil;
+import com.sap.s4hana.sample.TestUtil;
+import com.sap.s4hana.sample.util.DestinationHelper;
+import com.sap.s4hana.sample.util.TestHeaderSetterViaXsuaaService;
+import feign.Feign;
+import feign.codec.StringDecoder;
+import feign.jackson.JacksonEncoder;
+import feign.jaxrs.JAXRSContract;
+import feign.slf4j.Slf4jLogger;
+import org.junit.Rule;
+
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Produces;
-
-import org.junit.Rule;
-
-import com.github.tomakehurst.wiremock.junit.WireMockRule;
-import com.sap.cloud.sdk.testutil.MockUtil;
-import com.sap.s4hana.sample.print.service.PrintService;
-import com.sap.s4hana.sample.util.DelegatingEncoder;
-import com.sap.s4hana.sample.util.DestinationHelper;
-
-import feign.Feign;
-import feign.httpclient.ApacheHttpClient;
-import feign.jackson.JacksonDecoder;
-import feign.jackson.JacksonEncoder;
-import feign.slf4j.Slf4jLogger;
 
 /**
  * If you list this class in {@link TestUtil#createDeployment(Class...)}, it
@@ -40,13 +38,12 @@ public class TestPrintServiceProducer {
 	@Produces @RequestScoped
 	public PrintService createPrintService() {
 		return Feign.builder()
-				.encoder(DelegatingEncoder.builder()
-						.encoder("application/json", new JacksonEncoder())
-						.build())
-				.decoder(new JacksonDecoder())
-				.client(new ApacheHttpClient())
+				.contract(new JAXRSContract())
+				.encoder(new JacksonEncoder())
+				.decoder(new StringDecoder())
+				.requestInterceptor(new TestHeaderSetterViaXsuaaService())
 				.logger(new Slf4jLogger(PrintService.class))
-				.target(PrintService.class, DestinationHelper.getUrl(DESTINATION_NAME));
+			.target(PrintService.class, DestinationHelper.getUrl(DESTINATION_NAME));
 	}
 
 }

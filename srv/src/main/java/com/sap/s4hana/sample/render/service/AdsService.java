@@ -1,16 +1,14 @@
 package com.sap.s4hana.sample.render.service;
 
-import java.util.List;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.sap.s4hana.sample.render.model.AdsRenderRequest;
 import com.sap.s4hana.sample.render.model.AdsRenderResponse;
 import com.sap.s4hana.sample.render.model.GetFormResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import feign.Headers;
-import feign.RequestLine;
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+import java.util.List;
 
 /**
  * Feign client for <a href=
@@ -19,17 +17,19 @@ import feign.RequestLine;
  *
  */
 public interface AdsService {
-	
+
 	public static final String DESTINATION_NAME = "ads-rest-api";
-	
+
 	static final Logger log = LoggerFactory.getLogger(AdsService.class);
-	
-	@RequestLine("GET /ads.restapi/v1/forms?select=formData,templateData")
-	@Headers("Accept: application/json")
+
+	@GET
+	@Path("/v1/forms?select=formData,templateData")
+	@Consumes(MediaType.APPLICATION_JSON)
 	List<GetFormResponse> getForms();
-		
-	@RequestLine("POST /ads.restapi/v1/adsRender/pdf?templateSource=storageName")
-	@Headers({"Accept: application/json", "Content-Type: application/json"})
-    AdsRenderResponse renderFormFromStorage(AdsRenderRequest adsRenderRequest);
-	
+
+	@POST
+	@Path("/v1/adsRender/pdf?templateSource=storageName")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	AdsRenderResponse renderFormFromStorage(AdsRenderRequest adsRenderRequest);
 }

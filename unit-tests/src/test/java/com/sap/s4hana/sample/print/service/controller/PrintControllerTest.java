@@ -1,14 +1,11 @@
 package com.sap.s4hana.sample.print.service.controller;
 
-import static org.junit.Assert.fail;
-import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-
-import java.io.IOException;
-import java.io.StringReader;
-import java.util.UUID;
-
+import com.sap.s4hana.sample.print.controller.PrintController;
+import com.sap.s4hana.sample.print.model.PrintContent;
+import com.sap.s4hana.sample.print.model.PrintTask;
+import com.sap.s4hana.sample.print.service.PrintService;
+import feign.Request;
+import feign.Response;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -20,13 +17,15 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import com.sap.s4hana.sample.print.controller.PrintController;
-import com.sap.s4hana.sample.print.model.PrintContent;
-import com.sap.s4hana.sample.print.model.PrintTask;
-import com.sap.s4hana.sample.print.service.PrintService;
-import com.sap.s4hana.sample.render.service.AdsService;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.UUID;
 
-import feign.Response;
+import static org.junit.Assert.fail;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.Silent.class)
 public class PrintControllerTest {
@@ -38,16 +37,7 @@ public class PrintControllerTest {
 	private PrintService printService;
 	
 	@Mock
-	private AdsService adsService;
-	
-	@Mock
 	private PrintTask printTaskMock;
-
-	@Mock
-	private Response response;
-
-	@Mock
-	private Response.Body body;
 	
 	@Mock
 	private PrintContent printContentMock;
@@ -60,10 +50,8 @@ public class PrintControllerTest {
 	
 	@Before
 	public void setUp() {
-		when(printTaskMock.getNumberOfCopies()).thenReturn(1);
-		when(printTaskMock.getQueueName()).thenReturn("queueName");
 		when(printTaskMock.getPrintContents()).thenReturn(printContentMock);
-		
+
 		when(printContentMock.getDocumentName()).thenReturn("documentName");
 	}
 	
@@ -71,18 +59,33 @@ public class PrintControllerTest {
 	public void testPrintFileWithValidContents() throws IOException {
 		// Given
 		final String expectedFileContents = "fileContents";
-		StringReader reader = new StringReader(UUID.randomUUID().toString());
-		when(printContentMock.getObjectKey()).thenReturn("uuid");
-		when(printService.putPrintDocument(expectedFileContents.getBytes())).thenReturn(response);
-		when(response.body()).thenReturn(body);
-		when(body.asReader()).thenReturn(reader);
+		String testUUID = UUID.randomUUID().toString();
+		when(printContentMock.getObjectKey()).thenReturn(testUUID);
+
+		Request request = Request.create(
+			Request.HttpMethod.GET,
+			"http://example.com/api/resource",
+			new HashMap<>(),
+			null,
+			null
+		);
+
+		Response response = Response.builder()
+			.status(200)
+			.reason("OK")
+			.headers(new HashMap<>())
+			.body(testUUID.getBytes())
+			.request(request)
+			.build();
+		when(printService.putPrintDocument(any())).thenReturn(testUUID);
 
 		// When
 		testee.printFile(printTaskMock, expectedFileContents.getBytes());
 		
 		// Then
+		verify(printService).putPrintDocument(expectedFileContents.getBytes());
 		verify(printContentMock).setObjectKey(idCaptor.capture());
-		verify(printService).putPrintTask(eq("uuid"), eq(printTaskMock));
+		verify(printService).putPrintTask(eq(testUUID), eq(printTaskMock));
 		
 		try {
 			UUID.fromString(idCaptor.getValue());

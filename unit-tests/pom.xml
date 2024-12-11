@@ -54,7 +54,6 @@
             </exclusions>
         </dependency>
         
-        <!-- SAP Business Technology Platform Cloud Foundry TomEE 7 Runtime -->
         <dependency>
             <groupId>org.apache.tomee</groupId>
             <artifactId>tomee-jaxrs</artifactId>

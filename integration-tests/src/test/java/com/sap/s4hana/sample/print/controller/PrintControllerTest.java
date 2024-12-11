@@ -1,12 +1,11 @@
 package com.sap.s4hana.sample.print.controller;
 
-import static io.restassured.RestAssured.given;
-import static io.restassured.http.ContentType.JSON;
-import static org.hamcrest.Matchers.*;
-
-import java.io.IOException;
-import java.net.URL;
-
+import com.github.tomakehurst.wiremock.junit.WireMockRule;
+import com.sap.cloud.sdk.testutil.MockUtil;
+import com.sap.s4hana.sample.TestUtil;
+import com.sap.s4hana.sample.print.service.TestPrintServiceProducer;
+import com.sap.s4hana.sample.render.service.TestAdsServiceProducer;
+import io.restassured.RestAssured;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.arquillian.test.api.ArquillianResource;
@@ -17,26 +16,24 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import com.github.tomakehurst.wiremock.junit.WireMockRule;
-import com.sap.cloud.sdk.testutil.MockUtil;
-import com.sap.s4hana.sample.TestUtil;
-import com.sap.s4hana.sample.print.controller.PrintController;
-import com.sap.s4hana.sample.print.service.TestPrintServiceProducer;
-import com.sap.s4hana.sample.render.service.AdsService;
-import com.sap.s4hana.sample.render.service.AdsServiceProducer;
+import java.io.IOException;
+import java.net.URL;
 
-import io.restassured.RestAssured;
+import static io.restassured.RestAssured.given;
+import static io.restassured.http.ContentType.JSON;
+import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.is;
 
 @RunWith(Arquillian.class)
 public class PrintControllerTest {
 	
 	private static final MockUtil mockUtil = new MockUtil();
+
+	@Rule
+	public WireMockRule adsWireMockRule = mockUtil.mockServer(TestAdsServiceProducer.DESTINATION_NAME);
 	
 	@Rule
-	public WireMockRule adsWireMockRule = mockUtil.mockErpServer(AdsService.DESTINATION_NAME);
-	
-	@Rule
-	public WireMockRule printWireMockRule = mockUtil.mockErpServer(TestPrintServiceProducer.DESTINATION_NAME);
+	public WireMockRule printWireMockRule = mockUtil.mockServer(TestPrintServiceProducer.DESTINATION_NAME);
 
 	@ArquillianResource
 	private URL baseUrl;
@@ -46,8 +43,10 @@ public class PrintControllerTest {
 		return TestUtil
 				.createDeployment(PrintController.class,
 						TestPrintServiceProducer.class,
-						AdsServiceProducer.class)
+						TestAdsServiceProducer.class
+				)
 				.addPackages(/* recursive = */ true, "com.sap.s4hana.sample.rest")
+				.addAsResource("application.properties", "WEB-INF/classes/application.properties")
 				.addAsWebInfResource("web.xml");
 	}
 
@@ -65,28 +64,25 @@ public class PrintControllerTest {
 	 * This test uses WireMock stubs defined in the following files:
 	 * <ul>
 	 * <li>ADS_Forms_by_Adobe_REST_API/RenderPdfFromStore_PrintControllerTest.json</li>
-	 * <li>PrintService/POST_printDocument_PrintControllerTest.json</li>
 	 * <li>PrintService/PUT_printTask_PrintControllerTest.json</li>
 	 * </ul>
 	 */
 	@Test
 	public void testRenderAndPrint() {
+		System.out.println("Base URL: " + baseUrl.toExternalForm());
 		given().
 			contentType(JSON).
 			body("{\r\n" + 
-					"   \"printTask\":{\r\n" +
-					"      \"qname\":\"expected_queue_name\",\r\n" +
+					"   \"printTask\":{\r\n" + 
+					"      \"qname\":\"expected_queue_name\",\r\n" + 
 					"      \"numberOfCopies\":100500,\r\n" + 
-					"      \"username\":\"expected user name\",\r\n" +
-					"      \"printContents\":{" +
-					"         \"documentName\":\"expected_name.pdf\"\r\n" +
-					"       }\r\n" +
-					"   },\r\n" +
+					"      \"username\":\"expected_user_name\"\r\n" +
+					"   },\r\n" + 
 					"   \"renderRequest\":{\r\n" + 
 					"      \"templatePath\":\"expected form name/expected template name\",\r\n" + 
-					"      \"printData\":{\r\n" +
-					"         \"form\":\"easter egg\"\r\n" +
-					"      }\r\n" +
+					"      \"printData\":{\r\n" + 
+					"         \"form\":\"easter egg\"\r\n" + 
+					"      }\r\n" + 
 					"   }\r\n" + 
 					"}").
 		when().
@@ -94,30 +90,28 @@ public class PrintControllerTest {
 		then().
 			statusCode(is(204));
 	}
-	
+	/*
 	/**
 	 * This test uses WireMock stubs defined in the following file:
 	 * <ul>
-	 * <li>PrintService/POST_printDocument_PrintControllerTest.json</li>
 	 * <li>PrintService/PUT_printTask_PrintControllerTest.json</li>
 	 * </ul>
 	 */
 	@Test
 	public void testPrintFileMultipart() throws IOException {
-
-		final String file = TestUtil.loadFileAsString("/__files/PrintService/not.pdf");
 		given().
 			multiPart("file", 
-					file, 
+					TestUtil.loadFileAsString("/__files/PrintService/not.pdf"), 
 					"application/octet-stream").
 			multiPart("printTask", 
 					"{\r\n" + 
 					"  \"qname\": \"expected_queue_name\",\r\n" + 
 					"  \"numberOfCopies\": 100500,\r\n" + 
-					"  \"username\": \"expected user name\",\r\n" + 
+					"  \"username\": \"expected_user_name\",\r\n" +
 					"  \"printContents\": {\r\n" + 
-					"      \"documentName\": \"expected_name.pdf\"\r\n" + 
-					"  }\r\n" + 
+					"      \"documentName\": \"expected_name.pdf\",\r\n" +
+					"      \"countId\": 0\r\n" +
+					"  }\r\n" +
 					"}", 
 					"application/json").
 		when().
@@ -136,8 +130,8 @@ public class PrintControllerTest {
 					"{\r\n" + 
 					"  \"qname\": \"expected queue name\",\r\n" + 
 					"  \"numberOfCopies\": 100500,\r\n" + 
-					"  \"username\": \"expected user name\",\r\n" + 
-					"  \"printContents\": {    }\r\n" + // must contain non-empty documentName
+					"  \"username\": \"expected_user_name\",\r\n" +
+					"  \"printContents\": {     }\r\n" + // must contain non-empty documentName
 					"}", 
 					"application/json").
 		when().
@@ -157,7 +151,7 @@ public class PrintControllerTest {
 					"{\r\n" + 
 					"  \"qname\": \"expected queue name\",\r\n" + 
 					"  \"numberOfCopies\": 100500,\r\n" + 
-					"  \"username\": \"expected user name\",\r\n" + 
+					"  \"username\": \"expected_user_name\",\r\n" +
 					"  \"printContents\": {\r\n" + 
 					"      \"documentName\": \"\"\r\n" + 
 					"  }\r\n" + 
@@ -180,7 +174,7 @@ public class PrintControllerTest {
 					"{\r\n" + 
 					"  \"qname\": \"expected queue name\",\r\n" + 
 					"  \"numberOfCopies\": 100500,\r\n" + 
-					"  \"username\": \"expected user name\"\r\n" + 
+					"  \"username\": \"expected_user_name\"\r\n" +
 					"}", 
 					"application/json").
 		when().

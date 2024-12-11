@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
-	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="https://myXXXXXX-api.s4hana.ondemand.com/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value">
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="https://my301351-api.s4hana.ondemand.com/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value">
 		<edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities" />
 	</edmx:Reference>
 	<edmx:DataServices m:DataServiceVersion="2.0">
@@ -528,8 +528,8 @@
 			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="API_OUTBOUND_DELIVERY_SRV.API_OUTBOUND_DELIVERY_SRV_Entities/A_OutbDeliveryDocFlow">
 				<Annotation Term="Capabilities.IndexableByKey" />
 			</Annotations>
-			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="https://myXXXXXX-api.s4hana.ondemand.com/sap/opu/odata/sap/API_OUTBOUND_DELIVERY_SRV/$metadata" />
-			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="https://myXXXXXX-api.s4hana.ondemand.com/sap/opu/odata/sap/API_OUTBOUND_DELIVERY_SRV;v=2/$metadata" />
+			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="https://my301351-api.s4hana.ondemand.com/sap/opu/odata/sap/API_OUTBOUND_DELIVERY_SRV/$metadata" />
+			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="https://my301351-api.s4hana.ondemand.com/sap/opu/odata/sap/API_OUTBOUND_DELIVERY_SRV;v=2/$metadata" />
 		</Schema>
 	</edmx:DataServices>
 </edmx:Edmx>

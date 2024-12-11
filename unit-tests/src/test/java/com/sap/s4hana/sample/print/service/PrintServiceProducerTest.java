@@ -1,31 +1,22 @@
 package com.sap.s4hana.sample.print.service;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
-import static org.mockito.Mockito.doAnswer;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.verifyNoInteractions;
-
-import java.net.URI;
-import java.util.function.Consumer;
-
-import org.apache.http.HttpHeaders;
+import com.sap.cloud.sdk.cloudplatform.connectivity.ScpCfService;
+import feign.RequestTemplate;
 import org.apache.http.HttpRequest;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.contrib.java.lang.system.EnvironmentVariables;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 import org.mockito.stubbing.Answer;
 
-import com.sap.cloud.sdk.cloudplatform.connectivity.ScpCfService;
-import com.sap.s4hana.sample.print.service.PrintService;
-import com.sap.s4hana.sample.print.service.PrintServiceProducer;
+import java.net.URI;
+import java.util.function.Consumer;
 
-import feign.RequestTemplate;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
 
 public class PrintServiceProducerTest {
 
@@ -37,101 +28,104 @@ public class PrintServiceProducerTest {
 	@Rule
 	public final EnvironmentVariables environmentVariables = new EnvironmentVariables()
 		.set("VCAP_SERVICES", 
-				String.format("{\r\n" + 
-					"   \"print\":[\r\n" + 
-					"      {\r\n" + 
-					"         \"label\":\"print\",\r\n" + 
-					"         \"plan\":\"sender\",\r\n" + 
-					"         \"name\":\"printServiceInstanceName\",\r\n" + 
-					"         \"credentials\":{\r\n" + 
-					"            \"uaa\":{\r\n" + 
-					"               \"clientid\":\"%s\",\r\n" + 
-					"               \"clientsecret\":\"%s\",\r\n" + 
-					"               \"url\":\"%s\"\r\n" + 
-					"            },\r\n" + 
-					"            \"service_url\":\"%s\"\r\n" + 
-					"         }\r\n" + 
-					"      }\r\n" + 
-					"   ]\r\n" + 
-					"}", 
-					EXPECTED_CLIENT_ID, 
-					EXPECTED_CLIENT_SECRET, 
-					EXPECTED_UAA_URL, 
+				String.format("{  " + 
+					"\"print\": [ " +
+						"{ " +
+						"\"label\": \"print\", " +
+						"  \"provider\": null, " +
+						"  \"plan\": \"sender\", " +
+						"  \"name\": \"print-sender\", " +
+						"  \"tags\": [ " +
+						"   \"Print\", " +
+						"   \"Output Management\" " +
+						"  ], " +
+						"  \"instance_name\": \"print-sender\", " +
+						"  \"binding_name\": null, " +
+						"  \"credentials\": { " +
+						"   \"uaa\": { " +
+						"   \"tenantmode\": \"shared\", " +
+						"   \"sburl\": \"\", " +
+						"   \"credential-type\": \"binding-secret\", " +
+						"   \"clientid\": \"expected_client_id\", " +
+						"   \"clientsecret\": \"expected_client_secret\", " +
+						"   \"url\": \"https://example.com/uaa_url\", " +
+						"   \"uaadomain\": \"\", " +
+						"   }, " +
+						"   \"service_url\": \"https://example.com/service_url\" " +
+						"  }, " +
+						"  \"syslog_drain_url\": null, " +
+						"  \"volume_mounts\": [] " +
+						"  } " +
+						" ],  " +
+						"\"adsrestapi\": [" +
+						"{" +
+						"\"label\": \"adsrestapi\"," +
+						"\"provider\": null," +
+						"\"plan\": \"standard\"," +
+						"\"name\": \"adobe-form-rest\"," +
+						"\"tags\": []," +
+						"\"instance_guid\": \"\"," +
+						"\"instance_name\": \"\"," +
+						"\"binding_guid\": \"\"," +
+						"\"binding_name\": null," +
+						"\"credentials\": {" +
+						"\"uri\": \"https://example.com/service_url\"," +
+						"\"uaa\": {" +
+						"\"tenantmode\": \"shared\"," +
+						"\"sburl\": \"\"," +
+						"\"subaccountid\": \"\"," +
+						"\"credential-type\": \"binding-secret\"," +
+						"\"clientid\": \"expected_client_id\"," +
+						"\"xsappname\": \"\"," +
+						"\"clientsecret\": \"expected_client_secret\"," +
+						"\"serviceInstanceId\": \"\"," +
+						"\"url\": \"https://example.com/uaa_url\"," +
+						"\"uaadomain\": \"\"," +
+						"\"verificationkey\": \"\"," +
+						"\"apiurl\": \"\"," +
+						"\"identityzone\": \"\"," +
+						"\"identityzoneid\": \"\"," +
+						"\"tenantid\": \"\"," +
+						"\"zoneid\": \"\"" +
+						"}" +
+						"}," +
+						"\"syslog_drain_url\": null," +
+						"\"volume_mounts\": []" +
+						"}" +
+						"]" +
+					"},",
+					EXPECTED_CLIENT_ID,
+					EXPECTED_CLIENT_SECRET,
+					EXPECTED_UAA_URL,
 					EXPECTED_SERVICE_URL));
-	
+
 	@Rule
 	public MockitoRule mockitoRule = MockitoJUnit.rule().silent();
 
 	@Mock
 	ScpCfService scpCfServiceMock;
-	
+
 	@Spy
 	RequestTemplate requestTemplateSpy;
-	
+
 	@Test
-	public void testScpServiceFromVcapServices() {
+	public void testScpServiceFromVcaoServices() {
 		final ScpCfService scpService = new PrintServiceProducer().getScpPrintService();
-		
+
 		assertThat("service URL", scpService.getServiceLocationInfo(), is(equalTo(EXPECTED_SERVICE_URL)));
 		assertThat("service client id", scpService.getClientCredentials().getClientId(), is(equalTo(EXPECTED_CLIENT_ID)));
 		assertThat("service client secret", scpService.getClientCredentials().getClientSecret(), is(equalTo(EXPECTED_CLIENT_SECRET)));
 		assertThat("service UAA URL", scpService.getAuthUri(), is(equalTo(URI.create(EXPECTED_UAA_URL))));
 	}
-	
+
 	@Test
 	public void testProducerMehtod() {
 		final PrintService producedService = new PrintServiceProducer().createPrintService();
-		
+
 		// we can only check if nothing bad happens as the result service is a proxy
 		assertThat("print service", producedService, is(not(nullValue())));
 	}
-	
-	/* tests for PrintServiceProducer.AuthHeaderSetter */
-	
-	@Test
-	public void testAuthHeaderSetter() {
-		// Given
-		final String expectedAuthHeaderValue = "ExpectedAuthHeader";
-		
-		doAnswer(by(req -> req.addHeader(HttpHeaders.AUTHORIZATION, expectedAuthHeaderValue)))
-			.when(scpCfServiceMock)
-			.addBearerTokenHeader(Mockito.any());
-		
-		// When
-		PrintServiceProducer.AuthHeaderSetter.of(scpCfServiceMock).apply(requestTemplateSpy);
 
-		// Then
-		verify(requestTemplateSpy).header(HttpHeaders.AUTHORIZATION, expectedAuthHeaderValue);
-	}
-	
-	@Test
-	public void testAuthHeaderSetterWhenHeaderIsSetToNull() {
-		// Given an ScpService that sets the auth header to null
-		doAnswer(by(req -> req.addHeader(HttpHeaders.AUTHORIZATION, null)))
-			.when(scpCfServiceMock)
-			.addBearerTokenHeader(Mockito.any());
-		
-		// When
-		PrintServiceProducer.AuthHeaderSetter.of(scpCfServiceMock).apply(requestTemplateSpy);
-
-		// Then auth header is not set on the request
-		verifyNoInteractions(requestTemplateSpy);
-	}
-	
-	@Test
-	public void testAuthHeaderSetterWhenHeaderIsNotSet() {
-		// Given an ScpService that doesn't set the auth header
-		doAnswer(by(req -> {}))
-			.when(scpCfServiceMock)
-			.addBearerTokenHeader(Mockito.any());
-		
-		// When
-		PrintServiceProducer.AuthHeaderSetter.of(scpCfServiceMock).apply(requestTemplateSpy);
-
-		// Then auth header is not set on the request
-		verifyNoInteractions(requestTemplateSpy);
-	}
-	
 	/**
 	 * This is a helper method that makes {@link ScpCfService}'s mock do something
 	 * when the {@link ScpCfService#addBearerTokenHeader(HttpRequest)} method is

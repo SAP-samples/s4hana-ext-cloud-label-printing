@@ -18,6 +18,7 @@ applications:
   services:
   # TODO replace placeholder with the name of the same instance that is used by the backend application
   - <xsuaa-service-instance>
+  - <log-instance>
 
 - name: backend
   memory: 1024M
@@ -37,6 +38,7 @@ applications:
   - <xsuaa-service-instance>
   - <destination-service-instance>
   - <print-application-service-instance>
+  - <log-instance>
     
 - name: frontend
   routes:

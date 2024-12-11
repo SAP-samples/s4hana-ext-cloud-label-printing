@@ -31,13 +31,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class AdsRenderRequest {
 
-	@JsonProperty("xdpTemplate") // this name is used during serialization
-	@JsonAlias("templatePath") // this name is used during deserialization
+	@JsonProperty("xdpTemplate")
+	@JsonAlias("templatePath")
 	@NotNull @NotEmpty
 	private String xdpTemplate;
 
-	@JsonProperty("xmlData") // this name is used during serialization
-	@JsonAlias("printData") // this name is used during deserialization
+	@JsonProperty("xmlData")
+	@JsonAlias("printData")
 	@JsonSerialize(using = XmlBase64Serializer.class)
 	private Map<Object, Object> data;
 

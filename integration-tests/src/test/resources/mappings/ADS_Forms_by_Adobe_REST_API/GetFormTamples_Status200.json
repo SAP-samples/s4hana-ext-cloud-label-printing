@@ -1,7 +1,7 @@
 {
 	"request": {
 		"method": "GET",
-		"urlPattern": "/ads.restapi/v1/forms\\?select=formData\\&select=templateData"
+		"urlPattern": "/v1/forms\\?select=formData\\&select=templateData"
 	},
 	"response": {
 		"status": 200,

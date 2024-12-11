@@ -1,16 +1,5 @@
 package com.sap.s4hana.sample.print.service.model;
 
-import static org.hamcrest.Matchers.*;
-import static org.junit.Assert.assertThat;
-
-import java.util.Collection;
-import java.util.Set;
-import java.util.UUID;
-
-import javax.validation.ConstraintViolation;
-
-import org.junit.Test;
-
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -18,8 +7,16 @@ import com.sap.s4hana.sample.print.model.PrintContent;
 import com.sap.s4hana.sample.print.model.PrintTask;
 import com.sap.s4hana.sample.rest.JsonProvider;
 import com.sap.s4hana.sample.validation.ForPrinting;
-
+import org.junit.Test;
 import validation.ValidationUtil;
+
+import javax.validation.ConstraintViolation;
+import java.util.Collection;
+import java.util.Set;
+import java.util.UUID;
+
+import static org.hamcrest.Matchers.*;
+import static org.junit.Assert.assertThat;
 
 public class PrintTaskTest {
 	
@@ -95,6 +92,7 @@ public class PrintTaskTest {
 	private static PrintContent validPrintContent() {
 		return PrintContent.builder()
 			.objectKey(UUID.randomUUID().toString())
+			.countId(0)
 			.documentName("must not be null or empty")
 			.build();
 	}

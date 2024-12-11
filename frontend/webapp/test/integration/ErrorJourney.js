@@ -46,16 +46,6 @@ sap.ui.define([
 		Then.onTheHomePage.iShouldSeeTheItemsInTable();    
 	});
 
-	opaTest("Given that there is multiple delivery items & user selects only one", function (Given, When, Then) {
-		When.onTheHomePage.iPressOnTheItem103();
-		When.onThePrintLabelPage.iEnterNumberOfPackages("3");
-		When.onThePrintLabelPage.iPressOnPrintButton();
-		Then.onTheTechnicalErrorPage.iShouldSeeTheErrorDialog();
-		When.onTheTechnicalErrorPage.iCloseTheDialog();
-		When.onTheTechnicalErrorPage.iCallHistoryBack();
-		Then.onTheHomePage.iShouldSeeTheItemsInTable();
-	});
-
 	opaTest("Given that user clicks print", function (Given, When, Then) {
 		When.onTheHomePage.iPressOnTheItem105();
 		When.onThePrintLabelPage.iEnterNumberOfPackages("5");

@@ -1,13 +1,12 @@
 package com.sap.s4hana.sample.print.model;
 
-import java.math.BigDecimal;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.math.BigDecimal;
 
 /**
  * @see <a href="https://api.sap.com/api/PRINTAPI/resource">Print Service API

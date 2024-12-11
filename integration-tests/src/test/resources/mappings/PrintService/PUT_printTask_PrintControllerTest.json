@@ -6,30 +6,29 @@
 			"Content-Type": {
 				"equalTo": "application/json",
         		"caseInsensitive": true
-			},
-			"If-None-Match": {
-				"equalTo": "*"
 			}
 		},
-		"bodyPatterns": [
+		"bodyPatterns" : [
 			{
-				"equalToJson": {
-					"qname": "expected_queue_name",
-					"numberOfCopies": 100500,
-					"username": "expected user name",
+				"equalToJson" : {
 					"printContents": [
 						{
-							"documentName": "expected_name.pdf"
+							"objectKey": "d127f215-1928-466a-b76f-dbea4a71f786",
+							"documentName": "expected_name.pdf",
+							"countId" : 0
 						}
-					]
+					],
+					"numberOfCopies": 100500,
+					"username": "expected_user_name",
+					"qname": "expected_queue_name"
 				},
-				"ignoreExtraElements": true
+				"ignoreExtraElements" : true
 			},
 			{
-				"matchesJsonPath": "$[?(@.printContents.size() == 1)]"
+				"matchesJsonPath" : "$[?(@.printContents.size() == 1)]"
 			},
 			{
-				"matchesJsonPath": "$.printContents[?(@.objectKey =~ /[0-9a-fA-F]{8}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{12}/i)]"
+				"matchesJsonPath" : "$.printContents[?(@.objectKey =~ /[0-9a-fA-F]{8}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{4}\\-[0-9a-fA-F]{12}/i)]"
 			}
 		]
 	},
